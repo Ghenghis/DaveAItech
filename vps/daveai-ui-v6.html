@@ -1458,17 +1458,17 @@
 
       <!-- Projects tab -->
       <div id="fp-projects" class="fp-body" role="tabpanel" aria-labelledby="fpt-projects" style="display:none;flex-direction:column;">
-        <div class="proj-cats">
-          <button class="proj-cat on" data-cat="web" onclick="setProjCat('web')"><i class="fas fa-globe"></i> Web <span
+        <div class="proj-cats" role="tablist" aria-label="Project category">
+          <button class="proj-cat on" data-cat="web" role="tab" aria-selected="true" tabindex="0" aria-controls="proj-list" onclick="setProjCat('web')" onkeydown="activateOnKeyboard(event)"><i class="fas fa-globe"></i> Web <span
               class="pcat-count" id="pcat-c-web">0</span></button>
-          <button class="proj-cat" data-cat="apps" onclick="setProjCat('apps')"><i class="fas fa-mobile-alt"></i> Apps
+          <button class="proj-cat" data-cat="apps" role="tab" aria-selected="false" tabindex="-1" aria-controls="proj-list" onclick="setProjCat('apps')" onkeydown="activateOnKeyboard(event)"><i class="fas fa-mobile-alt"></i> Apps
             <span class="pcat-count" id="pcat-c-apps">0</span></button>
-          <button class="proj-cat" data-cat="games" onclick="setProjCat('games')"><i class="fas fa-gamepad"></i> Games
+          <button class="proj-cat" data-cat="games" role="tab" aria-selected="false" tabindex="-1" aria-controls="proj-list" onclick="setProjCat('games')" onkeydown="activateOnKeyboard(event)"><i class="fas fa-gamepad"></i> Games
             <span class="pcat-count" id="pcat-c-games">0</span></button>
-          <button class="proj-cat" data-cat="other" onclick="setProjCat('other')"><i class="fas fa-folder"></i> Other
+          <button class="proj-cat" data-cat="other" role="tab" aria-selected="false" tabindex="-1" aria-controls="proj-list" onclick="setProjCat('other')" onkeydown="activateOnKeyboard(event)"><i class="fas fa-folder"></i> Other
             <span class="pcat-count" id="pcat-c-other">0</span></button>
         </div>
-        <div id="proj-list" style="flex:1;overflow-y:auto;"></div>
+        <div id="proj-list" role="tabpanel" aria-label="Projects in this category" style="flex:1;overflow-y:auto;"></div>
         <div id="proj-add-area">
           <div id="proj-recovery-actions" style="display:flex;gap:6px;padding:8px 10px;border-top:1px solid var(--border);">
             <button onclick="resumeLastProject()" title="Open the last saved or most recent server project"
@@ -1482,8 +1482,8 @@
             style="width:100%;text-align:left;padding:8px 14px;font-size:11px;color:#A78BFA;background:none;border:none;cursor:pointer;border-top:1px solid var(--border)">+
             Add project</button>
           <div id="proj-form" class="proj-add-form" style="display:none">
-            <input type="text" id="proj-inp-name" placeholder="Project name" maxlength="60">
-            <input type="text" id="proj-inp-url" placeholder="URL (https://...)">
+            <input type="text" id="proj-inp-name" placeholder="Project name" aria-label="Project name" maxlength="60">
+            <input type="text" id="proj-inp-url" placeholder="URL (https://...)" aria-label="Project URL">
             <div class="proj-add-btns">
               <button class="proj-save-btn" onclick="saveNewProject()">Add</button>
               <button class="proj-cancel-btn" onclick="hideProjForm()">Cancel</button>
@@ -9573,7 +9573,12 @@
 
     function setProjCat(cat) {
       _projCat = cat;
-      document.querySelectorAll('.proj-cat').forEach(el => el.classList.toggle('on', el.dataset.cat === cat));
+      document.querySelectorAll('.proj-cat').forEach(el => {
+        const selected = el.dataset.cat === cat;
+        el.classList.toggle('on', selected);
+        el.setAttribute('aria-selected', String(selected));
+        el.setAttribute('tabindex', selected ? '0' : '-1');
+      });
       renderProjects();
     }
 

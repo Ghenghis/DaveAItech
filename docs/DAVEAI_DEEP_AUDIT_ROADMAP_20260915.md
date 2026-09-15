@@ -273,10 +273,45 @@ Collapse the five-places-at-once catalog mechanism (§4.2) into one real source,
 `web-pages.html` source into the repo, and add at least one real input-driven test per game beyond
 Asteroids before calling any of them "working." Contract: `docs/contracts/CT-003-games-catalog-consolidation.json`.
 
-### Phase 4 — Wildcard site extensibility
-Once Phase 3's registry is real and singular, wire the existing unused `"other"` category into the
-launcher UI as the place your additional sites go, with `embed:false` as the default for anything
-you don't control. Contract: `docs/contracts/CT-004-wildcard-extensibility.json`.
+### Phase 4 — Wildcard site extensibility — substantially already built, verified 2026-09-15
+This phase's stated goal — wire the unused `"other"` category into the launcher UI, with
+`embed:false` as the default for anything you don't control — turns out to already exist,
+end to end, in `vps/daveai-ui-v6.html`:
+- The Projects panel already has a working "Other" category tab (`.proj-cats`, alongside
+  Web/Apps/Games) and a "+ Add project" form (name + URL) that saves under whichever
+  category is currently selected, including "Other".
+- New projects don't set `embed` at all. `shouldUseLaunchCard()` treats any project whose
+  `embed` isn't explicitly `true` as a launch card (opened via `window.open(url, '_blank',
+  'noopener,noreferrer')`) rather than an iframe, for any URL on a different origin than
+  daveai.tech — exactly the safe-by-default behavior this phase asked for, with no
+  additional code needed.
+- Saved projects persist both to `localStorage` and (via `_dbSaveProject`) to the server,
+  so a user-added site follows the user across devices, not just the one browser.
+
+**What this session actually did here:** confirmed the above by tracing the real code path
+(`saveNewProject` → `shouldUseLaunchCard`/`shouldLaunchExternally` → `loadProject`), not by
+assuming it from the phase description, then fixed 2 small, genuinely-missing accessibility
+gaps found along the way — the "Other"/Web/Apps/Games category buttons had no ARIA tab
+semantics at all (now `role="tablist"`/`role="tab"`/`aria-selected`, matching the pattern
+used for every other tab-like control in this file), and the add-project form's two inputs
+had no accessible name beyond a placeholder (now `aria-label`s added). These 2 items are
+new findings from this pass, not part of the original 130 — noted here rather than folded
+into that count silently.
+
+**Not verified:** an actual authenticated click-through in a live browser session (adding a
+real external site and confirming it renders as a launch card, not an iframe) — this
+analysis is from reading the code path completely, not from running it. That's a
+reasonable, cheap thing for you to confirm yourself next time you're signed in: Projects
+panel → Other → "+ Add project" → a URL on a domain you don't control → confirm it opens
+in a new tab rather than an iframe.
+
+**This is the third time in this project** that a phase/finding assumed to be "not started"
+turned out to already be built when actually traced through the code (the other two:
+Chat's History-rows keyboard finding, and one Settings grid-timing finding, both in
+`DAVEAI_CONFIRMED_FINDINGS_20260915.md`). Worth remembering when planning future work here:
+verify against the actual file before assuming a described gap is real. Contract:
+`docs/contracts/CT-004-wildcard-extensibility.json` (still marked `not_started` there —
+worth updating separately if the contract-tracking process matters to you going forward).
 
 ### Phase 5 — Open strategic questions
 `app/`'s fate (§4.3), the six-week-dead voice/IPTV/TV stack (§2), and how the separate Alice's
