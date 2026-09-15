@@ -1,0 +1,13 @@
+{
+  "name": "daveai-tech",
+  "version": "1.0.0",
+  "private": true,
+  "description": "DaveAI.tech operational code, docs, and verification scripts — not a buildable app in this repo (the live site is a single hand-maintained HTML file, deployed by hand to the VPS; see vps/README.md).",
+  "scripts": {
+    "test:daveai:prod": "node vps/production-e2e-runner.cjs",
+    "test:daveai:gameplay": "playwright test --config=vps/tests/playwright.config.ts"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0"
+  }
+}
