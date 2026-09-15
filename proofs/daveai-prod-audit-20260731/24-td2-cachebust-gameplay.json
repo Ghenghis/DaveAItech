@@ -1,0 +1,21 @@
+{
+  "url": "https://daveai.tech/games/daveai-td2/index.html?proof=24-1785536823365",
+  "before": {
+    "title": "DaveAI TD2",
+    "bodyText": "",
+    "canvasCount": 1,
+    "buttons": []
+  },
+  "after": {
+    "title": "DaveAI TD2",
+    "bodyText": "",
+    "canvasCount": 1,
+    "activeElement": "BODY:\n  \n\n\n(function(){function c(){var b=a.contentDocu"
+  },
+  "badResponses": [],
+  "badCount": 0,
+  "pageErrors": [],
+  "actionableConsole": [],
+  "consoleCount": 0,
+  "passed": true
+}

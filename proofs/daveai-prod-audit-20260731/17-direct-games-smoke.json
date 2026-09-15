@@ -1,0 +1,1581 @@
+{
+  "generatedAt": "2026-07-31T20:59:40.275Z",
+  "results": [
+    {
+      "name": "Daves Siege TD",
+      "url": "https://daveai.tech/games/daves-siege-td/index.html",
+      "elapsedMs": 2528,
+      "navError": null,
+      "info": {
+        "title": "Dave's Siege TD — by DaveAI",
+        "h1": "Dave's Siege TD",
+        "bodyText": "⚔️\nDave's Siege TD\n\nBY DAVEAI\n\nLoading...",
+        "canvasCount": 0,
+        "buttonCount": 0,
+        "scriptCount": 3,
+        "visibleTextLen": 41,
+        "bodyBg": "rgb(10, 14, 26)"
+      },
+      "screenshot": "G:\\Github\\Bolt.DIY\\proofs\\daveai-prod-audit-20260731\\17-direct-game-00.png",
+      "badResponses": [],
+      "actionableConsole": [],
+      "pageErrors": [],
+      "passed": true
+    },
+    {
+      "name": "DaveAI TD2",
+      "url": "https://daveai.tech/games/daveai-td2/index.html",
+      "elapsedMs": 10840,
+      "navError": null,
+      "info": {
+        "title": "DaveAI TD2",
+        "h1": "",
+        "bodyText": "",
+        "canvasCount": 1,
+        "buttonCount": 0,
+        "scriptCount": 3,
+        "visibleTextLen": 0,
+        "bodyBg": "rgb(0, 0, 0)"
+      },
+      "screenshot": "G:\\Github\\Bolt.DIY\\proofs\\daveai-prod-audit-20260731\\17-direct-game-01.png",
+      "badResponses": [
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/damage/1_effect_damage_001.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/damage/1_effect_damage_008.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/damage/1_effect_damage_004.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/damage/1_effect_damage_007.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/damage/1_effect_damage_003.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/damage/1_effect_damage_000.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/fire/1_effect_fire_001.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/fire/1_effect_fire_000.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/fire/1_effect_fire_003.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/fire/1_effect_fire_009.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/fire/1_effect_fire_013.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/fire/1_effect_fire_012.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/fire/1_effect_fire_014.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/fire/1_effect_fire_016.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/damage/1_effect_damage_002.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/damage/1_effect_damage_009.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/damage/1_effect_damage_005.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/damage/1_effect_damage_006.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/fire/1_effect_fire_002.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/fire/1_effect_fire_005.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/fire/1_effect_fire_004.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/fire/1_effect_fire_006.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/fire/1_effect_fire_007.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/fire/1_effect_fire_008.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/fire/1_effect_fire_010.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/freeze/1_effect_freeze_002.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/freeze/1_effect_freeze_001.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/fire/1_effect_fire_015.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/fire/1_effect_fire_011.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/fire/1_effect_fire_017.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/fire/1_effect_fire_018.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/freeze/1_effect_freeze_004.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/freeze/1_effect_freeze_006.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/freeze/1_effect_freeze_008.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/freeze/1_effect_freeze_007.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/freeze/1_effect_freeze_009.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/freeze/1_effect_freeze_000.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/freeze/1_effect_freeze_010.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/freeze/1_effect_freeze_011.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/freeze/1_effect_freeze_012.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/freeze/1_effect_freeze_015.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/freeze/1_effect_freeze_014.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/freeze/1_effect_freeze_003.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/zip/1_effect_zip_000.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/freeze/1_effect_freeze_005.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/zip/1_effect_zip_001.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/zip/1_effect_zip_002.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/zip/1_effect_zip_003.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/zip/1_effect_zip_004.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/zip/1_effect_zip_005.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/zip/1_effect_zip_006.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/freeze/1_effect_freeze_013.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/zip/1_effect_zip_007.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/zip/1_effect_zip_008.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/zip/1_effect_zip_009.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/zip/1_effect_zip_011.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/zip/1_effect_zip_010.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/zip/1_effect_zip_012.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/zip/1_effect_zip_013.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/rain/1_effect_rain_002.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/rain/1_effect_rain_003.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/rain/1_effect_rain_004.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/rain/1_effect_rain_006.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/rain/1_effect_rain_008.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/rain/1_effect_rain_010.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/rain/1_effect_rain_011.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/rain/1_effect_rain_012.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/rain/1_effect_rain_014.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/rain/1_effect_rain_015.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/rain/1_effect_rain_001.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/rain/1_effect_rain_016.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/rain/1_effect_rain_017.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/rain/1_effect_rain_018.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/rain/1_effect_rain_019.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/rain/1_effect_rain_005.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/rain/1_effect_rain_021.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/rain/1_effect_rain_020.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/rain/1_effect_rain_007.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/rain/1_effect_rain_023.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/rain/1_effect_rain_009.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/rain/1_effect_rain_013.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/rain/1_effect_rain_024.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/rain/1_effect_rain_025.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/rain/1_effect_rain_026.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/rain/1_effect_rain_027.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/rain/1_effect_rain_028.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/rain/1_effect_rain_029.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/rain/1_effect_rain_031.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/rain/1_effect_rain_032.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/rain/1_effect_rain_033.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/rain/1_effect_rain_034.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/rain/1_effect_rain_035.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/rain/1_effect_rain_022.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/rain/1_effect_rain_036.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/rain/1_effect_rain_037.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/rain/1_effect_rain_038.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/stone/1_effect_stone_000.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/rain/1_effect_rain_039.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/stone/1_effect_stone_002.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/stone/1_effect_stone_001.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/stone/1_effect_stone_003.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/stone/1_effect_stone_004.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/stone/1_effect_stone_005.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/stone/1_effect_stone_006.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/rain/1_effect_rain_030.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/stone/1_effect_stone_007.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/stone/1_effect_stone_008.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/stone/1_effect_stone_010.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/stone/1_effect_stone_009.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/stone/1_effect_stone_012.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/stone/1_effect_stone_011.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/stone/1_effect_stone_013.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/stone/1_effect_stone_014.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/stone/1_effect_stone_016.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/stone/1_effect_stone_017.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/time/1_effect_time_000.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/time/1_effect_time_002.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/time/1_effect_time_001.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/time/1_effect_time_003.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/time/1_effect_time_005.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/time/1_effect_time_006.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/time/1_effect_time_007.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/time/1_effect_time_008.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/time/1_effect_time_010.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/time/1_effect_time_009.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/time/1_effect_time_011.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/time/1_effect_time_012.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/def/1_effect_def_000.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/time/1_effect_time_013.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/stone/1_effect_stone_015.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/def/1_effect_def_003.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/def/1_effect_def_001.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/def/1_effect_def_002.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/def/1_effect_def_004.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/def/1_effect_def_005.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/def/1_effect_def_006.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/def/1_effect_def_009.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/time/1_effect_time_004.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/def/1_effect_def_007.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/vfx/def/1_effect_def_008.png"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/audio/craftpix/free_cyberpunk_audio_pack_4_for_pixel_games/Music/MP3/Main_theme_exclusion_zone_looped.mp3"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/audio/craftpix/free_cyberpunk_music_and_sound_effects_pack_6/Music/MP3/Calm_theme_Chinese_Street.mp3"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/audio/craftpix/free_cyberpunk_audio_pack_4_for_pixel_games/Music/MP3/Main_theme_exclusion_zone_alternative_looped.mp3"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/audio/craftpix/free_cyberpunk_music_and_sound_effects_pack_6/Music/MP3/Main_theme_Chinese_Street.mp3"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/audio/craftpix/free_cyberpunk_audio_pack_4_for_pixel_games/Music/MP3/Main_theme_Halloween_looped.mp3"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/audio/craftpix/free_cyberpunk_music_and_sound_effects_pack_6/Music/MP3/Stealthy_theme_loopable.mp3"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/audio/craftpix/free_cyberpunk_music_and_sound_effects_pack_6/Music/MP3/Alternative_theme_Chinese_Street.mp3"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/audio/craftpix/free_cyberpunk_music_and_sound_effects_pack_6/Music/MP3/Battle_theme_Chinese_Street.mp3"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/audio/craftpix/free_cyberpunk_audio_pack_4_for_pixel_games/Music/MP3/Battle_theme_exclusion_zone_looped.mp3"
+        },
+        {
+          "status": 404,
+          "url": "/games/daveai-td2/assets/audio/craftpix/free_cyberpunk_audio_pack_4_for_pixel_games/Music/MP3/Battle_theme_Halloween_looped.mp3"
+        }
+      ],
+      "actionableConsole": [
+        {
+          "type": "warning",
+          "text": "[.WebGL-0x459400199400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+        },
+        {
+          "type": "warning",
+          "text": "[.WebGL-0x459400199400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+        },
+        {
+          "type": "warning",
+          "text": "[.WebGL-0x459400199400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+        },
+        {
+          "type": "warning",
+          "text": "[.WebGL-0x459400199400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        }
+      ],
+      "pageErrors": [],
+      "passed": true
+    },
+    {
+      "name": "DaveAI Asteroids",
+      "url": "https://daveai.tech/games/asteroids/index.html",
+      "elapsedMs": 2644,
+      "navError": null,
+      "info": {
+        "title": "DaveAI Asteroids",
+        "h1": "Asteroids",
+        "bodyText": "DAVEAI ARCADE\n\nAsteroids\nSCORE\n0\nLIVES\n3\nWAVE\n1\nDaveAI Asteroids game area\nMISSION READY\nClear the asteroid field\nUse the keyboard, pointer, or touch controls below.\nStart mission\nPause\nRestart\nReady\n↺\n▲\n↻\nFire\n\n←→ rotate · ↑ thrust · Space fire · P pause",
+        "canvasCount": 1,
+        "buttonCount": 7,
+        "scriptCount": 3,
+        "visibleTextLen": 255,
+        "bodyBg": "rgb(7, 11, 24)"
+      },
+      "screenshot": "G:\\Github\\Bolt.DIY\\proofs\\daveai-prod-audit-20260731\\17-direct-game-02.png",
+      "badResponses": [],
+      "actionableConsole": [],
+      "pageErrors": [],
+      "passed": true
+    },
+    {
+      "name": "Checkers Crowning",
+      "url": "https://daveai.tech/games/checkers-crowning/index.html",
+      "elapsedMs": 2568,
+      "navError": null,
+      "info": {
+        "title": "Checkers Crowning — DaveAI Games",
+        "h1": "Checkers Crowning",
+        "bodyText": "DAVEAI VERIFIED GAME\n\nCheckers Crowning\n\nMove diagonally, jump captures, and crown pieces that reach the far edge.\n\nTURN\nRed\nMOVES\n0\nCROWNS\n0\n\nRed to move.\n\n●\n●\n●\n●\n●\n●\n●\n●\n●\n●\n●\n●\n●\n●\n●\n●\n●\n●\n●\n●\n●\n●\n●\n●\nNew Game\nCrown Proof Setup\n\nClick one of your pieces, then click a highlighted square. Kings can move both directions.",
+        "canvasCount": 0,
+        "buttonCount": 66,
+        "scriptCount": 3,
+        "visibleTextLen": 323,
+        "bodyBg": "rgb(8, 11, 20)"
+      },
+      "screenshot": "G:\\Github\\Bolt.DIY\\proofs\\daveai-prod-audit-20260731\\17-direct-game-03.png",
+      "badResponses": [],
+      "actionableConsole": [],
+      "pageErrors": [],
+      "passed": true
+    },
+    {
+      "name": "Arcade Snake",
+      "url": "https://daveai.tech/arcade/snake.html",
+      "elapsedMs": 2458,
+      "navError": null,
+      "info": {
+        "title": "Snake+ SOTA",
+        "h1": "SNAKE+",
+        "bodyText": "SCORE\nSCORE\n0\nHIGH\n0\nLEVEL\n1\nLIVES\n❤❤❤\nCOMBO\nx1\nPOWER-UPS\nMODE\nCLASSIC\nSTATS\nFOOD\n0\nTIME\n0:00\nTOP SCORES\nWASD / Arrows to move\nP = Pause | S = Settings\nSNAKE+\nSTATE OF THE ART\nDaily Challenge: Fri Jul 31 2026\nSELECT MODE\nCLASSIC\nMAZE\nPORTAL\nCHAOS\nDAILY\nZEN\nSELECT SKIN\n▶ START\n⚙ SETTINGS\n🏆 ACHV\nTOP SCORES",
+        "canvasCount": 2,
+        "buttonCount": 16,
+        "scriptCount": 3,
+        "visibleTextLen": 306,
+        "bodyBg": "rgb(10, 10, 26)"
+      },
+      "screenshot": "G:\\Github\\Bolt.DIY\\proofs\\daveai-prod-audit-20260731\\17-direct-game-04.png",
+      "badResponses": [],
+      "actionableConsole": [],
+      "pageErrors": [],
+      "passed": true
+    },
+    {
+      "name": "Arcade Pacman",
+      "url": "https://daveai.tech/arcade/pacman.html",
+      "elapsedMs": 2534,
+      "navError": null,
+      "info": {
+        "title": "PACMAN+ ULTRA",
+        "h1": "",
+        "bodyText": "SCORE: 0\nCLASSIC\nLEVEL: 1\nLIVES: ●●●\nHI: 0\n👻👻👻👻\nPACMAN+\nULTRA EDITION\nCLASSIC\nTURBO\nDARK MODE\nMAZE RUNNER\n▶ START GAME\nHIGH SCORES\nACHIEVEMENTS\nWASD or Arrow Keys to Move | P to Pause | S to Save | L to Load",
+        "canvasCount": 2,
+        "buttonCount": 7,
+        "scriptCount": 3,
+        "visibleTextLen": 211,
+        "bodyBg": "rgb(0, 0, 0)"
+      },
+      "screenshot": "G:\\Github\\Bolt.DIY\\proofs\\daveai-prod-audit-20260731\\17-direct-game-05.png",
+      "badResponses": [],
+      "actionableConsole": [],
+      "pageErrors": [],
+      "passed": true
+    },
+    {
+      "name": "Arcade Tetris",
+      "url": "https://daveai.tech/arcade/tetris.html",
+      "elapsedMs": 2488,
+      "navError": null,
+      "info": {
+        "title": "Tetris+ SOTA",
+        "h1": "TETRIS+",
+        "bodyText": "SCORE\nSCORE\n0\nBEST\n0\nLEVEL\n1\nLINES\n0\n0:00\nHOLD\nSTATUS\nCOMBO\n0\nB2B\n-\nMODE\nCLASSIC\nTHEME\n⚙ SETTINGS\nTETRIS+\nSTATE OF THE ART\nSELECT MODE\nCLASSIC\nSPRINT\nULTRA\nZEN\nBLITZ\nCHALLENGE\n▶ START\n⚙ SETTINGS\n🏆 ACHV\nBEST (CLASSIC)\nNEXT (5)\nPIECES\nTOP SCORES\nCONTROLS\n←→ Move | ↓ Soft drop\n↑/X Rotate CW | Z CCW\nSpace Hard drop\nC Hold | P Pause\nR Restart (on over)",
+        "canvasCount": 8,
+        "buttonCount": 18,
+        "scriptCount": 3,
+        "visibleTextLen": 350,
+        "bodyBg": "rgb(7, 7, 26)"
+      },
+      "screenshot": "G:\\Github\\Bolt.DIY\\proofs\\daveai-prod-audit-20260731\\17-direct-game-06.png",
+      "badResponses": [],
+      "actionableConsole": [],
+      "pageErrors": [],
+      "passed": true
+    },
+    {
+      "name": "Arcade Tower Defense",
+      "url": "https://daveai.tech/arcade/towerdefense.html",
+      "elapsedMs": 2525,
+      "navError": null,
+      "info": {
+        "title": "Tower Defense+",
+        "h1": "TOWER DEFENSE+",
+        "bodyText": "TOWER DEFENSE+\n\n30 MAPS • 12 TOWER TYPES • 54 UPGRADES\n\n\nSELECT MAP\n\nENDLESS MODE\n\n\nHIGH SCORES: None\n\nLEFT CLICK: Place/Select Tower | RIGHT CLICK: Move Hero Unit\nSEND WAVE: Start wave | Towers auto-attack in range\nEarn interest on banked gold each minute\n\n\nAchievements: 0/25 unlocked",
+        "canvasCount": 1,
+        "buttonCount": 10,
+        "scriptCount": 3,
+        "visibleTextLen": 286,
+        "bodyBg": "rgb(0, 0, 0)"
+      },
+      "screenshot": "G:\\Github\\Bolt.DIY\\proofs\\daveai-prod-audit-20260731\\17-direct-game-07.png",
+      "badResponses": [],
+      "actionableConsole": [],
+      "pageErrors": [],
+      "passed": true
+    },
+    {
+      "name": "Snake",
+      "url": "https://daveai.tech/snake.html",
+      "elapsedMs": 2436,
+      "navError": null,
+      "info": {
+        "title": "Snake — DaveAI Arcade",
+        "h1": "🐍 Snake",
+        "bodyText": "← Back to Arcade\n🐍 Snake\nScore: 0\nHigh: 0\nPress any arrow key to start",
+        "canvasCount": 1,
+        "buttonCount": 1,
+        "scriptCount": 3,
+        "visibleTextLen": 71,
+        "bodyBg": "rgb(10, 10, 26)"
+      },
+      "screenshot": "G:\\Github\\Bolt.DIY\\proofs\\daveai-prod-audit-20260731\\17-direct-game-08.png",
+      "badResponses": [],
+      "actionableConsole": [],
+      "pageErrors": [],
+      "passed": true
+    },
+    {
+      "name": "Pacman",
+      "url": "https://daveai.tech/pacman.html",
+      "elapsedMs": 2463,
+      "navError": null,
+      "info": {
+        "title": "Pac-Man — DaveAI Arcade",
+        "h1": "🔴 Pac-Man",
+        "bodyText": "← Back to Arcade\n🔴 Pac-Man\nScore: 0\nLives: 3\nArrow keys to move",
+        "canvasCount": 1,
+        "buttonCount": 1,
+        "scriptCount": 3,
+        "visibleTextLen": 64,
+        "bodyBg": "rgb(10, 10, 26)"
+      },
+      "screenshot": "G:\\Github\\Bolt.DIY\\proofs\\daveai-prod-audit-20260731\\17-direct-game-09.png",
+      "badResponses": [],
+      "actionableConsole": [],
+      "pageErrors": [],
+      "passed": true
+    },
+    {
+      "name": "Tic Tac Toe",
+      "url": "https://daveai.tech/tictactoe.html",
+      "elapsedMs": 2452,
+      "navError": null,
+      "info": {
+        "title": "Tic-Tac-Toe — DaveAI Arcade",
+        "h1": "❌ Tic-Tac-Toe",
+        "bodyText": "← Back to Arcade\n❌ Tic-Tac-Toe\nX Wins: 0\nO Wins: 0\nDraws: 0\nX's turn\nNew Game",
+        "canvasCount": 0,
+        "buttonCount": 1,
+        "scriptCount": 3,
+        "visibleTextLen": 77,
+        "bodyBg": "rgb(10, 10, 26)"
+      },
+      "screenshot": "G:\\Github\\Bolt.DIY\\proofs\\daveai-prod-audit-20260731\\17-direct-game-10.png",
+      "badResponses": [],
+      "actionableConsole": [],
+      "pageErrors": [],
+      "passed": true
+    },
+    {
+      "name": "AI Tic Tac Toe",
+      "url": "https://daveai.tech/tic-tac-toe-ai.html",
+      "elapsedMs": 2622,
+      "navError": null,
+      "info": {
+        "title": "Tic-Tac-Toe with AI",
+        "h1": "Tic-Tac-Toe",
+        "bodyText": "Tic-Tac-Toe\n\nYour turn (X)\n\n Easy  Medium  Hard\nNew Game",
+        "canvasCount": 0,
+        "buttonCount": 10,
+        "scriptCount": 3,
+        "visibleTextLen": 56,
+        "bodyBg": "rgba(0, 0, 0, 0)"
+      },
+      "screenshot": "G:\\Github\\Bolt.DIY\\proofs\\daveai-prod-audit-20260731\\17-direct-game-11.png",
+      "badResponses": [],
+      "actionableConsole": [],
+      "pageErrors": [],
+      "passed": true
+    },
+    {
+      "name": "Chess",
+      "url": "https://daveai.tech/chess.html",
+      "elapsedMs": 2452,
+      "navError": null,
+      "info": {
+        "title": "Chess — DaveAI Arcade",
+        "h1": "♛ Chess",
+        "bodyText": "← Back to Arcade\n♛ Chess\nWhite's turn\n♜\n♞\n♝\n♛\n♚\n♝\n♞\n♜\n♟\n♟\n♟\n♟\n♟\n♟\n♟\n♟\n♙\n♙\n♙\n♙\n♙\n♙\n♙\n♙\n♖\n♘\n♗\n♕\n♔\n♗\n♘\n♖\nNew Game",
+        "canvasCount": 0,
+        "buttonCount": 1,
+        "scriptCount": 3,
+        "visibleTextLen": 110,
+        "bodyBg": "rgb(10, 10, 26)"
+      },
+      "screenshot": "G:\\Github\\Bolt.DIY\\proofs\\daveai-prod-audit-20260731\\17-direct-game-12.png",
+      "badResponses": [],
+      "actionableConsole": [],
+      "pageErrors": [],
+      "passed": true
+    },
+    {
+      "name": "Checkers",
+      "url": "https://daveai.tech/checkers.html",
+      "elapsedMs": 2431,
+      "navError": null,
+      "info": {
+        "title": "Checkers — DaveAI Arcade",
+        "h1": "⚪ Checkers",
+        "bodyText": "← Back to Arcade\n⚪ Checkers\nRed's turn\nNew Game",
+        "canvasCount": 0,
+        "buttonCount": 1,
+        "scriptCount": 3,
+        "visibleTextLen": 47,
+        "bodyBg": "rgb(10, 10, 26)"
+      },
+      "screenshot": "G:\\Github\\Bolt.DIY\\proofs\\daveai-prod-audit-20260731\\17-direct-game-13.png",
+      "badResponses": [],
+      "actionableConsole": [],
+      "pageErrors": [],
+      "passed": true
+    },
+    {
+      "name": "Breakout",
+      "url": "https://daveai.tech/breakout.html",
+      "elapsedMs": 2453,
+      "navError": null,
+      "info": {
+        "title": "Breakout — DaveAI Arcade",
+        "h1": "🧱 Breakout",
+        "bodyText": "← Back to Arcade\n🧱 Breakout\nScore: 0\nLives: 3\nClick to launch ball",
+        "canvasCount": 1,
+        "buttonCount": 1,
+        "scriptCount": 3,
+        "visibleTextLen": 67,
+        "bodyBg": "rgb(10, 10, 26)"
+      },
+      "screenshot": "G:\\Github\\Bolt.DIY\\proofs\\daveai-prod-audit-20260731\\17-direct-game-14.png",
+      "badResponses": [],
+      "actionableConsole": [],
+      "pageErrors": [],
+      "passed": true
+    },
+    {
+      "name": "Memory",
+      "url": "https://daveai.tech/memory.html",
+      "elapsedMs": 2443,
+      "navError": null,
+      "info": {
+        "title": "Memory Match — DaveAI Arcade",
+        "h1": "🧠 Memory Match",
+        "bodyText": "← Back to Arcade\n🧠 Memory Match\nMoves: 0\nPairs: 0/8\nTime: 0s\n?\n⚡\n?\n🚀\n?\n🏆\n?\n⚡\n?\n🎮\n?\n🎯\n?\n💎\n?\n🔥\n?\n🎯\n?\n💎\n?\n🎲\n?\n🎲\n?\n🏆\n?\n🚀\n?\n🔥\n?\n🎮\nNew Game",
+        "canvasCount": 0,
+        "buttonCount": 1,
+        "scriptCount": 3,
+        "visibleTextLen": 148,
+        "bodyBg": "rgb(10, 10, 26)"
+      },
+      "screenshot": "G:\\Github\\Bolt.DIY\\proofs\\daveai-prod-audit-20260731\\17-direct-game-15.png",
+      "badResponses": [],
+      "actionableConsole": [],
+      "pageErrors": [],
+      "passed": true
+    },
+    {
+      "name": "Wheel Hangman",
+      "url": "https://daveai.tech/wheel-hangman.html",
+      "elapsedMs": 2453,
+      "navError": null,
+      "info": {
+        "title": "Wheel Hangman",
+        "h1": "🎡 WHEEL HANGMAN",
+        "bodyText": "🎡 WHEEL HANGMAN\n📂 ANIMALS\n_ _ _ _ _\n💰 $0\n🏆 High: $0\n❤️ 6\nSPIN →\nA\nB\nC\nD\nE\nF\nG\nH\nI\nJ\nK\nL\nM\nN\nO\nP\nQ\nR\nS\nT\nU\nV\nW\nX\nY\nZ\nBuy Vowel ($250)\nNew Puzzle\nTheme\nSpin the wheel & guess a letter!",
+        "canvasCount": 0,
+        "buttonCount": 3,
+        "scriptCount": 3,
+        "visibleTextLen": 186,
+        "bodyBg": "rgb(240, 244, 248)"
+      },
+      "screenshot": "G:\\Github\\Bolt.DIY\\proofs\\daveai-prod-audit-20260731\\17-direct-game-16.png",
+      "badResponses": [],
+      "actionableConsole": [],
+      "pageErrors": [],
+      "passed": true
+    }
+  ],
+  "passed": true
+}

@@ -1,0 +1,46 @@
+# Rewritten after removing bolt.diy from this repo (2026-09-15) — the old version
+# inherited from the bolt.diy template had a blanket `*.md` rule (with a growing list of
+# `!docs/DAVEAI_*.md` exceptions bolted on) that was silently gitignoring real, never-
+# committed DaveAI docs living outside docs/ — deployment/docs/*.md, deployment/authelia/
+# README.md, deployment/CLOUDFLARE_SETUP.md, vps/README.md, vps/DAVEAI_FEATURE_AUDIT_*.md,
+# vps/DAVEAI_ROUTE_HEALTH_*.md, and vps/services/daveai-subdomain-suite/ACCEPTANCE.md all
+# existed on disk but had never once been tracked in git. No blanket markdown rule here now.
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+__pycache__/
+*.local
+
+.vscode/*
+.vscode/launch.json
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+/.history
+/.cache
+.env.local
+.env
+
+Modelfile
+modelfiles
+.cursorrules
+.qodo
+
+private/
+
+# Local orchestration/lock-manager tool state (task queues, agent locks, event logs from
+# an MCP server that writes into whatever directory it's pointed at) — not part of either
+# bolt.diy or DaveAI.tech, doesn't belong in this repo's history.
+.hermes3d_orchestrator/

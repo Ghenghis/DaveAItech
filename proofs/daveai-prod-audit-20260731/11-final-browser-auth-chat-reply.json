@@ -1,0 +1,231 @@
+{
+  "url": "https://daveai.tech/?codex_proof=browser-auth-chat-20260731",
+  "screenshot": "G:\\Github\\Bolt.DIY\\proofs\\daveai-prod-audit-20260731\\11-final-browser-auth-chat-reply.png",
+  "result": {
+    "authOverlayVisible": false,
+    "introOverlayVisible": false,
+    "typingIndicatorPresent": false,
+    "statusText": "💭 Thinking...",
+    "composerValue": "",
+    "aiTexts": [
+      "I'mdoingwell"
+    ],
+    "userTexts": [
+      "hello how are you today? just reply with one short sentence"
+    ],
+    "feedText": "hello how are you today? just reply with one short sentence\nI'mdoingwell",
+    "bodyClasses": "has-chat-transcript"
+  },
+  "api": [
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/health"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/pages"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/status"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/tools"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/log"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/db/dashboard"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/agents/status"
+    },
+    {
+      "status": 200,
+      "method": "POST",
+      "url": "/api/db/analytics"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/health"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/db/users/Codex%20Browser%20Audit"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/pages"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/status"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/health"
+    },
+    {
+      "status": 200,
+      "method": "POST",
+      "url": "/api/db/users"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/health"
+    },
+    {
+      "status": 200,
+      "method": "POST",
+      "url": "/api/stream"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/db/projects"
+    },
+    {
+      "status": 429,
+      "method": "POST",
+      "url": "/api/azure-tts"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/health"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/db/projects"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/agents/status"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/status"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/pages"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/health"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/health"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/status"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/health"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/agents/status"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/pages"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/health"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/health"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/pages"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/status"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/log"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/agents/status"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/health"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/status"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/pages"
+    }
+  ],
+  "badApi": [
+    {
+      "status": 429,
+      "method": "POST",
+      "url": "/api/azure-tts"
+    }
+  ],
+  "consoleEntries": [
+    {
+      "type": "warning",
+      "text": "An iframe which has both allow-scripts and allow-same-origin for its sandbox attribute can escape its sandboxing."
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 429 ()"
+    }
+  ],
+  "pageErrors": [],
+  "passed": false,
+  "generatedAt": "2026-07-31T20:44:08.894Z"
+}

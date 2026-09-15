@@ -1,0 +1,3 @@
+===/health?model=fast-agent===
+===/health?model=local-fallback===
+===/health?model=heavy-coder===

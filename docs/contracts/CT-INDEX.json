@@ -1,0 +1,116 @@
+{
+  "schema_version": "1.0",
+  "kit_version": "1.0.0",
+  "kit_title": "DaveAI.tech Phase Contract Kit",
+  "generated_date": "2026-09-15",
+  "source_of_truth": {
+    "roadmap_doc": "docs/DAVEAI_DEEP_AUDIT_ROADMAP_20260915.md",
+    "architecture_map": "docs/DAVEAI_ARCHITECTURE_MAP_20260915.md",
+    "contract_kit_overview": "docs/DAVEAI_CONTRACT_KIT_20260915.md",
+    "note": "The roadmap doc is the sole authority on phase scope and count (six phases, 0-5). This index and every contract file below must stay consistent with it; if they ever disagree, the roadmap doc wins and this kit needs correcting, not the other way around."
+  },
+  "audit_status_note": "A section-by-section bug audit of the live production source (vps/daveai-ui-v6.html, brain_llm.py, CSS, and infra scripts) produced 133 candidate findings; a majority have been independently confirmed real (see docs/DAVEAI_DEEP_AUDIT_ROADMAP_20260915.md and docs/DAVEAI_ARCHITECTURE_MAP_20260915.md §7 for the current exact count, since it may be updated after this index was written). The remainder are NOT confirmed-false, only pending re-verification. No consolidated ledger of all 133 findings exists in this repository as of 2026-09-15 — each contract below carries only the findings specifically flagged for its phase under known_findings.",
+  "status_discipline": {
+    "verified": "Read the code/data/live response directly, with evidence quoted.",
+    "reported": "A document or another agent's proof artifact says so, not independently re-checked.",
+    "rule": "Never upgrade a 'reported' fact to a 'verified' claim without re-checking it yourself."
+  },
+  "contract_count": 6,
+  "status_summary": {
+    "not_started": 6,
+    "in_progress": 0,
+    "blocked": 0,
+    "done": 0
+  },
+  "phase_order_note": "Phases 0-4 are a strict dependency chain (each depends on the last touching the same shared file, vps/daveai-ui-v6.html, or the same catalog mechanism). Phase 5 (CT-005) is not sequential with the rest — it is a standing decision register consulted both before Phase 0/1 start and again once CT-003/CT-004 land, not a phase to run once at the end.",
+  "contracts": [
+    {
+      "id": "CT-000",
+      "file": "docs/contracts/CT-000-stop-the-bleeding.json",
+      "title": "Stop the Bleeding — Repo/Production Drift and Urgent Security Exposure",
+      "phase_number": 0,
+      "phase_name": "Stop the bleeding",
+      "status": "not_started",
+      "depends_on": [],
+      "blocks": ["CT-001", "CT-002", "CT-003"],
+      "one_line_summary": "Four low-risk repo-hygiene fixes that stop the repo from actively lying about what's live on daveai.tech, plus one urgent, narrowly-scoped security lockdown, before any feature work begins on the same files.",
+      "critical_findings": ["F-P0-05-unauthenticated-admin-panel"],
+      "is_decision_register": false
+    },
+    {
+      "id": "CT-001",
+      "file": "docs/contracts/CT-001-chat-completion.json",
+      "title": "Chat Completion — Line-by-Line Audit and Fix Pass on the Real Chat Stack",
+      "phase_number": 1,
+      "phase_name": "Chat completion",
+      "status": "not_started",
+      "depends_on": ["CT-000"],
+      "blocks": ["CT-002"],
+      "one_line_summary": "Top priority per the owner: a real line-by-line audit and fix pass on vps/daveai-ui-v6.html's chat logic and brain_llm.py — hung-state recovery, fetch/stream error handling, auth/session edge cases, the SSE parser, and voice/TTS wiring.",
+      "critical_findings": ["F-P1-01-preview-iframe-sandbox-escape", "F-P1-02-v7-functionality-gap"],
+      "is_decision_register": false
+    },
+    {
+      "id": "CT-002",
+      "file": "docs/contracts/CT-002-menu-nav-polish.json",
+      "title": "Menus, Tabs, Topbar/Sidebar Polish — Including the Accessibility Pass",
+      "phase_number": 2,
+      "phase_name": "Menus, tabs, topbar/sidebar polish",
+      "status": "not_started",
+      "depends_on": ["CT-000", "CT-001"],
+      "blocks": ["CT-003"],
+      "one_line_summary": "Same file as CT-001, different section (#topbar, sidebar icon rail, settings panels) plus a real accessibility pass, including the sign-in form and the ~23-toggle Settings modal.",
+      "critical_findings": ["F-P2-01-signin-form-no-accessible-name", "F-P2-02-settings-modal-23-toggles-no-accessible-name"],
+      "is_decision_register": false
+    },
+    {
+      "id": "CT-003",
+      "file": "docs/contracts/CT-003-games-catalog-consolidation.json",
+      "title": "Games Catalog Consolidation — One Real Source Instead of Five",
+      "phase_number": 3,
+      "phase_name": "Games catalog consolidation",
+      "status": "not_started",
+      "depends_on": ["CT-000", "CT-002"],
+      "blocks": ["CT-004"],
+      "one_line_summary": "Collapses the five-places-at-once catalog mechanism into one real source, adds the missing web-pages.html source into the repo, and raises game test coverage beyond 'the page loads.'",
+      "critical_findings": ["F-P3-01-five-place-drift", "F-P3-02-hardcoded-55-assertion", "F-P3-03-web-pages-html-missing-from-repo", "F-P3-04-shallow-test-coverage"],
+      "is_decision_register": false
+    },
+    {
+      "id": "CT-004",
+      "file": "docs/contracts/CT-004-wildcard-extensibility.json",
+      "title": "Wildcard Site Extensibility — Wiring the 'Other' Category as the Launcher for External Sites",
+      "phase_number": 4,
+      "phase_name": "Wildcard site extensibility",
+      "status": "not_started",
+      "depends_on": ["CT-003"],
+      "blocks": [],
+      "one_line_summary": "Wires the existing but unused 'other' catalog category and embed:false launch-card rendering into a real path for adding the owner's other sites, once CT-003's registry is singular.",
+      "critical_findings": [],
+      "is_decision_register": false
+    },
+    {
+      "id": "CT-005",
+      "file": "docs/contracts/CT-005-strategic-decisions.json",
+      "title": "Open Strategic Questions — Decisions Needed From the Owner, Not Code Fixes",
+      "phase_number": 5,
+      "phase_name": "Open strategic questions",
+      "status": "not_started",
+      "depends_on": [],
+      "blocks": [],
+      "one_line_summary": "A standing decision register, not an implementation contract: the dead voice/IPTV/TV stack, the bolt Cloudflare Pages deployment's fate, pacing/go-ahead, the unlocated Alice's Arena thread, and whether to revive the daveai-v7 modularization.",
+      "decision_items": ["Q1-voice-iptv-hermestv", "Q2-app-bolt-pages-reachability", "Q3-pace", "Q4-alices-arena-fold-in", "Q5-v7-modularization-revival"],
+      "is_decision_register": true
+    }
+  ],
+  "shared_file_warning": {
+    "file": "vps/daveai-ui-v6.html",
+    "touched_by": ["CT-000", "CT-001", "CT-002", "CT-003", "CT-004"],
+    "rule": "This is one 12,920-line hand-written file with no build pipeline. CT-000/001/002/003/004 all touch it in different, non-overlapping sections. Do not start a later contract's edits to this file until the earlier contract's changes are merged, and never edit it from two contracts at once without explicit coordination — line numbers cited in a not-yet-started contract will silently go stale the moment an earlier one lands."
+  },
+  "notes": [
+    "Every contract file's status must only ever move off 'not_started' with dated evidence attached matching that contract's required_evidence and definition_of_done — never edit this index's status field ahead of that evidence existing.",
+    "This index does not duplicate each contract's forbidden_claim_patterns, protected_paths, or full known_findings detail — read the contract file itself (docs/contracts/CT-0XX-*.json) before starting any work; this index is for navigation and dependency ordering only, not a substitute for it.",
+    "As of 2026-09-15 all six contracts are not_started; Phase 0/1 work has an explicit go/no-go gate of its own — see CT-005's Q3 — which must be answered before CT-000 or CT-001 status changes."
+  ]
+}

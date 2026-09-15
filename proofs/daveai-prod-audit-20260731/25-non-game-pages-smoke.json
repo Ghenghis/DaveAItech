@@ -1,0 +1,228 @@
+{
+  "generatedAt": "2026-07-31T22:27:56.531Z",
+  "results": [
+    {
+      "id": "studio",
+      "name": "DaveAI Studio",
+      "url": "https://daveai.tech/studio.html",
+      "finalUrl": "https://daveai.tech/studio.html?proof=25-1785536863643",
+      "navError": null,
+      "state": {
+        "title": "404: This page could not be found.",
+        "h1": "404",
+        "bodyText": "404\nThis page could not be found.",
+        "buttons": [],
+        "authHints": false
+      },
+      "badResponses": [
+        {
+          "status": 404,
+          "url": "https://daveai.tech/studio.html?proof=25-1785536863643"
+        }
+      ],
+      "badCount": 1,
+      "pageErrors": [],
+      "actionableConsole": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        }
+      ],
+      "passed": false
+    },
+    {
+      "id": "web-pages",
+      "name": "DaveAI Web Pages",
+      "url": "https://daveai.tech/web-pages.html",
+      "finalUrl": "https://daveai.tech/web-pages.html?proof=25-1785536866230",
+      "navError": null,
+      "state": {
+        "title": "DaveAI Web Pages",
+        "h1": "Pages & Apps",
+        "bodyText": "DAVEAI WEB\n\nPages & Apps\n\nA clean launcher for DaveAI chat, hosted apps, games, and verified generated pages.\n\nDaveAI Chat\nApps\nAll\nApps\nGames\nPages\nTools\nFeatured\nVerified links only\nA\nPROTECTED\nApps Launcher\n\nHosted DaveTV/IPTV app collection with provider-ready player surfaces.\n\napps.daveai.tech\nauth gate\nOpen\nD\nLIVE\nDaveAI Chat\n\nMain DaveAI workspace and agent chat surface.\n\ndaveai.tech\nagent brain\nOpen\nW\nGAME\nWheel Hangman\n\nWheel-style hangman game generated through the repaired DaveAI agent path.\n\nbrowser proof\ninteractive\nOpen\nGames\nDirect browser pages\nG\nGAMES\nGames Hub\n\nDaveAI game collection and playable browser experiments.\n\n/games/\n200 OK\nOpen\nR\nARCADE\nArcade\n\nClassic arcade-style games including snake, tetris, racing, and breakout.\n\n/arcade/index.html\n200 OK\nOpen\nT\nGAME\nTic Tac Toe AI\n\nRecent agent-built tic tac toe page retained as a direct playable link.\n\n/tic-tac-toe-ai.html\n200 OK\nOpen\nTD\nTOWER\nDaveAI TD2\n\nTower-defense game page hosted under the DaveAI games collection.\n\n/games/daveai-td2/\ndirect\nOpen\nS\nSIEGE\nDave's Siege TD\n\nSecond tower-defense game page with direct index routing.\n\n/games/daves-siege-td/\ndirect\nOpen\nA\nASTEROIDS\nAsteroids\n\nStandalone browser game",
+        "buttons": [
+          "DaveAI Chat",
+          "Apps",
+          "All",
+          "Apps",
+          "Games",
+          "Pages",
+          "Tools",
+          "Open",
+          "Open",
+          "Open",
+          "Open",
+          "Open",
+          "Open",
+          "Open",
+          "Open",
+          "Open",
+          "Open",
+          "Open",
+          "Open"
+        ],
+        "authHints": true
+      },
+      "badResponses": [],
+      "badCount": 0,
+      "pageErrors": [],
+      "actionableConsole": [],
+      "passed": true
+    },
+    {
+      "id": "windsurf",
+      "name": "Windsurf",
+      "url": "https://daveai.tech/windsurf.html",
+      "finalUrl": "https://daveai.tech/windsurf.html?proof=25-1785536868959",
+      "navError": null,
+      "state": {
+        "title": "DaveAI — Ops Control Panel",
+        "h1": "",
+        "bodyText": "VPS Error\nCPU\n–\nMEM\n–\nUPTIME\n–\nLAST POLL –\n↻ Refresh\n🔔 Alerts\n← DaveAI\nPM2 PROCESSES\n↻\nDOCKER CONTAINERS\n(CORE ONLY)\nAI TOOLS\ngoose\nv1.27.2\n/usr/local/bin/goose\nver\nrun\nopenhands\ndocker\n:3333 → open\n↻\nlog\nQUICK ACTIONS\n↻ Restart All PM2\n↻ Restart Brain\n⚡ Fix edge-tts\n📄 View Logs\n🚀 Deploy\n🚨 Monitor\n⌨ Command\n🖥 Procs\n📄 Logs\n🧪 Tests\n🚀 Deploy\n💬 Discuss\n■ stop\nsupervisor\nIDLE\n–\n–\n■ stop\ncoder\nIDLE\n–\n–\n■ stop\nasset\nIDLE\n–\n–\n■ stop\nqa\nIDLE\n–\n–\nLIVE ACTIVITY FEED\n2 EVENTS\n3:27:49 PM\nsystem\n⚠ Agent poll failed: HTTP 401\n3:27:49 PM\nsystem\nControl panel loaded — polling active\nBUDGET STATUS\nDETAIL\nAuthentication required\nCHECKPOINT\nDETAIL\nAdmin token required\nAgent Chat\nsupervisor\ncoder\nasset\nqa\n→",
+        "buttons": [
+          "↻ Refresh",
+          "🔔 Alerts",
+          "← DaveAI",
+          "ver",
+          "run",
+          "open",
+          "↻",
+          "log",
+          "↻ Restart All PM2",
+          "↻ Restart Brain",
+          "⚡ Fix edge-tts",
+          "📄 View Logs",
+          "🚀 Deploy",
+          "■ stop",
+          "■ stop",
+          "■ stop",
+          "■ stop",
+          "Run",
+          "✕",
+          "↻ refresh",
+          "↻ refresh",
+          "agent-brain",
+          "daveai-api",
+          "agentic-ui",
+          "edge-tts"
+        ],
+        "authHints": false
+      },
+      "badResponses": [
+        {
+          "status": 401,
+          "url": "https://daveai.tech/api/budget/status"
+        },
+        {
+          "status": 401,
+          "url": "https://daveai.tech/api/agents/status"
+        },
+        {
+          "status": 401,
+          "url": "https://daveai.tech/api/discuss/list"
+        },
+        {
+          "status": 401,
+          "url": "https://daveai.tech/api/checkpoint/status"
+        },
+        {
+          "status": 401,
+          "url": "https://daveai.tech/api/tools/shell/run"
+        },
+        {
+          "status": 401,
+          "url": "https://daveai.tech/api/tools/shell/run"
+        }
+      ],
+      "badCount": 6,
+      "pageErrors": [],
+      "actionableConsole": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 401 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 401 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 401 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 401 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 401 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 401 ()"
+        }
+      ],
+      "passed": false
+    },
+    {
+      "id": "voice-landing",
+      "name": "Voice Landing",
+      "url": "https://daveai.tech/voice.html",
+      "finalUrl": "https://daveai.tech/voice.html?proof=25-1785536871555",
+      "navError": null,
+      "state": {
+        "title": "404: This page could not be found.",
+        "h1": "404",
+        "bodyText": "404\nThis page could not be found.",
+        "buttons": [],
+        "authHints": false
+      },
+      "badResponses": [
+        {
+          "status": 404,
+          "url": "https://daveai.tech/voice.html?proof=25-1785536871555"
+        }
+      ],
+      "badCount": 1,
+      "pageErrors": [],
+      "actionableConsole": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        }
+      ],
+      "passed": false
+    },
+    {
+      "id": "streamhub",
+      "name": "StreamHub",
+      "url": "https://daveai.tech/streamhub.html",
+      "finalUrl": "https://daveai.tech/streamhub.html?proof=25-1785536874060",
+      "navError": null,
+      "state": {
+        "title": "404: This page could not be found.",
+        "h1": "404",
+        "bodyText": "404\nThis page could not be found.",
+        "buttons": [],
+        "authHints": false
+      },
+      "badResponses": [
+        {
+          "status": 404,
+          "url": "https://daveai.tech/streamhub.html?proof=25-1785536874060"
+        }
+      ],
+      "badCount": 1,
+      "pageErrors": [],
+      "actionableConsole": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        }
+      ],
+      "passed": false
+    }
+  ],
+  "passedCount": 1,
+  "total": 5
+}

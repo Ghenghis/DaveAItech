@@ -1,0 +1,402 @@
+{
+  "launches": [
+    {
+      "iframeSrc": "https://daveai.tech/games/daves-siege-td/index.html",
+      "bodyText": "App Mode\nWelcome to DaveAI\nChoose your device to enter\nDesktop\n1280px+\nRECOMMENDED\nTablet\n768px\nMobile\n412px\nD\nDaveAI\n🛠️\nBuild\nSupervisor\nCoder\nQA\nAsset\nPreview\nBuild\nAnalytics\nAdmin\nonline\nHorizons\nDA\nLIVE\n● BRAIN OK\nBrain online\n·\nSign in for workspace stats\nconnecting…\nPAGES\nProjects\nPages\nSites\nTools\nAgents\nDB\nSkills\nLoading deployed pages…\n+ New page\nPreview\nCode\nDesktop\nTablet\nAndroid\nMobile\ndaveai.tech\ndaveai.tech/games\nPLAYING\n🛠️\nBuild\nAzure Neural\nMaisie (UK)\n Auto\n Silent\n Text\ntype /voice to switch\nMake button purple gradient\nAdd dark mode toggle\nCheck mobile layout\nGenerate logo\nAdd pricing section\nRun lighthouse audit\nScreenshot the site\nActivity\nMemory\nHistory\n Visual\n Dev\nSY\nSystem\njust now\nSystem completed the requested operation\nSY\nSystem\njust now\nSystem completed the re"
+    },
+    {
+      "iframeSrc": "https://daveai.tech/games/daveai-td2/index.html",
+      "bodyText": "App Mode\nWelcome to DaveAI\nChoose your device to enter\nDesktop\n1280px+\nRECOMMENDED\nTablet\n768px\nMobile\n412px\nD\nDaveAI\n🛠️\nBuild\nSupervisor\nCoder\nQA\nAsset\nPreview\nBuild\nAnalytics\nAdmin\nonline\nHorizons\nDA\nLIVE\n● BRAIN OK\nBrain online\n·\nSign in for workspace stats\nconnecting…\nPAGES\nProjects\nPages\nSites\nTools\nAgents\nDB\nSkills\nLoading deployed pages…\n+ New page\nPreview\nCode\nDesktop\nTablet\nAndroid\nMobile\ndaveai.tech\ndaveai.tech/games\nPLAYING\n🛠️\nBuild\nAzure Neural\nMaisie (UK)\n Auto\n Silent\n Text\ntype /voice to switch\nMake button purple gradient\nAdd dark mode toggle\nCheck mobile layout\nGenerate logo\nAdd pricing section\nRun lighthouse audit\nScreenshot the site\nActivity\nMemory\nHistory\n Visual\n Dev\nSY\nSystem\njust now\nSystem completed the requested operation\nSY\nSystem\njust now\nSystem completed the re"
+    },
+    {
+      "iframeSrc": "https://daveai.tech/games/asteroids/index.html",
+      "bodyText": "App Mode\nWelcome to DaveAI\nChoose your device to enter\nDesktop\n1280px+\nRECOMMENDED\nTablet\n768px\nMobile\n412px\nD\nDaveAI\n🛠️\nBuild\nSupervisor\nCoder\nQA\nAsset\nPreview\nBuild\nAnalytics\nAdmin\nonline\nHorizons\nDA\nLIVE\n● BRAIN OK\nBrain online\n·\nSign in for workspace stats\nconnecting…\nPAGES\nProjects\nPages\nSites\nTools\nAgents\nDB\nSkills\nLoading deployed pages…\n+ New page\nPreview\nCode\nDesktop\nTablet\nAndroid\nMobile\ndaveai.tech\ndaveai.tech/games\nPLAYING\n🛠️\nBuild\nAzure Neural\nMaisie (UK)\n Auto\n Silent\n Text\ntype /voice to switch\nMake button purple gradient\nAdd dark mode toggle\nCheck mobile layout\nGenerate logo\nAdd pricing section\nRun lighthouse audit\nScreenshot the site\nActivity\nMemory\nHistory\n Visual\n Dev\nSY\nSystem\njust now\nSystem completed the requested operation\nSY\nSystem\njust now\nSystem completed the re"
+    }
+  ],
+  "trace": {
+    "clean": false,
+    "badResponses": [],
+    "requestFailures": [
+      {
+        "url": "https://daveai.tech/intros/fe-male-intro.mp4",
+        "method": "GET",
+        "resourceType": "media",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/intros/fe-male-intro.mp4",
+        "method": "GET",
+        "resourceType": "media",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/api/health",
+        "method": "GET",
+        "resourceType": "fetch",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/",
+        "method": "HEAD",
+        "resourceType": "fetch",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/games/daves-siege-td/index.html",
+        "method": "HEAD",
+        "resourceType": "fetch",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/games/daveai-td2/index.html",
+        "method": "HEAD",
+        "resourceType": "fetch",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/games/asteroids/index.html",
+        "method": "HEAD",
+        "resourceType": "fetch",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/",
+        "method": "HEAD",
+        "resourceType": "fetch",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/studio/index.html",
+        "method": "HEAD",
+        "resourceType": "fetch",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/web-pages.html",
+        "method": "HEAD",
+        "resourceType": "fetch",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/voice-landing.html",
+        "method": "HEAD",
+        "resourceType": "fetch",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/games/daves-siege-td/index.html",
+        "method": "HEAD",
+        "resourceType": "fetch",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/games/daveai-td2/index.html",
+        "method": "HEAD",
+        "resourceType": "fetch",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/games/asteroids/index.html",
+        "method": "HEAD",
+        "resourceType": "fetch",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/arcade/index.html",
+        "method": "HEAD",
+        "resourceType": "fetch",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/arcade/snake.html",
+        "method": "HEAD",
+        "resourceType": "fetch",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/arcade/pacman.html",
+        "method": "HEAD",
+        "resourceType": "fetch",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/arcade/tetris.html",
+        "method": "HEAD",
+        "resourceType": "fetch",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/arcade/towerdefense.html",
+        "method": "HEAD",
+        "resourceType": "fetch",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/snake.html",
+        "method": "HEAD",
+        "resourceType": "fetch",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/pacman.html",
+        "method": "HEAD",
+        "resourceType": "fetch",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/tictactoe.html",
+        "method": "HEAD",
+        "resourceType": "fetch",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/tic-tac-toe-ai.html",
+        "method": "HEAD",
+        "resourceType": "fetch",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/chess.html",
+        "method": "HEAD",
+        "resourceType": "fetch",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/checkers.html",
+        "method": "HEAD",
+        "resourceType": "fetch",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/breakout.html",
+        "method": "HEAD",
+        "resourceType": "fetch",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/memory.html",
+        "method": "HEAD",
+        "resourceType": "fetch",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/wheel-hangman.html",
+        "method": "HEAD",
+        "resourceType": "fetch",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/games/checkers-crowning/index.html",
+        "method": "HEAD",
+        "resourceType": "fetch",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/cdn-cgi/rum?",
+        "method": "POST",
+        "resourceType": "ping",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/games/daveai-td2/assets/enemies/3/3_enemies_1_die_002.png?v=20260731td2assets2",
+        "method": "GET",
+        "resourceType": "xhr",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/games/daveai-td2/assets/enemies/3/3_enemies_1_jump_017.png?v=20260731td2assets2",
+        "method": "GET",
+        "resourceType": "xhr",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/games/daveai-td2/assets/enemies/3/3_enemies_1_jump_000.png?v=20260731td2assets2",
+        "method": "GET",
+        "resourceType": "xhr",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/games/daveai-td2/assets/enemies/3/3_enemies_1_jump_009.png?v=20260731td2assets2",
+        "method": "GET",
+        "resourceType": "xhr",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/games/daveai-td2/assets/enemies/4/4_enemies_1_idle_009.png?v=20260731td2assets2",
+        "method": "GET",
+        "resourceType": "xhr",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/games/daveai-td2/assets/enemies/4/4_enemies_1_idle_005.png?v=20260731td2assets2",
+        "method": "GET",
+        "resourceType": "xhr",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/games/daveai-td2/assets/enemies/3/3_enemies_1_die_017.png?v=20260731td2assets2",
+        "method": "GET",
+        "resourceType": "xhr",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/games/daveai-td2/assets/enemies/3/3_enemies_1_jump_014.png?v=20260731td2assets2",
+        "method": "GET",
+        "resourceType": "xhr",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/games/daveai-td2/assets/enemies/4/4_enemies_1_idle_004.png?v=20260731td2assets2",
+        "method": "GET",
+        "resourceType": "xhr",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/games/daveai-td2/assets/enemies/3/3_enemies_1_die_009.png?v=20260731td2assets2",
+        "method": "GET",
+        "resourceType": "xhr",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/games/daveai-td2/assets/enemies/3/3_enemies_1_die_014.png?v=20260731td2assets2",
+        "method": "GET",
+        "resourceType": "xhr",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/games/daveai-td2/assets/enemies/3/3_enemies_1_jump_010.png?v=20260731td2assets2",
+        "method": "GET",
+        "resourceType": "xhr",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/games/daveai-td2/assets/enemies/3/3_enemies_1_die_012.png?v=20260731td2assets2",
+        "method": "GET",
+        "resourceType": "xhr",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/games/daveai-td2/assets/enemies/3/3_enemies_1_jump_013.png?v=20260731td2assets2",
+        "method": "GET",
+        "resourceType": "xhr",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/games/daveai-td2/assets/enemies/4/4_enemies_1_idle_003.png?v=20260731td2assets2",
+        "method": "GET",
+        "resourceType": "xhr",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/games/daveai-td2/assets/enemies/4/4_enemies_1_idle_006.png?v=20260731td2assets2",
+        "method": "GET",
+        "resourceType": "xhr",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/games/daveai-td2/assets/enemies/3/3_enemies_1_jump_015.png?v=20260731td2assets2",
+        "method": "GET",
+        "resourceType": "xhr",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/games/daveai-td2/assets/enemies/3/3_enemies_1_jump_016.png?v=20260731td2assets2",
+        "method": "GET",
+        "resourceType": "xhr",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/games/daveai-td2/assets/enemies/4/4_enemies_1_idle_000.png?v=20260731td2assets2",
+        "method": "GET",
+        "resourceType": "xhr",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/games/daveai-td2/assets/enemies/4/4_enemies_1_idle_002.png?v=20260731td2assets2",
+        "method": "GET",
+        "resourceType": "xhr",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/games/daveai-td2/assets/enemies/3/3_enemies_1_die_016.png?v=20260731td2assets2",
+        "method": "GET",
+        "resourceType": "xhr",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/games/daveai-td2/assets/enemies/3/3_enemies_1_jump_008.png?v=20260731td2assets2",
+        "method": "GET",
+        "resourceType": "xhr",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/games/daveai-td2/assets/enemies/3/3_enemies_1_jump_006.png?v=20260731td2assets2",
+        "method": "GET",
+        "resourceType": "xhr",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/games/daveai-td2/assets/enemies/3/3_enemies_1_jump_007.png?v=20260731td2assets2",
+        "method": "GET",
+        "resourceType": "xhr",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/games/daveai-td2/assets/enemies/3/3_enemies_1_die_019.png?v=20260731td2assets2",
+        "method": "GET",
+        "resourceType": "xhr",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/cdn-cgi/rum?",
+        "method": "POST",
+        "resourceType": "ping",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/games/daveai-td2/assets/enemies/3/3_enemies_1_jump_012.png?v=20260731td2assets2",
+        "method": "GET",
+        "resourceType": "xhr",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/games/daveai-td2/assets/enemies/4/4_enemies_1_idle_001.png?v=20260731td2assets2",
+        "method": "GET",
+        "resourceType": "xhr",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/games/daveai-td2/assets/enemies/3/3_enemies_1_jump_018.png?v=20260731td2assets2",
+        "method": "GET",
+        "resourceType": "xhr",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/games/daveai-td2/assets/enemies/4/4_enemies_1_idle_007.png?v=20260731td2assets2",
+        "method": "GET",
+        "resourceType": "xhr",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/games/daveai-td2/assets/enemies/3/3_enemies_1_jump_019.png?v=20260731td2assets2",
+        "method": "GET",
+        "resourceType": "xhr",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/games/daveai-td2/assets/enemies/3/3_enemies_1_jump_011.png?v=20260731td2assets2",
+        "method": "GET",
+        "resourceType": "xhr",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://daveai.tech/games/daveai-td2/assets/enemies/4/4_enemies_1_idle_008.png?v=20260731td2assets2",
+        "method": "GET",
+        "resourceType": "xhr",
+        "failure": "net::ERR_ABORTED"
+      }
+    ],
+    "pageErrors": [],
+    "consoleMessages": []
+  }
+}

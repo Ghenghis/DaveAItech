@@ -1,0 +1,148 @@
+=== time ===
+Sat Aug  1 02:51:18 UTC 2026
+
+=== uptime/load ===
+ 02:51:18 up 83 days,  1:32,  4 users,  load average: 4.71, 4.49, 3.86
+
+=== memory/swap ===
+               total        used        free      shared  buff/cache   available
+Mem:            15Gi       8.4Gi       493Mi       111Mi       7.3Gi       7.2Gi
+Swap:          4.0Gi       3.7Gi       341Mi
+
+=== disk ===
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda1       193G  151G   43G  78% /
+
+=== zombie processes ===
+Z    1096996   49856 python          [python] <defunct>
+Z    1096996  246407 python          [python] <defunct>
+Z    1096996  296070 python          [python] <defunct>
+Z    1096996  690510 python          [python] <defunct>
+Zs    645662  691210 git             [git] <defunct>
+Z     645662  691473 docker          [docker] <defunct>
+Z     645662  693115 docker          [docker] <defunct>
+Z    1096996  748774 python          [python] <defunct>
+Z    1096996 1031240 python          [python] <defunct>
+Z    1096996 1051881 python          [python] <defunct>
+Z    1096996 1594412 python          [python] <defunct>
+Z    1096996 1785898 python          [python] <defunct>
+Z    1096996 1841728 python          [python] <defunct>
+Z    1096996 1851895 python          [python] <defunct>
+Z    1096996 2042135 python          [python] <defunct>
+Z    1096996 2294781 python          [python] <defunct>
+Z    1096996 2438042 python          [python] <defunct>
+Z    1096996 2448810 python          [python] <defunct>
+Z    1096996 2533480 python          [python] <defunct>
+Z    1096996 2638987 python          [python] <defunct>
+Z    1096996 2888686 python          [python] <defunct>
+Z    1096996 2940610 python          [python] <defunct>
+Z    1096996 2969393 python          [python] <defunct>
+Z    1096996 2971190 python          [python] <defunct>
+Z    1096996 3022936 python          [python] <defunct>
+Z    1096996 3142921 python          [python] <defunct>
+Z    1096996 3552740 python          [python] <defunct>
+Z    1096996 3789943 python          [python] <defunct>
+Z    1096996 3850336 python          [python] <defunct>
+Z    1096996 3940033 python          [python] <defunct>
+Z    1096996 3947553 python          [python] <defunct>
+Z    1096996 4037853 python          [python] <defunct>
+Z    1096996 4157733 python          [python] <defunct>
+
+=== reboot required ===
+*** System restart required ***
+linux-image-6.8.0-117-generic
+linux-base
+linux-image-6.8.0-124-generic
+linux-base
+linux-image-6.8.0-134-generic
+linux-base
+linux-image-6.8.0-136-generic
+linux-base
+libc6
+
+=== pending apt updates count ===
+30
+
+=== unattended-upgrades recent failures ===
+
+=== PM2 status ===
+┌────┬────────────────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
+│ id │ name               │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
+├────┼────────────────────┼─────────────┼─────────┼─────────┼──────────┼────────┼──────┼───────────┼──────────┼──────────┼──────────┼──────────┤
+│ 4  │ agent-brain        │ default     │ N/A     │ fork    │ 3165459  │ 6h     │ 3    │ online    │ 0%       │ 633.2mb  │ root     │ disabled │
+│ 2  │ agentic-ui         │ default     │ 1.0.0   │ fork    │ 674910   │ 35h    │ 0    │ online    │ 0%       │ 81.9mb   │ root     │ disabled │
+│ 7  │ daveai-dev         │ default     │ 1.0.0   │ fork    │ 674925   │ 35h    │ 0    │ online    │ 0%       │ 32.3mb   │ root     │ disabled │
+│ 6  │ daveai-diy         │ default     │ 1.0.0   │ fork    │ 674922   │ 35h    │ 0    │ online    │ 0%       │ 31.0mb   │ root     │ disabled │
+│ 9  │ daveai-fleet       │ default     │ 1.0.0   │ fork    │ 674945   │ 35h    │ 0    │ online    │ 0%       │ 31.0mb   │ root     │ disabled │
+│ 11 │ daveai-hermes3d    │ default     │ 1.0.0   │ fork    │ 674993   │ 35h    │ 0    │ online    │ 0%       │ 34.4mb   │ root     │ disabled │
+│ 8  │ daveai-staging     │ default     │ 1.0.0   │ fork    │ 674935   │ 35h    │ 0    │ online    │ 0%       │ 31.2mb   │ root     │ disabled │
+│ 10 │ daveai-ws          │ default     │ 1.0.0   │ fork    │ 674968   │ 35h    │ 0    │ online    │ 0%       │ 33.9mb   │ root     │ disabled │
+│ 1  │ edge-tts           │ default     │ N/A     │ fork    │ 674909   │ 35h    │ 0    │ online    │ 0%       │ 46.7mb   │ root     │ disabled │
+│ 3  │ hermes-watchdog    │ default     │ N/A     │ fork    │ 674911   │ 35h    │ 0    │ online    │ 0%       │ 2.8mb    │ root     │ disabled │
+│ 5  │ openhands-web      │ default     │ N/A     │ fork    │ 674920   │ 35h    │ 0    │ online    │ 0%       │ 218.4mb  │ root     │ disabled │
+│ 0  │ serve-api          │ default     │ 1.0.0   │ fork    │ 674908   │ 35h    │ 0    │ online    │ 0%       │ 42.9mb   │ root     │ disabled │
+└────┴────────────────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘
+
+=== Docker status ===
+NAMES                                    STATUS                         PORTS
+stories-of-the-west                      Up 12 hours (healthy)          127.0.0.1:18080->80/tcp
+supabase-edge-functions                  Up 20 hours (healthy)          
+supabase-pooler                          Up 35 hours (healthy)          127.0.0.1:6543->6543/tcp, 127.0.0.1:15432->5432/tcp
+supabase-auth                            Up 35 hours (healthy)          
+supabase-db                              Up 35 hours (healthy)          5432/tcp, 127.0.0.1:15433->15432/tcp
+supabase-kong                            Up 35 hours (healthy)          8001-8004/tcp, 8444-8447/tcp, 127.0.0.1:18000->8000/tcp, 127.0.0.1:18443->8443/tcp
+supabase-studio                          Up 2 days (healthy)            3000/tcp
+supabase-storage                         Up 2 days (healthy)            5000/tcp
+realtime-dev.supabase-realtime           Up 35 hours (healthy)          
+supabase-meta                            Up 2 days (healthy)            8080/tcp
+supabase-rest                            Up 2 days (healthy)            3000/tcp
+supabase-imgproxy                        Up 2 days (healthy)            8080/tcp
+daveai-grafana                           Up 7 days                      127.0.0.1:3030->3000/tcp
+daveai-prometheus                        Up 7 days                      127.0.0.1:9090->9090/tcp
+daveai-node-exporter                     Up 7 days                      127.0.0.1:9100->9100/tcp
+daveai-adminer                           Up 7 days                      127.0.0.1:8080->8080/tcp
+daveai-gitea                             Up 7 days (healthy)            22/tcp, 127.0.0.1:3301->3000/tcp
+openhands-kilo-ci-3000                   Up 9 days                      8002/tcp, 0.0.0.0:3000->8000/tcp, [::]:3000->8000/tcp
+kilo-gate11-ollama-15424638887           Up 11 days                     11434/tcp
+kilo-gate11-ollama-15424476042           Up 11 days                     11434/tcp
+kilo-gate11-ollama-15415468512           Up 13 days                     11434/tcp
+kilo-gate11-ollama-15414880492           Up 13 days                     11434/tcp
+kilo-gate11-ollama-15414483506           Up 13 days                     11434/tcp
+kilo-gate11-ollama-15413740869           Up 13 days                     11434/tcp
+kilo-gate11-ollama-15413252520           Up 13 days                     11434/tcp
+kilo-gate11-ollama-15412824055           Up 13 days                     11434/tcp
+open-webui                               Up 2 weeks (healthy)           0.0.0.0:8083->8080/tcp, [::]:8083->8080/tcp
+openhands-kilo-ci-8000                   Up 3 weeks                     
+openhands-kilo-ci-18000                  Restarting (1) 3 seconds ago   
+aice-agent                               Up 8 weeks (healthy)           7860/tcp
+aice-caddy                               Up 8 weeks                     443/udp, 2019/tcp, 0.0.0.0:8088->80/tcp, [::]:8088->80/tcp, 0.0.0.0:8448->443/tcp, [::]:8448->443/tcp
+aice-dashboard                           Up 8 weeks (healthy)           7860/tcp
+iptv-restream-iptv_restream_frontend-1   Up 8 weeks                     80/tcp
+authelia                                 Up 2 months (healthy)          127.0.0.1:9091->9091/tcp
+authelia-redis                           Up 2 months (healthy)          6379/tcp
+bolt-diy-postgres                        Up 2 months (healthy)          5432/tcp
+bolt-diy-redis                           Up 2 months (healthy)          6379/tcp
+pipelines                                Up 2 months                    172.17.0.1:9099->9099/tcp
+hermes-webui                             Up 2 months (healthy)          127.0.0.1:8787->8787/tcp
+shiba-postgres                           Up 2 months (healthy)          127.0.0.1:5499->5432/tcp
+iptv-restream-iptv_restream_nginx-1      Up 2 months                    127.0.0.1:3103->80/tcp
+iptv-restream-iptv_restream_backend-1    Up 6 days                      5000/tcp
+hermestv-vps-api                         Up 2 months (healthy)          127.0.0.1:3011->3011/tcp
+hermestv-vps-web                         Up 2 months (healthy)          127.0.0.1:3080->80/tcp
+hermes5                                  Up 2 months                    
+hermes4                                  Up 2 months                    
+hermes3                                  Up 2 months                    
+hermes2                                  Up 2 months                    
+hermes1                                  Up 2 months                    
+
+Maintenance-window actions not performed by this diagnostic script:
+1. Snapshot/backup VPS.
+2. Announce maintenance window.
+3. Run apt update && apt upgrade.
+4. Reboot if /var/run/reboot-required exists.
+5. After reboot, verify:
+   - nginx -t
+   - systemctl is-active nginx litellm
+   - pm2 status
+   - vps/patches/daveai-production-runtime-20260731/check-litellm-health.sh
+   - node vps/production-e2e-runner.cjs

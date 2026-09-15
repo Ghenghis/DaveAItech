@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.0",
+  "id": "CT-004",
+  "title": "Wildcard Site Extensibility — Wiring the 'Other' Category as the Launcher for External Sites",
+  "phase_number": 4,
+  "status": "not_started",
+  "priority_note": "Fourth priority, per the owner's explicit ordering: chat, then menus/tabs, then games, then wildcard sites. Roadmap: 'Once Phase 3's registry is real and singular, wire the existing unused \"other\" category into the launcher UI as the place your additional sites go, with embed:false as the default for anything you don't control.' This is an explicit, textual dependency on CT-003 in the roadmap doc itself, not an inferred one.",
+  "audit_status_note": "A section-by-section bug audit of the live production source (vps/daveai-ui-v6.html, brain_llm.py, CSS, and infra scripts) produced 133 candidate findings; 83 were independently confirmed real. The other 50 are NOT confirmed-false — they are pending re-verification after an unrelated rate-limit interruption stopped that re-check pass partway through. Treat any finding not explicitly marked confirmation_status='confirmed' or 'verified-in-this-contract' below as unresolved, not cleared. No consolidated ledger of all 133 findings exists in this repository as of 2026-09-15; no items were specifically flagged for this phase beyond what is described below.",
+  "source_of_truth": {
+    "roadmap_doc": "docs/DAVEAI_DEEP_AUDIT_ROADMAP_20260915.md",
+    "roadmap_sections": ["§4.2 (the 'other' category and embed:false groundwork)", "§5 Phase 4"],
+    "contract_kit_overview": "docs/DAVEAI_CONTRACT_KIT_20260915.md"
+  },
+  "summary": "Make it easy to keep adding the owner's other sites to daveai.tech as first-class launcher entries, using groundwork that already exists but is not yet wired up: an unused 'other' catalog category and an embed:false rendering mode that already shows a launch card instead of an iframe.",
+  "background": "The roadmap doc identifies existing, unused groundwork for this goal: the catalog schema already has a 'web | apps | games | other' category field, and setting embed:false on a catalog entry already makes the UI render it as a launch card instead of an iframe — exactly the presentation you want for a site you do not control and should not attempt to frame. During contract-kit preparation (2026-09-15), the 'other' category's UI filter button was independently confirmed to already exist in vps/daveai-ui-v6.html, but zero catalog entries currently use cat:\"other\" — the category is wired into the filter UI but has no content and, per the roadmap, no launcher wiring behind it yet. This contract depends entirely on CT-003 landing first: wiring a new, permanent category into a catalog mechanism that is still split five ways would either have to be done five times or would immediately drift, which is exactly the failure mode CT-003 exists to remove.",
+  "status_discipline": {
+    "verified": "You personally read the code, ran the command, or fetched the live response yourself in this session, and can quote the exact evidence.",
+    "reported": "A document or another agent's proof artifact says so, and you have not independently re-checked it today.",
+    "rule": "Never upgrade a 'reported' fact to a 'verified' claim without re-checking it yourself. Label every claim in your completion report as one or the other."
+  },
+  "depends_on": ["CT-003"],
+  "blocks": [],
+  "scope": {
+    "files": [
+      {
+        "path": "the single canonical catalog source produced by CT-003",
+        "lines": "n/a until CT-003 lands — CT-003's completion report names the exact file/path; use that, not vps/daveai-project-catalog.json by default assumption, since CT-003 may have restructured or relocated it",
+        "description": "Where new wildcard/'other' entries will be added going forward."
+      },
+      {
+        "path": "vps/daveai-ui-v6.html",
+        "lines": "catalog-rendering / launcher UI section — line range pending deep-audit workflow completion — see docs/DAVEAI_DEEP_AUDIT_ROADMAP_20260915.md. The 'other' category filter button already exists at line 1461 (`data-cat=\"other\"`, verified via grep 2026-09-15) — confirm this line number is still current after CT-002/CT-003 land, since both touch this file.",
+        "description": "The launcher UI that needs to (a) actually show entries tagged cat:\"other\" when that filter is active — confirm today it has nothing to show, since zero entries currently use that category — and (b) render embed:false entries as launch cards, which the roadmap reports already works and this contract should verify rather than reimplement."
+      }
+    ],
+    "notes": "This contract is deliberately small in code footprint if CT-003 has done its job: the categorization and embed:false rendering mechanisms are reported to already exist. The bulk of the work is verification, documentation (so the owner or a future agent can add a new external site without re-deriving how), and closing any gap between 'the button exists' and 'the category actually works end to end.'"
+  },
+  "protected_paths": [
+    { "path": "app/", "reason": "Confirmed to share no code with daveai.tech. Out of scope for the entire roadmap unless CT-005 changes that." },
+    { "path": "vps/daveai-ui-v6.html chat-logic and topbar/sidebar/settings sections outside catalog rendering", "reason": "CT-001/CT-002 territory." },
+    { "path": "The consolidation mechanism itself (how the five former sources were merged) established by CT-003", "reason": "Build on it; do not redesign it under this contract. If it is inadequate for wildcard entries specifically, say so explicitly and treat that as a finding for CT-003's owner or the owner directly, not a silent rework here." }
+  ],
+  "known_findings": [],
+  "cross_phase_notes": [
+    "This contract cannot start meaningfully until CT-003's completion report exists — read it first to learn the actual canonical catalog path and structure, which may differ from the pre-consolidation paths named elsewhere in this contract kit.",
+    "If CT-003 was only partially completed (see its failure_policy), evaluate whether the catalog is 'real and singular' enough for this contract to safely proceed, or whether wiring wildcard entries into a still-partially-fragmented registry would recreate the drift problem. Document that judgment either way."
+  ],
+  "steps": [
+    "Confirm CT-003 is done; read its completion report and evidence before doing anything else.",
+    "Read docs/DAVEAI_DEEP_AUDIT_ROADMAP_20260915.md §4.2 and §5 Phase 4 in full.",
+    "Read this contract in full.",
+    "Add at least one real test entry tagged cat:\"other\" with embed:false to the canonical catalog, and confirm it appears correctly under the 'other' filter as a launch card, not an iframe.",
+    "Confirm an entry with embed:true still renders as an iframe as before (no regression to existing embed behavior).",
+    "Write down (in this contract's evidence, and/or a short doc if none exists) the exact steps required to add a new external 'wildcard' site going forward, so the owner or a future agent does not have to re-derive this.",
+    "Remove or replace the test entry once verified, unless the owner wants it to remain as a real, permanent example.",
+    "Gather required_evidence for every change before writing a completion report.",
+    "Check every definition_of_done line item against your own evidence before declaring any of them done."
+  ],
+  "required_evidence": [
+    "The exact diff adding the test cat:\"other\"/embed:false catalog entry.",
+    "A screenshot or accessibility-tree/read_page capture of that entry rendering as a launch card (not an iframe) under the 'other' filter.",
+    "A screenshot or equivalent capture of an existing embed:true entry still rendering as an iframe after this contract's changes (no regression).",
+    "The written steps-to-add-a-new-site documentation produced by this contract, with its file path.",
+    "A restated definition_of_done checklist with each line marked done/blocked/not-attempted and an evidence pointer for every 'done' line."
+  ],
+  "forbidden_claim_patterns": [
+    "100%\\s*complete",
+    "everything\\s+(is\\s+)?(fixed|working)",
+    "no\\s+bugs?\\s+remain",
+    "release-ready",
+    "production-ready",
+    "perfect"
+  ],
+  "reporting_requirements": [
+    "State plainly whether CT-003 was fully or only partially done at the time this contract started, and how that affected this contract's scope.",
+    "Every item claimed fixed/working must cite a required_evidence artifact by file path or exact command+output, not a narrative description.",
+    "Never use a forbidden_claim_patterns phrase to describe this contract's outcome unless the exact proof command+output is quoted directly next to it.",
+    "If the embed:false launch-card rendering reported as already working turns out not to work as described, say so explicitly rather than quietly fixing it as if it were expected scope, and note it as a correction to the roadmap doc's §4.2 claim."
+  ],
+  "definition_of_done": [
+    "[ ] A real catalog entry tagged cat:\"other\" with embed:false renders correctly as a launch card, with evidence.",
+    "[ ] An existing embed:true entry still renders as an iframe with no regression, with evidence.",
+    "[ ] Documentation exists (in this contract's evidence or a short doc) describing exactly how to add a new external wildcard site going forward.",
+    "[ ] No file outside this contract's scope list was modified, or every such change is explicitly disclosed with a reason.",
+    "[ ] Completion report uses verified/reported labeling per status_discipline, states CT-003's completion status honestly, and contains no forbidden_claim_patterns phrase without adjacent proof."
+  ],
+  "failure_policy": {
+    "if_blocked": "Stop. Document exactly what is blocking you (e.g. CT-003 is not sufficiently complete, embed:false rendering does not actually work as the roadmap describes) and why. Do not guess, silently skip the item, or mark it done anyway.",
+    "if_partially_done": "Report exact done/blocked/not-attempted counts against the steps above. Partial completion is a legitimate, honest outcome — an inflated claim is not.",
+    "release_eligible_on_partial_completion": false
+  },
+  "rollback_plan": "Before installing any change to /var/www/agentic-website or the canonical catalog on the live VPS, snapshot the current file(s) to a timestamped backup directory, following the existing pattern in vps/patches/deploy-accessibility-contract-20260725.sh (backup → install → verify with sha256sum/curl → trap-based rollback to the backup on any verification failure).",
+  "evidence_location": "proofs/daveai-phase4-wildcard-extensibility-<YYYYMMDD>/ (use the date you actually do the work, following the existing proofs/daveai-prod-audit-20260731/ naming convention)"
+}

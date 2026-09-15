@@ -1,0 +1,397 @@
+{
+  "generatedAt": "2026-07-31T22:28:45.496Z",
+  "results": [
+    {
+      "id": "studio",
+      "name": "DaveAI Studio",
+      "status": "live",
+      "url": "https://daveai.tech/studio/index.html",
+      "finalUrl": "https://daveai.tech/studio/index.html?proof=26-1785536900638",
+      "navError": null,
+      "state": {
+        "title": "DaveAI — Agentic Web Builder",
+        "h1": "Agentic Generation",
+        "bodyText": "D\nWelcome to DaveAI\nThe autonomous web builder. Sign in to continue.\nEmail\nGoogle\nGitHub\n  Sign In\nNo account? Create one  ·  Forgot password?\nTest login: demo@daveai.tech  /  DaveAI2026\nD\nDaveAI\nSupervisor\nanalyzing\nCoder\nbuilding UI\nQA\nidle\nAsset\nidle\nPreview\nBuild\nAnalytics\nAdmin\nHorizons\nDA\nPAGES\nPages\nSites\nTools\nAgents\nHome\n/\nAbout\n/about\nPricing\n/pricing\nBlog\n/blog\nContact\n/contact\n+ New page\nPreview\nCode\nMobile\npreview.daveai.tech\npreview.daveai.tech\nv2.0 Beta · Live\nAgentic Generation\n\nBuild faster with an autonomous swarm of AI agents that write, test, and ship production code in real-time.\n\nDeploy Now\nView Docs\nSupervisor: I'm having @Coder update the hero section. @QA will verify contrast ratios.\nMake button purple gradient\nAdd dark mode toggle\nCheck mobile layout\nGenerate logo\nAdd pricing section\nChange title to \"Build the Future\"\nActivity\nHistory\nCoder\n2m ago\nScaffolded Hero.tsx component\na3f91b2\nQA\n4m ago\nContrast ratios — all pass ✓\nSupervisor\n5m ago\nRouted \"add hero section\" to Coder\nAsset\n8m ago\nGenerated gradient background asset\nc12de45\nCoder\n12m ago\nCreated layout.tsx with Tailwind base\n7fb3c91\nSupervisor\n14m ago\nSession started — brain online\nPAGES\n5\n2 published\nBUILDS\n12\ntoday\nCOMMITS\n34\nthis week\nUPTIME\n99%\n30d avg",
+        "links": [
+          {
+            "text": "Create one",
+            "href": ""
+          },
+          {
+            "text": "Forgot password?",
+            "href": ""
+          },
+          {
+            "text": "Health API",
+            "href": "https://daveai.tech/api/health"
+          },
+          {
+            "text": "Agents Status",
+            "href": "https://daveai.tech/api/agents"
+          },
+          {
+            "text": "Pages API",
+            "href": "https://daveai.tech/api/pages/main"
+          }
+        ],
+        "buttons": [
+          "Sign In",
+          "Continue with Google",
+          "Continue with GitHub",
+          "Apply this layout",
+          "Preview",
+          "Build",
+          "Analytics",
+          "Admin",
+          "+ New page",
+          "+ New site",
+          "all",
+          "supervisor",
+          "coder",
+          "qa",
+          "Deploy Now",
+          "View Docs",
+          "Config",
+          "Agents",
+          "Logs"
+        ],
+        "inputCount": 4,
+        "canvasCount": 0,
+        "iframeCount": 1,
+        "authHints": true
+      },
+      "badResponses": [],
+      "badCount": 0,
+      "pageErrors": [],
+      "actionableConsole": [],
+      "toleratedAuth": false,
+      "passed": true
+    },
+    {
+      "id": "web-pages",
+      "name": "DaveAI Web Pages",
+      "status": "live",
+      "url": "https://daveai.tech/web-pages.html",
+      "finalUrl": "https://daveai.tech/web-pages.html?proof=26-1785536904835",
+      "navError": null,
+      "state": {
+        "title": "DaveAI Web Pages",
+        "h1": "Pages & Apps",
+        "bodyText": "DAVEAI WEB\n\nPages & Apps\n\nA clean launcher for DaveAI chat, hosted apps, games, and verified generated pages.\n\nDaveAI Chat\nApps\nAll\nApps\nGames\nPages\nTools\nFeatured\nVerified links only\nA\nPROTECTED\nApps Launcher\n\nHosted DaveTV/IPTV app collection with provider-ready player surfaces.\n\napps.daveai.tech\nauth gate\nOpen\nD\nLIVE\nDaveAI Chat\n\nMain DaveAI workspace and agent chat surface.\n\ndaveai.tech\nagent brain\nOpen\nW\nGAME\nWheel Hangman\n\nWheel-style hangman game generated through the repaired DaveAI agent path.\n\nbrowser proof\ninteractive\nOpen\nGames\nDirect browser pages\nG\nGAMES\nGames Hub\n\nDaveAI game collection and playable browser experiments.\n\n/games/\n200 OK\nOpen\nR\nARCADE\nArcade\n\nClassic arcade-style games including snake, tetris, racing, and breakout.\n\n/arcade/index.html\n200 OK\nOpen\nT\nGAME\nTic Tac Toe AI\n\nRecent agent-built tic tac toe page retained as a direct playable link.\n\n/tic-tac-toe-ai.html\n200 OK\nOpen\nTD\nTOWER\nDaveAI TD2\n\nTower-defense game page hosted under the DaveAI games collection.\n\n/games/daveai-td2/\ndirect\nOpen\nS\nSIEGE\nDave's Siege TD\n\nSecond tower-defense game page with direct index routing.\n\n/games/daves-siege-td/\ndirect\nOpen\nA\nASTEROIDS\nAsteroids\n\nStandalone browser game page inside the DaveAI games folder.\n\n/games/asteroids/\ndirect\nOpen\nPages & Tools\nUseful DaveAI surfaces\nS\nSTUDIO\nStudio\n\nStudio UI page hosted under DaveAI.\n\n/studio/index.html\n200 OK\nOpen\nV\nVOICE\nV",
+        "links": [
+          {
+            "text": "DaveAI Chat",
+            "href": "https://daveai.tech/"
+          },
+          {
+            "text": "Apps",
+            "href": "https://apps.daveai.tech/"
+          },
+          {
+            "text": "Open",
+            "href": "https://apps.daveai.tech/"
+          },
+          {
+            "text": "Open",
+            "href": "https://daveai.tech/"
+          },
+          {
+            "text": "Open",
+            "href": "https://daveai.tech/wheel-hangman.html"
+          },
+          {
+            "text": "Open",
+            "href": "https://daveai.tech/games/"
+          },
+          {
+            "text": "Open",
+            "href": "https://daveai.tech/arcade/index.html"
+          },
+          {
+            "text": "Open",
+            "href": "https://daveai.tech/tic-tac-toe-ai.html"
+          },
+          {
+            "text": "Open",
+            "href": "https://daveai.tech/games/daveai-td2/index.html"
+          },
+          {
+            "text": "Open",
+            "href": "https://daveai.tech/games/daves-siege-td/index.html"
+          },
+          {
+            "text": "Open",
+            "href": "https://daveai.tech/games/asteroids/index.html"
+          },
+          {
+            "text": "Open",
+            "href": "https://daveai.tech/studio/index.html"
+          },
+          {
+            "text": "Open",
+            "href": "https://daveai.tech/voice-landing.html"
+          },
+          {
+            "text": "Open",
+            "href": "https://daveai.tech/hello-world.html"
+          }
+        ],
+        "buttons": [
+          "All",
+          "Apps",
+          "Games",
+          "Pages",
+          "Tools"
+        ],
+        "inputCount": 0,
+        "canvasCount": 0,
+        "iframeCount": 1,
+        "authHints": true
+      },
+      "badResponses": [],
+      "badCount": 0,
+      "pageErrors": [],
+      "actionableConsole": [],
+      "toleratedAuth": false,
+      "passed": true
+    },
+    {
+      "id": "windsurf",
+      "name": "Windsurf",
+      "status": "auth",
+      "url": "https://daveai.tech/windsurf.html",
+      "finalUrl": "https://daveai.tech/windsurf.html?proof=26-1785536908893",
+      "navError": null,
+      "state": {
+        "title": "DaveAI — Ops Control Panel",
+        "h1": "",
+        "bodyText": "VPS Error\nCPU\n–\nMEM\n–\nUPTIME\n–\nLAST POLL –\n↻ Refresh\n🔔 Alerts\n← DaveAI\nPM2 PROCESSES\n↻\nDOCKER CONTAINERS\n(CORE ONLY)\nAI TOOLS\ngoose\nv1.27.2\n/usr/local/bin/goose\nver\nrun\nopenhands\ndocker\n:3333 → open\n↻\nlog\nQUICK ACTIONS\n↻ Restart All PM2\n↻ Restart Brain\n⚡ Fix edge-tts\n📄 View Logs\n🚀 Deploy\n🚨 Monitor\n⌨ Command\n🖥 Procs\n📄 Logs\n🧪 Tests\n🚀 Deploy\n💬 Discuss\n■ stop\nsupervisor\nIDLE\n–\n–\n■ stop\ncoder\nIDLE\n–\n–\n■ stop\nasset\nIDLE\n–\n–\n■ stop\nqa\nIDLE\n–\n–\nLIVE ACTIVITY FEED\n2 EVENTS\n3:28:29 PM\nsystem\n⚠ Agent poll failed: HTTP 401\n3:28:29 PM\nsystem\nControl panel loaded — polling active\nBUDGET STATUS\nDETAIL\nAuthentication required\nCHECKPOINT\nDETAIL\nAdmin token required\nAgent Chat\nsupervisor\ncoder\nasset\nqa\n→",
+        "links": [
+          {
+            "text": "open",
+            "href": "http://187.77.30.206:3333/"
+          }
+        ],
+        "buttons": [
+          "↻ Refresh",
+          "🔔 Alerts",
+          "← DaveAI",
+          "ver",
+          "run",
+          "↻",
+          "log",
+          "↻ Restart All PM2",
+          "↻ Restart Brain",
+          "⚡ Fix edge-tts",
+          "📄 View Logs",
+          "🚀 Deploy",
+          "■ stop",
+          "■ stop",
+          "■ stop",
+          "■ stop",
+          "Run",
+          "✕",
+          "↻ refresh",
+          "↻ refresh",
+          "agent-brain",
+          "daveai-api",
+          "agentic-ui",
+          "edge-tts",
+          "litellm"
+        ],
+        "inputCount": 6,
+        "canvasCount": 0,
+        "iframeCount": 1,
+        "authHints": true
+      },
+      "badResponses": [
+        {
+          "status": 401,
+          "url": "https://daveai.tech/api/agents/status"
+        },
+        {
+          "status": 401,
+          "url": "https://daveai.tech/api/checkpoint/status"
+        },
+        {
+          "status": 401,
+          "url": "https://daveai.tech/api/budget/status"
+        },
+        {
+          "status": 401,
+          "url": "https://daveai.tech/api/discuss/list"
+        },
+        {
+          "status": 401,
+          "url": "https://daveai.tech/api/tools/shell/run"
+        },
+        {
+          "status": 401,
+          "url": "https://daveai.tech/api/tools/shell/run"
+        }
+      ],
+      "badCount": 6,
+      "pageErrors": [],
+      "actionableConsole": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 401 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 401 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 401 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 401 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 401 ()"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 401 ()"
+        }
+      ],
+      "toleratedAuth": true,
+      "passed": true
+    },
+    {
+      "id": "voice",
+      "name": "DaveAI Voice",
+      "status": "live",
+      "url": "https://voice.daveai.tech/",
+      "finalUrl": "https://voice.daveai.tech/?proof=26-1785536912799",
+      "navError": null,
+      "state": {
+        "title": "Voice Studio — DaveAI.tech",
+        "h1": "Voice Studio",
+        "bodyText": "VOICE STUDIO — STAGING\nVoice Studio\n\nEdge TTS synthesis server running on daveai.tech infrastructure. Real-time voice synthesis, multi-language support, and AI agent voice integration. Accessible via API or integrated into the DaveAI agent workflow.\n\nReal-time TTS\n\nLow-latency text-to-speech synthesis via Edge TTS engine. Multiple voices, styles, and speeds.\n\nMulti-language\n\nSupports 100+ languages and dialects. British and American English, Spanish, German, French, and more.\n\nAgent Voice\n\nAssign unique voices to each AI agent — Supervisor, Coder, QA, Asset. DaveAI reads responses aloud.\n\nREST API\n\nClean API for programmatic synthesis. POST JSON, receive audio. Integrated into the Brain API.\n\nAPI ENDPOINTS\nPOST /synthesize — Text-to-speech\nGET /voices — Available voices\nGET /health — Service status\nPOST /api/edge-tts — Via DaveAI proxy\nBack to DaveAI.tech\n Engine: Active\nModels: 0 loaded\nRegion: VPS Boston\nContainer: edge-tts-server\n DaveAI.tech Hub  ·   Hermes Chat  ·   Web Builder",
+        "links": [
+          {
+            "text": "Back to DaveAI.tech",
+            "href": "https://daveai.tech/"
+          },
+          {
+            "text": "DaveAI.tech Hub",
+            "href": "https://daveai.tech/"
+          },
+          {
+            "text": "Hermes Chat",
+            "href": "https://hermes.daveai.tech/"
+          },
+          {
+            "text": "Web Builder",
+            "href": "https://fleet.daveai.tech/"
+          }
+        ],
+        "buttons": [],
+        "inputCount": 0,
+        "canvasCount": 0,
+        "iframeCount": 1,
+        "authHints": false
+      },
+      "badResponses": [],
+      "badCount": 0,
+      "pageErrors": [],
+      "actionableConsole": [],
+      "toleratedAuth": false,
+      "passed": true
+    },
+    {
+      "id": "voice-landing",
+      "name": "Voice Landing",
+      "status": "live",
+      "url": "https://daveai.tech/voice-landing.html",
+      "finalUrl": "https://daveai.tech/voice-landing.html?proof=26-1785536916951",
+      "navError": null,
+      "state": {
+        "title": "Voice Studio — DaveAI.tech",
+        "h1": "Voice Studio",
+        "bodyText": "VOICE STUDIO — STAGING\nVoice Studio\n\nEdge TTS synthesis server running on daveai.tech infrastructure. Real-time voice synthesis, multi-language support, and AI agent voice integration. Accessible via API or integrated into the DaveAI agent workflow.\n\nReal-time TTS\n\nLow-latency text-to-speech synthesis via Edge TTS engine. Multiple voices, styles, and speeds.\n\nMulti-language\n\nSupports 100+ languages and dialects. British and American English, Spanish, German, French, and more.\n\nAgent Voice\n\nAssign unique voices to each AI agent — Supervisor, Coder, QA, Asset. DaveAI reads responses aloud.\n\nREST API\n\nClean API for programmatic synthesis. POST JSON, receive audio. Integrated into the Brain API.\n\nAPI ENDPOINTS\nPOST /synthesize — Text-to-speech\nGET /voices — Available voices\nGET /health — Service status\nPOST /api/edge-tts — Via DaveAI proxy\nBack to DaveAI.tech\n Engine: Active\nModels: 0 loaded\nRegion: VPS Boston\nContainer: edge-tts-server\n DaveAI.tech Hub  ·   Hermes Chat  ·   Web Builder",
+        "links": [
+          {
+            "text": "Back to DaveAI.tech",
+            "href": "https://daveai.tech/"
+          },
+          {
+            "text": "DaveAI.tech Hub",
+            "href": "https://daveai.tech/"
+          },
+          {
+            "text": "Hermes Chat",
+            "href": "https://hermes.daveai.tech/"
+          },
+          {
+            "text": "Web Builder",
+            "href": "https://fleet.daveai.tech/"
+          }
+        ],
+        "buttons": [],
+        "inputCount": 0,
+        "canvasCount": 0,
+        "iframeCount": 1,
+        "authHints": false
+      },
+      "badResponses": [],
+      "badCount": 0,
+      "pageErrors": [],
+      "actionableConsole": [],
+      "toleratedAuth": false,
+      "passed": true
+    },
+    {
+      "id": "streamhub",
+      "name": "StreamHub IPTV",
+      "status": "live",
+      "url": "https://iptv.daveai.tech/",
+      "finalUrl": "https://iptv.daveai.tech/?proof=26-1785536920969",
+      "navError": null,
+      "state": {
+        "title": "StreamHub",
+        "h1": "StreamHub",
+        "bodyText": "StreamHub\nAll Channels\nCategory\n\nPublic HLS Sample\n\nTears of Steel Sample\n\nLIBRARY\nNew Playlist\nAdd Selected\nRight-click a vault card to save it for later.\nPublic HLS Sample\nResume\nReload\nReplay\nSave\nPlay Later\nBookmark Time\nLive Chat",
+        "links": [],
+        "buttons": [
+          "All Channels",
+          "Category",
+          "Add channel",
+          "Public HLS Sample",
+          "Tears of Steel Sample",
+          "New Playlist",
+          "Add Selected",
+          "Resume",
+          "Reload",
+          "Replay",
+          "Save",
+          "Play Later",
+          "Bookmark Time",
+          "Send live chat command"
+        ],
+        "inputCount": 2,
+        "canvasCount": 0,
+        "iframeCount": 1,
+        "authHints": false
+      },
+      "badResponses": [],
+      "badCount": 0,
+      "pageErrors": [],
+      "actionableConsole": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: net::ERR_FAILED"
+        }
+      ],
+      "toleratedAuth": false,
+      "passed": true
+    }
+  ],
+  "passStrict": 5,
+  "passWithAuthTolerated": 6,
+  "total": 6
+}

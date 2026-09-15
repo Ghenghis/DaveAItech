@@ -1,0 +1,7 @@
+Checking LiteLLM readiness at http://127.0.0.1:4000/health/readiness
+Checking LiteLLM liveliness at http://127.0.0.1:4000/health/liveliness
+Checking LiteLLM model list at http://127.0.0.1:4000/v1/models
+Checking LiteLLM completion path with model fast-agent
+LITELLM_MASTER_KEY is not set; probing unauthenticated local completion path.
+Pong
+LiteLLM functional health passed.

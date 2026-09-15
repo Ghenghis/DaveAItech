@@ -1,0 +1,111 @@
+{
+  "schema_version": "1.0",
+  "id": "CT-002",
+  "title": "Menus, Tabs, Topbar/Sidebar Polish — Including the Accessibility Pass",
+  "phase_number": 2,
+  "status": "not_started",
+  "priority_note": "Second priority, per the owner's explicit ordering: chat, then menus/tabs, then games, then wildcard sites. Roadmap: 'Same file, different section (#topbar, sidebar icon rail, settings panels) — accessibility pass included, since this branch's own name (chore/daveai-a11y-source-truth) says that's an active goal.'",
+  "audit_status_note": "A section-by-section bug audit of the live production source (vps/daveai-ui-v6.html, brain_llm.py, CSS, and infra scripts) produced 133 candidate findings; 83 were independently confirmed real. The other 50 are NOT confirmed-false — they are pending re-verification after an unrelated rate-limit interruption stopped that re-check pass partway through. Treat any finding not explicitly marked confirmation_status='confirmed' or 'verified-in-this-contract' below as unresolved, not cleared. No consolidated ledger of all 133 findings exists in this repository as of 2026-09-15; the items under known_findings here are only the ones specifically flagged for this phase.",
+  "source_of_truth": {
+    "roadmap_doc": "docs/DAVEAI_DEEP_AUDIT_ROADMAP_20260915.md",
+    "roadmap_sections": ["§5 Phase 2", "§4.4 (an accessibility audit of the unrelated app/ stack — useful as a pattern reference, not as a source of findings for this file)"],
+    "contract_kit_overview": "docs/DAVEAI_CONTRACT_KIT_20260915.md"
+  },
+  "summary": "Same physical file as CT-001, different section: the topbar, sidebar icon rail, and settings panels. Includes a real accessibility pass — the branch this work happens on is literally named for accessibility/source-of-truth work, and nothing found so far confirms the monolith's nav has actually had one.",
+  "background": "vps/daveai-ui-v6.html is one 12,920-line file; CT-001 covers its chat logic, this contract covers its navigation chrome and settings surfaces. Two specific, independently confirmed accessibility findings from the 2026-09-15 follow-up bug audit land squarely in this contract's scope: the primary sign-in form and the entire Settings modal (~23 toggles) lack accessible names for screen readers. A related, already-audited precedent exists in this same repo: a prior accessibility pass on the unrelated app/ (bolt.diy) stack found 17 separate accessibility gaps fanning out from just 4 shared primitives, several structurally unable to carry an aria-label at all — a useful pattern to check for here (a handful of shared components missing label plumbing, rather than 23 independent one-off mistakes), but that audit's specific findings do not apply to this file; they were about a different, disconnected codebase.",
+  "status_discipline": {
+    "verified": "You personally read the code, ran the command, or fetched the live response yourself in this session, and can quote the exact evidence.",
+    "reported": "A document or another agent's proof artifact says so, and you have not independently re-checked it today.",
+    "rule": "Never upgrade a 'reported' fact to a 'verified' claim without re-checking it yourself. Label every claim in your completion report as one or the other."
+  },
+  "depends_on": ["CT-000", "CT-001"],
+  "blocks": ["CT-003"],
+  "scope": {
+    "files": [
+      {
+        "path": "vps/daveai-ui-v6.html",
+        "lines": "#topbar, sidebar icon rail, and settings-panel sections — line range pending deep-audit workflow completion — see docs/DAVEAI_DEEP_AUDIT_ROADMAP_20260915.md. Partial, non-exhaustive confirmation from a 2026-09-15 grep: bare `<input type=\"checkbox\" id=\"stg-...\">` / `id=\"vs-...\">` settings toggles appear starting at line 267 and continuing at least through line 1133 (stg-ext-cb, stg-immersive-cb, stg-edgehover-cb, stg-showthinking-cb, stg-demo-cb, stg-voice-cb, stg-fx-*, stg-theme-*, stg-adult-humor, stg-long-form, stg-memory, stg-auto-refresh, stg-local-llm, stg-autoload-models, stg-auto-switch, vs-narr-*, vs-cache, vs-queue, and more beyond line 1133 not yet enumerated) — none of the matched lines carried a visible aria-label/aria-labelledby in the matched text. This is a lead for locating the ~23-toggle Settings modal, not a confirmed exhaustive list — read the surrounding markup yourself to find every associated <label> (if any) before concluding a given toggle is unlabeled.",
+        "description": "Topbar, sidebar icon rail, sign-in form, and Settings modal markup/behavior, plus their accessibility (labels, roles, keyboard paths)."
+      }
+    ],
+    "notes": "This is the same file as CT-001 and CT-003. Do not start this contract's edits until CT-001's changes to this file are merged, to avoid two agents diffing the same 12,920-line file at once."
+  },
+  "protected_paths": [
+    { "path": "app/", "reason": "Confirmed to share no code with daveai.tech. Out of scope for the entire roadmap unless CT-005 changes that. Its own 17-item accessibility audit (§4.4) is recorded-for-the-record only and explicitly parked as low priority — do not port its specific fixes here; only its pattern (check shared primitives first) is relevant." },
+    { "path": "vps/daveai-ui-v6.html chat-logic sections (SSE, auth/session functional behavior, history, voice functional wiring)", "reason": "CT-001's territory. If the sign-in form's session logic needs to change to support an accessibility fix (e.g. adding a live region for an error message), coordinate with whoever holds CT-001 rather than changing session behavior unilaterally here." },
+    { "path": "vps/daveai-project-catalog.json and the other four catalog mechanisms", "reason": "Reserved for CT-003." }
+  ],
+  "known_findings": [
+    {
+      "id": "F-P2-01-signin-form-no-accessible-name",
+      "severity": "high",
+      "category": "accessibility",
+      "description": "The primary sign-in form lacks accessible names for screen readers.",
+      "confirmation_status": "confirmed-by-audit (2026-09-15 follow-up bug audit; one of the 83 independently confirmed findings)",
+      "evidence": "Owner-provided audit summary, 2026-09-15 (task context for this contract kit). Not independently re-verified line-by-line during contract-kit preparation.",
+      "likely_location": "line range pending deep-audit workflow completion — see docs/DAVEAI_DEEP_AUDIT_ROADMAP_20260915.md. Search vps/daveai-ui-v6.html for the sign-in form's <input>/<button> elements and check each for aria-label, aria-labelledby, or an associated <label for=...>."
+    },
+    {
+      "id": "F-P2-02-settings-modal-23-toggles-no-accessible-name",
+      "severity": "high",
+      "category": "accessibility",
+      "description": "The entire Settings modal (~23 toggles) lacks accessible names for screen readers.",
+      "confirmation_status": "confirmed-by-audit (2026-09-15 follow-up bug audit; one of the 83 independently confirmed findings)",
+      "evidence": "Owner-provided audit summary, 2026-09-15. Corroborating detail found while preparing this contract kit: a grep for `type=\"checkbox\"` in vps/daveai-ui-v6.html returns bare `<input type=\"checkbox\" id=\"stg-...\">` elements starting at line 267, with no aria-label visible in the matched text — consistent with, though not a line-exact reproduction of, the confirmed finding.",
+      "likely_location": "vps/daveai-ui-v6.html, starting around line 267 (settings toggles) — see scope.files above for the fuller, non-exhaustive line list. Confirm the exact toggle count and boundaries of 'the Settings modal' specifically (as distinct from the separate Voice Settings panel, whose vs-narr-*/vs-cache/vs-queue toggles start around line 1061) before fixing, since the two panels may need to be treated as separate fix batches."
+    }
+  ],
+  "cross_phase_notes": [
+    "Fix labeling/ARIA only. Do not change the sign-in form's or Settings modal's underlying functional/session logic here — that is CT-001's scope on the same elements. If a label fix requires restructuring markup in a way that could affect CT-001's functional work, coordinate rather than proceeding silently.",
+    "While auditing settings toggles, check whether any of them control the narrator-first routing gate, the approval/governance gating layer, or the manual agent-routing override described in CT-001's F-P1-02 (features present in current production but not in the older daveai-v7 split). If so, make sure the accessibility fix does not hide, rename, or reroute that control silently — flag it for whoever holds CT-001 rather than resolving ambiguity unilaterally.",
+    "Do not touch the games catalog or its rendering — that is CT-003's scope, even where a settings toggle or nav item happens to link to it."
+  ],
+  "steps": [
+    "Confirm CT-000 and CT-001 are done (or at least that CT-001's changes to this file are merged) before establishing your own line-number baseline.",
+    "Read docs/DAVEAI_DEEP_AUDIT_ROADMAP_20260915.md §5 Phase 2 and §4.4 (for pattern reference only) in full.",
+    "Read this contract in full, including known_findings and cross_phase_notes.",
+    "Locate the topbar, sidebar icon rail, sign-in form, and Settings modal markup by reading the file directly — do not rely solely on the line hints above, which are non-exhaustive.",
+    "For each interactive control lacking an accessible name, add the appropriate fix (aria-label, aria-labelledby, or an associated <label for=...>) using standard WCAG technique choice: prefer a visible <label> where one can be shown, aria-label/aria-labelledby where a visible label is not appropriate for the design.",
+    "Verify keyboard operability alongside labeling — a control with a new accessible name but no keyboard path is still broken for the same users.",
+    "Test with at least one real screen reader or an automated accessibility checker (e.g. axe) against the live or locally-served page, not just a visual/code read.",
+    "Gather required_evidence for every fix before writing a completion report.",
+    "Check every definition_of_done line item against your own evidence before declaring any of them done."
+  ],
+  "required_evidence": [
+    "For F-P2-01 and F-P2-02: the exact diff of changed lines (before/after) for every element given a new accessible name.",
+    "An automated accessibility scan (e.g. axe-core) output, before and after, showing the specific violations resolved.",
+    "A screen-reader (or accessibility-tree/read_page-equivalent) transcript demonstrating the sign-in form and at least a sample of Settings-modal toggles now announce a meaningful name.",
+    "A keyboard-only walkthrough (no mouse) demonstrating the sidebar/topbar/settings controls touched by this contract remain operable.",
+    "An exact count of toggles found in the Settings modal (confirm or correct the reported ~23 figure) and how many were fixed vs. remaining, with reasons for any left unfixed.",
+    "A restated definition_of_done checklist with each line marked done/blocked/not-attempted and an evidence pointer for every 'done' line."
+  ],
+  "forbidden_claim_patterns": [
+    "100%\\s*complete",
+    "everything\\s+(is\\s+)?(fixed|working)",
+    "no\\s+bugs?\\s+remain",
+    "release-ready",
+    "production-ready",
+    "perfect"
+  ],
+  "reporting_requirements": [
+    "State exact counts: how many of the sign-in form's controls and how many of the Settings modal's toggles were found, how many were fixed with evidence, and how many remain (with reasons).",
+    "Every item claimed fixed must cite a required_evidence artifact by file path or exact command+output, not a narrative description.",
+    "Never use a forbidden_claim_patterns phrase to describe this contract's outcome unless the exact proof command+output is quoted directly next to it.",
+    "If you find additional accessibility or nav bugs outside the sign-in form / Settings modal while working, record them (file + line + description) and hand them off rather than silently expanding scope."
+  ],
+  "definition_of_done": [
+    "[ ] F-P2-01: the primary sign-in form's controls have accessible names, verified with an automated scan and a screen-reader/accessibility-tree transcript.",
+    "[ ] F-P2-02: every toggle in the Settings modal has an accessible name, verified the same way; the exact toggle count is confirmed (or corrected from ~23) and stated in the report.",
+    "[ ] Keyboard operability of every control touched is verified, not assumed.",
+    "[ ] No functional/session logic in the sign-in form or Settings modal was changed under cover of this contract.",
+    "[ ] No file outside this contract's scope list was modified, or every such change is explicitly disclosed with a reason.",
+    "[ ] Completion report uses verified/reported labeling per status_discipline, states exact counts per reporting_requirements, and contains no forbidden_claim_patterns phrase without adjacent proof."
+  ],
+  "failure_policy": {
+    "if_blocked": "Stop. Document exactly what is blocking you (e.g. cannot determine the intended visible label text for a given toggle) and why. Do not guess a label that misrepresents the control's function, silently skip it, or mark it done anyway.",
+    "if_partially_done": "Report exact done/blocked/not-attempted counts against the sign-in form and each Settings-modal toggle. Partial completion is a legitimate, honest outcome — an inflated claim is not.",
+    "release_eligible_on_partial_completion": false
+  },
+  "rollback_plan": "Before installing any change to /var/www/agentic-website on the live VPS, snapshot the current file(s) to a timestamped backup directory, following the existing pattern in vps/patches/deploy-accessibility-contract-20260725.sh (backup → install → verify with sha256sum/curl → trap-based rollback to the backup on any verification failure). Labeling-only changes are low-risk but should still go through this pattern given the file is hand-deployed with no CI.",
+  "evidence_location": "proofs/daveai-phase2-menu-nav-polish-<YYYYMMDD>/ (use the date you actually do the work, following the existing proofs/daveai-prod-audit-20260731/ naming convention)"
+}

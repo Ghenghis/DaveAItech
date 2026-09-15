@@ -1,0 +1,53 @@
+{
+  "generatedAt": "2026-07-31T22:29:07.703Z",
+  "url": "https://iptv.daveai.tech/?proof=27-1785536939267",
+  "finalUrl": "https://iptv.daveai.tech/?proof=27-1785536939267",
+  "state": {
+    "title": "StreamHub",
+    "h1": "StreamHub",
+    "bodyText": "StreamHub\nAll Channels\nCategory\n\nPublic HLS Sample\n\nTears of Steel Sample\n\nLIBRARY\nNew Playlist\nAdd Selected\nRight-click a vault card to save it for later.\nPublic HLS Sample\nResume\nReload\nReplay\nSave\nPlay Later\nBookmark Time\nLive Chat",
+    "videoCount": 1,
+    "iframeCount": 1,
+    "inputs": 2,
+    "buttons": [
+      "All Channels",
+      "Category",
+      "Add channel",
+      "Public HLS Sample",
+      "Tears of Steel Sample",
+      "New Playlist",
+      "Add Selected",
+      "Resume",
+      "Reload",
+      "Replay",
+      "Save",
+      "Play Later",
+      "Bookmark Time",
+      "Send live chat command"
+    ]
+  },
+  "badResponses": [],
+  "requestFailures": [
+    {
+      "url": "https://apps.daveai.tech/login?return_to=https://iptv.daveai.tech/api/provider-vault/providers",
+      "method": "GET",
+      "failure": "net::ERR_FAILED",
+      "resourceType": "fetch"
+    }
+  ],
+  "pageErrors": [],
+  "consoleMessages": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": {
+        "url": "https://apps.daveai.tech/login?return_to=https://iptv.daveai.tech/api/provider-vault/providers",
+        "line": 0,
+        "column": 0,
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    }
+  ],
+  "passed": false
+}

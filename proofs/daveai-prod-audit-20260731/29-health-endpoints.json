@@ -1,0 +1,38 @@
+[
+  {
+    "url": "https://daveai.tech/api/health",
+    "status": 200,
+    "contentType": "application/json",
+    "body": "{\"status\":\"ok\",\"version\":\"4.0.0\",\"workspace\":\"/var/www/agentic-website\",\"public_dir\":\"/var/www/agentic-website/public\",\"tools\":120,\"skills_loaded\":true,\"agents\":[\"supervisor\",\"coder\",\"asset\",\"qa\"],\"ts\":\"2026-07-31T22:32:30.913373\"}"
+  },
+  {
+    "url": "https://daveai.tech/health",
+    "status": 200,
+    "contentType": "application/json",
+    "body": "{\"status\":\"ok\",\"version\":\"4.0.0\",\"workspace\":\"/var/www/agentic-website\",\"public_dir\":\"/var/www/agentic-website/public\",\"tools\":120,\"skills_loaded\":true,\"agents\":[\"supervisor\",\"coder\",\"asset\",\"qa\"],\"ts\":\"2026-07-31T22:32:31.130676\"}"
+  },
+  {
+    "url": "https://api.daveai.tech/health",
+    "status": 401,
+    "contentType": "application/json; charset=utf-8",
+    "body": "{\n  \"message\":\"Unauthorized\",\n  \"request_id\":\"7abca52b4eeab653c1b7d217c793460a\"\n}"
+  },
+  {
+    "url": "https://brain.daveai.tech/health",
+    "status": 526,
+    "contentType": "text/plain; charset=UTF-8",
+    "body": "error code: 526\n"
+  },
+  {
+    "url": "https://voice.daveai.tech/health",
+    "status": 404,
+    "contentType": "text/html",
+    "body": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx/1.24.0 (Ubuntu)</center>\r\n<script type=\"module\" src=\"https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4d"
+  },
+  {
+    "url": "https://iptv.daveai.tech/api/provider-vault/providers",
+    "status": 200,
+    "contentType": "application/json",
+    "body": "{\"providers\":[]}"
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "generatedAt": "2026-07-31T21:05:07.354Z",
+  "url": "https://daveai.tech/games/daveai-td2/index.html?v=codex-td2-rgb-1785531899376",
+  "info": {
+    "title": "DaveAI TD2",
+    "canvasCount": 1,
+    "buttonCount": 0,
+    "scriptCount": 3,
+    "visibleTextLen": 0
+  },
+  "screenshot": "G:\\Github\\Bolt.DIY\\proofs\\daveai-prod-audit-20260731\\19-td2-after-rgb-placeholders.png",
+  "badResponses": [],
+  "badCount": 0,
+  "consoleKinds": {
+    "webgl": 257
+  },
+  "actionableConsole": [],
+  "pageErrors": [],
+  "passed": true
+}

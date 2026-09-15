@@ -1,0 +1,3 @@
+Checking LiteLLM readiness at http://127.0.0.1:4000/health/readiness
+Checking LiteLLM liveliness at http://127.0.0.1:4000/health/liveliness
+Checking LiteLLM model list at http://127.0.0.1:4000/v1/models

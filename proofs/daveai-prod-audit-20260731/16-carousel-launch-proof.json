@@ -1,0 +1,60 @@
+{
+  "generatedAt": "2026-07-31T20:58:20.742Z",
+  "results": [
+    {
+      "index": 0,
+      "cardText": "Daves_Siege_TD\nLive project",
+      "frameSrc": "https://daveai.tech/games/daves-siege-td/index.html",
+      "frameInfo": {
+        "title": "",
+        "h1": "",
+        "bodyText": "",
+        "canvasCount": 0,
+        "buttonCount": 0,
+        "scriptCount": 0
+      },
+      "screenshot": "G:\\Github\\Bolt.DIY\\proofs\\daveai-prod-audit-20260731\\16-carousel-launch-0.png",
+      "badApi": [],
+      "actionableConsole": [],
+      "pageErrors": [],
+      "passed": true
+    },
+    {
+      "index": 1,
+      "cardText": "DaveAI TD2\nLive project",
+      "frameSrc": "https://daveai.tech/games/daveai-td2/index.html",
+      "frameInfo": {
+        "title": "",
+        "h1": "",
+        "bodyText": "",
+        "canvasCount": 0,
+        "buttonCount": 0,
+        "scriptCount": 0
+      },
+      "screenshot": "G:\\Github\\Bolt.DIY\\proofs\\daveai-prod-audit-20260731\\16-carousel-launch-1.png",
+      "badApi": [],
+      "actionableConsole": [],
+      "pageErrors": [],
+      "passed": true
+    },
+    {
+      "index": 2,
+      "cardText": "DaveAI Asteroids\nLive project",
+      "frameSrc": "https://daveai.tech/games/asteroids/index.html",
+      "frameInfo": {
+        "title": "",
+        "h1": "",
+        "bodyText": "",
+        "canvasCount": 0,
+        "buttonCount": 0,
+        "scriptCount": 0
+      },
+      "screenshot": "G:\\Github\\Bolt.DIY\\proofs\\daveai-prod-audit-20260731\\16-carousel-launch-2.png",
+      "badApi": [],
+      "actionableConsole": [],
+      "pageErrors": [],
+      "passed": true
+    }
+  ],
+  "passed": true
+}

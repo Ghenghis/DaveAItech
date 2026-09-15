@@ -1,0 +1,127 @@
+{
+  "schema_version": "1.0",
+  "id": "CT-001",
+  "title": "Chat Completion — Line-by-Line Audit and Fix Pass on the Real Chat Stack",
+  "phase_number": 1,
+  "status": "not_started",
+  "priority_note": "Top priority, per the owner's own explicit framing in the roadmap doc: 'chat completion is the top priority, then menus/tabs, then games, then wildcard sites.' Can start as soon as CT-000 has synced vps/daveai-ui-v6.html to production (see depends_on) — it does not need to wait for CT-002/CT-003/CT-004.",
+  "audit_status_note": "A section-by-section bug audit of the live production source (vps/daveai-ui-v6.html, brain_llm.py, CSS, and infra scripts) produced 133 candidate findings; 83 were independently confirmed real. The other 50 are NOT confirmed-false — they are pending re-verification after an unrelated rate-limit interruption stopped that re-check pass partway through. Treat any finding not explicitly marked confirmation_status='confirmed' or 'verified-in-this-contract' below as unresolved, not cleared. No consolidated ledger of all 133 findings exists in this repository as of 2026-09-15; the items under known_findings here are only the ones specifically flagged for this phase. Producing or requesting that fuller ledger before you start is strongly recommended (see required_evidence) — this contract's scope (12,920 lines) is large enough that working from a partial picture risks missing confirmed issues.",
+  "source_of_truth": {
+    "roadmap_doc": "docs/DAVEAI_DEEP_AUDIT_ROADMAP_20260915.md",
+    "roadmap_sections": ["§0 Executive summary (item 4)", "§4.1", "§4.3 (rigor to match, applied to the unrelated app/ stack)", "§5 Phase 1"],
+    "contract_kit_overview": "docs/DAVEAI_CONTRACT_KIT_20260915.md"
+  },
+  "summary": "The gap that matters most: nobody has yet done a real line-by-line audit and fix pass on the actual production chat file and its backend. This contract is that pass — hung-state recovery, error handling on every fetch, auth/session edge cases, the SSE parser, tool-calling if any, and voice/TTS wiring — with the same rigor already applied to the unrelated app/ stack in a prior audit.",
+  "background": "vps/daveai-ui-v6.html (12,920 lines) and vps/patches/daveai-production-runtime-20260731/brain_llm.py are where daveai.tech's actual chat happens. Prior agent passes mapped where this code lives and audited the catalog/extensibility layer (now CT-003) and a completely unrelated chat stack in app/ (a stock bolt.diy Remix app that deploys to a different Cloudflare Pages project and shares no code with daveai.tech) — but nobody has done the equivalent deep pass on the real file yet. Because this is the single biggest file in the product, the roadmap doc itself recommends splitting the work by section rather than one pass; see recommended_subdivision. Separately, a reconciliation of an older March 2026 modular split attempt ('daveai-v7') against current production found that production has gained real functionality since March that v7 does not have: a manual agent-routing override, an approval/governance gating layer, a narrator-first routing gate, and a tools-to-agent attribution catalog. Anyone touching routing/chat logic in this contract must locate and account for these four features — do not treat daveai-v7 as an equivalent or superior reference implementation for chat/routing structure, and do not let a refactor silently drop any of the four.",
+  "status_discipline": {
+    "verified": "You personally read the code, ran the command, or fetched the live response yourself in this session, and can quote the exact evidence.",
+    "reported": "A document or another agent's proof artifact says so, and you have not independently re-checked it today.",
+    "rule": "Never upgrade a 'reported' fact to a 'verified' claim without re-checking it yourself. Label every claim in your completion report as one or the other."
+  },
+  "depends_on": ["CT-000"],
+  "blocks": ["CT-002"],
+  "scope": {
+    "files": [
+      {
+        "path": "vps/daveai-ui-v6.html",
+        "lines": "chat-logic sections only — line range pending deep-audit workflow completion — see docs/DAVEAI_DEEP_AUDIT_ROADMAP_20260915.md. Confirmed anchor points to start from (grep run 2026-09-15): the AI-generated preview iframe at lines 1808-1812 (see known_findings F-P1-01); settings/voice checkboxes beginning around line 267 belong to CT-002, not this contract — see cross_phase_notes.",
+        "description": "Chat widget UI, its SSE/stream consumption, auth/session handling as expressed in the chat surface, chat history/persistence, and voice/TTS wiring, wherever they live inside this one file. Exact boundaries must be established by your own read of the file — do not assume a section header marks a clean boundary in a 12,920-line hand-written file."
+      },
+      {
+        "path": "vps/patches/daveai-production-runtime-20260731/brain_llm.py",
+        "lines": "full file (430 lines, verified via `wc -l` on 2026-09-15)",
+        "description": "Chat backend on port 8888. Module docstring (line 1, verified) describes itself as 'LLM abstraction: 4-stage fallback, streaming, JSON mode, caching.' Confirmed structure as of 2026-09-15 (grep, not a full read): class _ReActStreamFilter (line 38) strips ReAct control tokens from streamed text; _cache_key/_cache_get/_cache_put (lines 146/156/164); _litellm_call (line 173) and _local_direct_call (line 224) implement the streaming/non-streaming fallback stages; llm_chat_direct (line 316), llm (line 337), llm_json (line 402), llm_fast (line 418), llm_heavy (line 427) are the public entry points. This is a starting map, not a substitute for reading the file — confirm current line numbers yourself before citing them in a fix."
+      }
+    ],
+    "notes": "The roadmap doc explicitly says this file is large enough that it 'should be split across several agents by section (chat widget + SSE, auth/session, history/persistence, voice) rather than one pass' — see recommended_subdivision. If multiple agents/tools pick up this one contract in parallel, they must coordinate on non-overlapping line ranges and merge sequentially, not simultaneously, into the same file."
+  },
+  "recommended_subdivision": [
+    { "area": "chat widget + SSE", "focus": "message send/receive UI, EventSource or fetch-stream consumption, stream parsing/backpressure, reconnect/hung-state recovery" },
+    { "area": "auth/session", "focus": "sign-in flow's functional logic (session token handling, expiry, edge cases) — NOT its accessible-name/ARIA labeling, which is CT-002's job on the same form" },
+    { "area": "history/persistence", "focus": "chat history storage/retrieval, any localStorage or backend persistence, load-on-refresh behavior" },
+    { "area": "voice/TTS wiring", "focus": "the voice narration settings and their wiring to the backend (note the ~30 voice/narrator checkboxes visible from line ~1061 onward per CT-002's grep are UI/labeling concerns for CT-002; this contract's voice scope is the functional wiring, not the checkbox labels)" }
+  ],
+  "protected_paths": [
+    { "path": "app/", "reason": "Confirmed to share no code with daveai.tech. Out of scope for the entire roadmap unless CT-005 changes that." },
+    { "path": "vps/daveai-ui-v6.html #topbar / sidebar / settings-panel sections and their accessible-name/ARIA attributes", "reason": "Reserved for CT-002, including the sign-in form and Settings modal's ~23 toggles. If your chat-logic work touches the sign-in form's underlying session logic, leave its labeling/ARIA attributes untouched and say so explicitly, so CT-002 knows the form's structure may have shifted." },
+    { "path": "vps/daveai-project-catalog.json and the other four catalog mechanisms", "reason": "Reserved for CT-003." },
+    { "path": "vps/DAVEAI_SOURCE_OF_TRUTH.md, vps/daveai-project-catalog.json (item 1), vps/patches/*.sh pull-back mechanism", "reason": "CT-000's territory — should already be resolved before you start; do not redo or second-guess it here without flagging why." }
+  ],
+  "known_findings": [
+    {
+      "id": "F-P1-01-preview-iframe-sandbox-escape",
+      "severity": "critical",
+      "category": "security",
+      "description": "The AI-generated content preview iframe sets sandbox=\"allow-scripts allow-same-origin allow-forms allow-popups\". Combining allow-scripts with allow-same-origin in one sandbox attribute is a well-known escape: the framed content can use script access plus same-origin privileges to remove its own sandbox restriction, defeating the isolation entirely. A comment directly above the element already acknowledges the risk ('allow-scripts + allow-same-origin can escape sandbox') and claims 'We use allow-scripts only for user-generated previews' — but the actual attribute value contradicts that claim by also granting allow-same-origin.",
+      "confirmation_status": "verified-in-this-contract",
+      "evidence": "vps/daveai-ui-v6.html:1808-1812, read directly during contract-kit preparation, 2026-09-15: line 1809 comment `<!-- SECURITY: allow-scripts + allow-same-origin can escape sandbox. We use allow-scripts only for user-generated previews. -->`; line 1812 `sandbox=\"allow-scripts allow-same-origin allow-forms allow-popups\"` on `<iframe id=\"preview-frame\" data-testid=\"action-window-frame\" data-artifact-frame=\"primary\" src=\"about:blank\" ...>`.",
+      "likely_location": "vps/daveai-ui-v6.html:1808-1812 (verified)"
+    },
+    {
+      "id": "F-P1-02-v7-functionality-gap",
+      "severity": "high",
+      "category": "functional-regression-risk",
+      "description": "Current production has functionality that the older daveai-v7 modular-split attempt does not: a manual agent-routing override, an approval/governance gating layer, a narrator-first routing gate, and a tools-to-agent attribution catalog. This is not a bug in production — it is a warning about a wrong reference. Anyone using v7 as a structural guide while auditing/refactoring chat/routing logic here could silently regress one of these four features.",
+      "confirmation_status": "reported (owner-provided reconciliation summary, 2026-09-15) — this contract-kit author did not independently re-run the v7-vs-production diff",
+      "evidence": "Owner-provided task context for this contract kit, referencing a completed reconciliation of daveai-v7 against current production.",
+      "likely_location": "vps/daveai-ui-v6.html chat/routing logic and vps/patches/daveai-production-runtime-20260731/brain_llm.py — exact functions/lines not yet mapped; locate the routing/approval/narrator/attribution logic yourself as an early step before making any routing-adjacent change"
+    }
+  ],
+  "cross_phase_notes": [
+    "The primary sign-in form's missing accessible name (screen-reader labeling) is CT-002's fix, not this contract's — do not fix labeling here even if you touch the form's session logic. If your change alters the form's DOM structure, note that explicitly for whoever picks up CT-002.",
+    "Do not fix the Settings modal's ~23 unlabeled toggles here even if you touch the voice/TTS settings adjacent to them — that is CT-002 scope. This contract's voice work is the functional wiring only.",
+    "This contract depends on CT-000 having already synced vps/daveai-ui-v6.html to production (item 2). If CT-000 is not done, you are auditing a file that is already known to be missing 64 lines of real production behavior — confirm CT-000's status before establishing your own line-number baseline."
+  ],
+  "steps": [
+    "Confirm CT-000 (specifically item 2, the HTML sync) is done; if not, stop and say so rather than auditing a stale file.",
+    "Read docs/DAVEAI_DEEP_AUDIT_ROADMAP_20260915.md §4.1, §4.3, and §5 Phase 1 in full.",
+    "Read this contract in full, including known_findings and cross_phase_notes.",
+    "If working as part of a multi-agent wave, agree on non-overlapping line-range ownership per recommended_subdivision before editing, and merge sequentially.",
+    "For the assigned section(s), do a real line-by-line pass: locate hung-state paths, unhandled fetch/stream errors, auth/session edge cases, SSE parsing behavior, any tool-calling logic, and voice/TTS wiring.",
+    "Fix F-P1-01 (iframe sandbox) regardless of section assignment, given its severity — coordinate ownership if more than one agent is active so it is fixed exactly once.",
+    "Locate and explicitly verify the four v7-gap features (F-P1-02) still function correctly if your section touches routing/chat logic; do not proceed with a routing refactor until you can point to where each of the four lives.",
+    "Gather required_evidence for every fix before writing a completion report.",
+    "Check every definition_of_done line item against your own evidence before declaring any of them done."
+  ],
+  "required_evidence": [
+    "For F-P1-01: the exact before/after `sandbox` attribute value, plus a rationale for the chosen fix (e.g. dropping allow-same-origin, or serving previewed content from an isolated origin) and a demonstration that AI-generated preview content still renders and runs as intended after the change.",
+    "For every other fixed bug: a reproduction (exact steps or request) showing the bug before your fix, and the same reproduction showing correct behavior after, plus the exact diff of changed lines.",
+    "For hung-state/error-handling fixes: evidence of the failure path actually being exercised (e.g. a forced network failure, a malformed SSE chunk, an expired session) and the recovery behavior observed, not just a code-reading argument that it should work.",
+    "curl output showing the relevant health endpoint(s) (e.g. api.daveai.tech/health, brain.daveai.tech/health) returning healthy status after your changes are applied.",
+    "A live or local reproduction of a full chat turn (request in, streamed response out) after your changes, captured as a transcript, screenshot, or recorded network trace.",
+    "For the v7-gap features (F-P1-02): a citation of where each of the four now lives (file + line), and confirmation each still behaves as it did before your changes, if your section touched routing/chat logic.",
+    "A restated definition_of_done checklist with each line marked done/blocked/not-attempted and an evidence pointer for every 'done' line."
+  ],
+  "forbidden_claim_patterns": [
+    "100%\\s*complete",
+    "everything\\s+(is\\s+)?(fixed|working)",
+    "no\\s+bugs?\\s+remain",
+    "release-ready",
+    "production-ready",
+    "perfect"
+  ],
+  "reporting_requirements": [
+    "State exact counts: how many confirmed findings in this contract's scope were fixed with evidence, how many were attempted and blocked (say why), and how many known-but-unconfirmed (from the 50 pending re-verification) were checked and found real or not.",
+    "Every item claimed fixed must cite a required_evidence artifact by file path or exact command+output, not a narrative description.",
+    "Never use a forbidden_claim_patterns phrase to describe this contract's outcome unless the exact proof command+output is quoted directly next to it — this file alone is 12,920 lines, so 'chat is fixed' is never a safe claim without an itemized list of exactly what was checked.",
+    "If you find additional bugs outside your assigned section while working, record them (file + line + description) and hand them off rather than silently expanding scope or leaving them unmentioned."
+  ],
+  "definition_of_done": [
+    "[ ] F-P1-01 (iframe sandbox escape) is fixed, with before/after evidence attached.",
+    "[ ] The four v7-gap features (F-P1-02) are located, and confirmed still functioning correctly if this contract's work touched routing/chat logic.",
+    "[ ] Hung-state recovery is verified for at least the chat send/receive path (evidence: a forced-failure reproduction and observed recovery).",
+    "[ ] Error handling on every fetch/stream call in the assigned section has been reviewed, with any silent failures fixed or explicitly logged as a known-remaining item with a reason.",
+    "[ ] Auth/session edge cases in the assigned section have been reviewed, with fixes evidenced or remaining gaps explicitly logged.",
+    "[ ] The SSE parser's behavior under malformed/partial input has been checked, with fixes evidenced or remaining gaps explicitly logged.",
+    "[ ] Voice/TTS functional wiring has been checked end-to-end at least once, with evidence.",
+    "[ ] No file outside this contract's scope list was modified, or every such change is explicitly disclosed with a reason.",
+    "[ ] Completion report uses verified/reported labeling per status_discipline, states exact counts per reporting_requirements, and contains no forbidden_claim_patterns phrase without adjacent proof."
+  ],
+  "failure_policy": {
+    "if_blocked": "Stop. Document exactly what is blocking you (e.g. cannot reproduce a hung state, cannot locate one of the four v7-gap features) and why. Do not guess, silently skip the item, or mark it done anyway.",
+    "if_partially_done": "Report exact done/blocked/not-attempted counts against the sections and findings above. Given the file's size, partial completion in a single pass is the expected, honest outcome, not a failure — an inflated claim is the actual failure.",
+    "release_eligible_on_partial_completion": false
+  },
+  "rollback_plan": "Before installing any change to /var/www/agentic-website or the brain backend on the live VPS, snapshot the current file(s) to a timestamped backup directory, following the existing pattern in vps/patches/deploy-accessibility-contract-20260725.sh (backup → install → verify with sha256sum/curl → trap-based rollback to the backup on any verification failure). Given this contract's size and severity, prefer landing changes in small, independently-revertible commits per fixed finding rather than one large diff.",
+  "evidence_location": "proofs/daveai-phase1-chat-completion-<YYYYMMDD>/ (use the date you actually do the work, following the existing proofs/daveai-prod-audit-20260731/ naming convention; if multiple agents split by recommended_subdivision, use one subdirectory per area)"
+}

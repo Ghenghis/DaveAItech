@@ -1,0 +1,46 @@
+===fast-agent===
+HTTP/1.1 200 OK
+date: Sat, 01 Aug 2026 02:49:03 GMT
+server: uvicorn
+content-length: 432
+content-type: application/json
+x-litellm-call-id: 00c39dcb-f542-45bb-a202-3805e3f9f576
+x-litellm-model-id: 4e00555b4bf51998b9db1a90fcb503eaea9d8179852980911fc1fb6bdb16fc14
+x-litellm-model-api-base: http://127.0.0.1:11434
+x-litellm-version: 1.65.4
+x-litellm-key-spend: 0.0
+x-litellm-model-group: fast-agent
+x-litellm-attempted-retries: 0
+x-litellm-attempted-fallbacks: 0
+
+{"id":"chatcmpl-ee705357-e28c-493d-88ec-a683de590571","created":1785552582,"model":"ollama_chat/qwen2.5-coder:3b","object":"chat.completion","system_fingerprint":null,"choices":[{"finish_reason":"stop","index":0,"message":{"content":"Pong","role":"assistant","tool_calls":null,"function_call":null}}],"usage":{"completion_tokens":3,"prompt_tokens":32,"total_tokens":35,"completion_tokens_details":null,"prompt_tokens_details":null}}===local-fallback===
+HTTP/1.1 200 OK
+date: Sat, 01 Aug 2026 02:49:42 GMT
+server: uvicorn
+content-length: 432
+content-type: application/json
+x-litellm-call-id: ce3397f4-110e-422d-8786-e41d6ff789ac
+x-litellm-model-id: 7e4d932b0d9f8f7e8cb65243dd921c431810d0cb99cf460b083de82a70d8e521
+x-litellm-model-api-base: http://127.0.0.1:11434
+x-litellm-version: 1.65.4
+x-litellm-key-spend: 0.0
+x-litellm-model-group: local-fallback
+x-litellm-attempted-retries: 0
+x-litellm-attempted-fallbacks: 0
+
+{"id":"chatcmpl-a09f0e5f-eb4d-4089-816a-85b608d65c08","created":1785552587,"model":"ollama_chat/qwen2.5-coder:3b","object":"chat.completion","system_fingerprint":null,"choices":[{"finish_reason":"stop","index":0,"message":{"content":"pong","role":"assistant","tool_calls":null,"function_call":null}}],"usage":{"completion_tokens":2,"prompt_tokens":32,"total_tokens":34,"completion_tokens_details":null,"prompt_tokens_details":null}}===heavy-coder===
+HTTP/1.1 200 OK
+date: Sat, 01 Aug 2026 02:49:47 GMT
+server: uvicorn
+content-length: 432
+content-type: application/json
+x-litellm-call-id: cc486b77-ba7c-46f1-9a04-cf7f4c9a1209
+x-litellm-model-id: 8384ee459f0f73e59e50ef39d68f93c87502a77dcb6e2aa9bd39b8fcdd530ff8
+x-litellm-model-api-base: http://127.0.0.1:11434
+x-litellm-version: 1.65.4
+x-litellm-key-spend: 0.0
+x-litellm-model-group: heavy-coder
+x-litellm-attempted-retries: 0
+x-litellm-attempted-fallbacks: 0
+
+{"id":"chatcmpl-bb03320e-da3c-42b3-81c9-b1ad48edac88","created":1785552593,"model":"ollama_chat/qwen2.5-coder:3b","object":"chat.completion","system_fingerprint":null,"choices":[{"finish_reason":"stop","index":0,"message":{"content":"pong","role":"assistant","tool_calls":null,"function_call":null}}],"usage":{"completion_tokens":2,"prompt_tokens":32,"total_tokens":34,"completion_tokens_details":null,"prompt_tokens_details":null}}

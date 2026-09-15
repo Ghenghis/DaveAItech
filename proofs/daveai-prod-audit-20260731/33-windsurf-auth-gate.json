@@ -1,0 +1,17 @@
+{
+  "generatedAt": "2026-07-31T22:35:16.207Z",
+  "url": "https://daveai.tech/windsurf.html?proof=33-1785537309736",
+  "finalUrl": "https://daveai.tech/windsurf.html?proof=33-1785537309736",
+  "state": {
+    "title": "DaveAI — Ops Control Panel",
+    "gateVisible": true,
+    "gateText": "DAVEAI OPS\nWindsurf is an authenticated control panel\n\nThis page controls VPS processes, deployment commands, logs, and agent operations. Sign in through DaveAI first, then reopen Windsurf from the launcher.\n\nSign in to DaveAI\nBack to launcher\n\nPublic proof expectation: no protected admin API calls are made until auth is present.",
+    "bodyText": "VPS\nCPU\n–\nMEM\n–\nUPTIME\n–\nLAST POLL –\n↻ Refresh\n🔔 Alerts\n← DaveAI\nPM2 PROCESSES\n↻\nDOCKER CONTAINERS\n(CORE ONLY)\nAI TOOLS\ngoose\nv1.27.2\n/usr/local/bin/goose\nver\nrun\nopenhands\ndocker\n:3333 → open\n↻\nlog\nQUICK ACTIONS\n↻ Restart All PM2\n↻ Restart Brain\n⚡ Fix edge-tts\n📄 View Logs\n🚀 Deploy\n🚨 Monitor\n⌨ Command\n🖥 Procs\n📄 Logs\n🧪 Tests\n🚀 Deploy\n💬 Discuss\n■ stop\nsupervisor\nIDLE\n–\n–\n■ stop\ncoder\nIDLE\n–\n–\n■ stop\nasset\nIDLE\n–\n–\n■ stop\nqa\nIDLE\n–\n–\nLIVE ACTIVITY FEED\n1 EVENTS\n3:35:10 PM\nsystem\nAuth required — Windsurf polling not started\nBUDGET STATUS\nCHECKPOINT\nAgent Chat\nsupervisor\ncoder\nasset\nqa\n→\nDAVEAI OPS\nWindsurf is an authenticated control panel\n\nThis page controls VPS processes, deployment commands, logs, and agent operations. Sign in through DaveAI first, then reopen Windsurf from the launcher.\n\nSign in to DaveAI\nBack to launcher\n\nPublic proof expectation: no protected admin API calls are made until auth is present."
+  },
+  "badResponses": [],
+  "requestFailures": [],
+  "pageErrors": [],
+  "consoleMessages": [],
+  "protectedCalls": [],
+  "passed": true
+}

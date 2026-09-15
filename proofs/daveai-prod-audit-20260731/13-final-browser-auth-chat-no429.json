@@ -1,0 +1,383 @@
+{
+  "url": "https://daveai.tech/?codex_proof=browser-auth-chat-no429-20260731&v=1785531134014",
+  "screenshot": "G:\\Github\\Bolt.DIY\\proofs\\daveai-prod-audit-20260731\\13-final-browser-auth-chat-no429.png",
+  "result": {
+    "authOverlayVisible": false,
+    "introOverlayVisible": false,
+    "typingIndicatorPresent": false,
+    "statusText": "Ready",
+    "composerValue": "",
+    "aiTexts": [
+      "I'm doing well, thanks! How about yourself?"
+    ],
+    "userTexts": [
+      "hello how are you today? just reply with one short sentence"
+    ],
+    "feedText": "hello how are you today? just reply with one short sentence\nI'm doing well, thanks! How about yourself?",
+    "bodyClasses": "has-chat-transcript"
+  },
+  "api": [
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/health"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/status"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/pages"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/agents/status"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/tools"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/db/users/Codex%20Browser%20Audit"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/log"
+    },
+    {
+      "status": 200,
+      "method": "POST",
+      "url": "/api/db/analytics"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/health"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/db/dashboard"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/status"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/pages"
+    },
+    {
+      "status": 200,
+      "method": "POST",
+      "url": "/api/db/users"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/health"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/health"
+    },
+    {
+      "status": 200,
+      "method": "POST",
+      "url": "/api/stream"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/db/projects"
+    },
+    {
+      "status": 200,
+      "method": "POST",
+      "url": "/api/azure-tts"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/health"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/db/projects"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/pages"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/status"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/agents/status"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/health"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/health"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/pages"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/status"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/agents/status"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/health"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/health"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/status"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/pages"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/health"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/log"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/agents/status"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/pages"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/status"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/health"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/health"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/status"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/agents/status"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/health"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/pages"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/health"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/pages"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/health"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/status"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/agents/status"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/health"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/pages"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/log"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/status"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/agents/status"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/tools"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/db/dashboard"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/health"
+    },
+    {
+      "status": 200,
+      "method": "POST",
+      "url": "/api/db/session/heartbeat"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/pages"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/status"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/health"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/health"
+    },
+    {
+      "status": 200,
+      "method": "POST",
+      "url": "/api/db/chat"
+    },
+    {
+      "status": 200,
+      "method": "POST",
+      "url": "/api/db/analytics"
+    },
+    {
+      "status": 200,
+      "method": "POST",
+      "url": "/api/db/chat"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/health"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/status"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/pages"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/agents/status"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/health"
+    }
+  ],
+  "badApi": [],
+  "consoleEntries": [
+    {
+      "type": "warning",
+      "text": "An iframe which has both allow-scripts and allow-same-origin for its sandbox attribute can escape its sandboxing."
+    }
+  ],
+  "ignoredConsole": [
+    {
+      "type": "warning",
+      "text": "An iframe which has both allow-scripts and allow-same-origin for its sandbox attribute can escape its sandboxing."
+    }
+  ],
+  "actionableConsole": [],
+  "pageErrors": [],
+  "passed": true,
+  "generatedAt": "2026-07-31T20:52:49.678Z"
+}

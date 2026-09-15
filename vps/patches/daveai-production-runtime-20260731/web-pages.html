@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DaveAI Web Pages</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #080b10;
+      --panel: #10161f;
+      --panel-2: #151c27;
+      --text: #f5f7fb;
+      --muted: #9ba7b7;
+      --line: #273142;
+      --cyan: #63d7d8;
+      --green: #73e08f;
+      --red: #ff5f67;
+      --amber: #f2c66d;
+      --blue: #74a7ff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 20% 0%, rgba(99, 215, 216, .14), transparent 28rem),
+        linear-gradient(135deg, #080b10 0%, #10141c 48%, #080b10 100%);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .shell {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 42px;
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: end;
+      padding: 18px 0 26px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--cyan);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(34px, 6vw, 72px);
+      line-height: .96;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      max-width: 760px;
+      margin: 14px 0 0;
+      color: #d5dbe5;
+      font-size: 18px;
+      line-height: 1.45;
+    }
+
+    .top-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-end;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 44px;
+      padding: 0 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      color: var(--text);
+      font-weight: 750;
+      white-space: nowrap;
+    }
+
+    .button.primary {
+      background: #143f42;
+      border-color: #2a8788;
+      color: #eaffff;
+    }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 24px 0;
+    }
+
+    .filter {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #0d121a;
+      color: var(--muted);
+      min-height: 42px;
+      padding: 0 14px;
+      font-weight: 750;
+      cursor: pointer;
+    }
+
+    .filter.active {
+      color: #061011;
+      background: var(--cyan);
+      border-color: var(--cyan);
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin: 28px 0 14px;
+    }
+
+    .section-title h2 {
+      margin: 0;
+      font-size: 24px;
+      letter-spacing: 0;
+    }
+
+    .section-title span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .card {
+      display: grid;
+      gap: 16px;
+      min-height: 214px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: linear-gradient(180deg, var(--panel-2), #0d121a);
+      box-shadow: 0 18px 50px rgba(0, 0, 0, .24);
+    }
+
+    .card:hover, .card:focus-within {
+      border-color: rgba(99, 215, 216, .8);
+      transform: translateY(-1px);
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .icon {
+      display: grid;
+      place-items: center;
+      width: 46px;
+      height: 46px;
+      border-radius: 8px;
+      background: #0c1118;
+      border: 1px solid var(--line);
+      font-size: 22px;
+      font-weight: 900;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 0 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .badge.ok { color: #07130a; background: var(--green); border-color: var(--green); }
+    .badge.auth { color: #101015; background: var(--amber); border-color: var(--amber); }
+    .badge.page { color: #071113; background: var(--cyan); border-color: var(--cyan); }
+    .badge.game { color: #0c1020; background: var(--blue); border-color: var(--blue); }
+
+    .card h3 {
+      margin: 0;
+      font-size: 22px;
+      letter-spacing: 0;
+    }
+
+    .card p {
+      margin: 0;
+      min-height: 58px;
+      color: #c4ccd8;
+      line-height: 1.45;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .meta span {
+      padding: 6px 8px;
+      border-radius: 7px;
+      background: #0a0f15;
+      border: 1px solid #1d2735;
+    }
+
+    .open {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: fit-content;
+      min-height: 42px;
+      padding: 0 14px;
+      border-radius: 8px;
+      background: #e8fbfc;
+      color: #061011;
+      font-weight: 900;
+    }
+
+    .hidden { display: none; }
+
+    footer {
+      margin-top: 34px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      header { grid-template-columns: 1fr; }
+      .top-actions { justify-content: flex-start; }
+      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 620px) {
+      .shell { width: min(100% - 20px, 1180px); padding-top: 16px; }
+      .grid { grid-template-columns: 1fr; }
+      .button, .filter { width: 100%; justify-content: center; }
+      .section-title { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <div>
+        <p class="eyebrow">DaveAI Web</p>
+        <h1>Pages & Apps</h1>
+        <p class="subtitle">A clean launcher for DaveAI chat, hosted apps, games, and verified generated pages.</p>
+      </div>
+      <nav class="top-actions" aria-label="Primary links">
+        <a class="button primary" href="/">DaveAI Chat</a>
+        <a class="button" href="https://apps.daveai.tech/">Apps</a>
+      </nav>
+    </header>
+
+    <div class="toolbar" aria-label="Filters">
+      <button class="filter active" type="button" data-filter="all">All</button>
+      <button class="filter" type="button" data-filter="app">Apps</button>
+      <button class="filter" type="button" data-filter="game">Games</button>
+      <button class="filter" type="button" data-filter="page">Pages</button>
+      <button class="filter" type="button" data-filter="tool">Tools</button>
+    </div>
+
+    <section aria-labelledby="featured-title">
+      <div class="section-title">
+        <h2 id="featured-title">Featured</h2>
+        <span>Verified links only</span>
+      </div>
+      <div class="grid">
+        <article class="card" data-kind="app">
+          <div class="card-top">
+            <div class="icon">A</div>
+            <span class="badge auth">Protected</span>
+          </div>
+          <div>
+            <h3>Apps Launcher</h3>
+            <p>Hosted DaveTV/IPTV app collection with provider-ready player surfaces.</p>
+          </div>
+          <div class="meta"><span>apps.daveai.tech</span><span>auth gate</span></div>
+          <a class="open" href="https://apps.daveai.tech/">Open</a>
+        </article>
+
+        <article class="card" data-kind="app tool">
+          <div class="card-top">
+            <div class="icon">D</div>
+            <span class="badge ok">Live</span>
+          </div>
+          <div>
+            <h3>DaveAI Chat</h3>
+            <p>Main DaveAI workspace and agent chat surface.</p>
+          </div>
+          <div class="meta"><span>daveai.tech</span><span>agent brain</span></div>
+          <a class="open" href="/">Open</a>
+        </article>
+
+        <article class="card" data-kind="game page">
+          <div class="card-top">
+            <div class="icon">W</div>
+            <span class="badge game">Game</span>
+          </div>
+          <div>
+            <h3>Wheel Hangman</h3>
+            <p>Wheel-style hangman game generated through the repaired DaveAI agent path.</p>
+          </div>
+          <div class="meta"><span>browser proof</span><span>interactive</span></div>
+          <a class="open" href="/wheel-hangman.html">Open</a>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="games-title">
+      <div class="section-title">
+        <h2 id="games-title">Games</h2>
+        <span>Direct browser pages</span>
+      </div>
+      <div class="grid">
+        <article class="card" data-kind="game page">
+          <div class="card-top"><div class="icon">G</div><span class="badge game">Games</span></div>
+          <div><h3>Games Hub</h3><p>DaveAI game collection and playable browser experiments.</p></div>
+          <div class="meta"><span>/games/</span><span>200 OK</span></div>
+          <a class="open" href="/games/">Open</a>
+        </article>
+
+        <article class="card" data-kind="game page">
+          <div class="card-top"><div class="icon">R</div><span class="badge game">Arcade</span></div>
+          <div><h3>Arcade</h3><p>Classic arcade-style games including snake, tetris, racing, and breakout.</p></div>
+          <div class="meta"><span>/arcade/index.html</span><span>200 OK</span></div>
+          <a class="open" href="/arcade/index.html">Open</a>
+        </article>
+
+        <article class="card" data-kind="game page">
+          <div class="card-top"><div class="icon">T</div><span class="badge game">Game</span></div>
+          <div><h3>Tic Tac Toe AI</h3><p>Recent agent-built tic tac toe page retained as a direct playable link.</p></div>
+          <div class="meta"><span>/tic-tac-toe-ai.html</span><span>200 OK</span></div>
+          <a class="open" href="/tic-tac-toe-ai.html">Open</a>
+        </article>
+
+        <article class="card" data-kind="game page">
+          <div class="card-top"><div class="icon">TD</div><span class="badge game">Tower</span></div>
+          <div><h3>DaveAI TD2</h3><p>Tower-defense game page hosted under the DaveAI games collection.</p></div>
+          <div class="meta"><span>/games/daveai-td2/</span><span>direct</span></div>
+          <a class="open" href="/games/daveai-td2/index.html">Open</a>
+        </article>
+
+        <article class="card" data-kind="game page">
+          <div class="card-top"><div class="icon">S</div><span class="badge game">Siege</span></div>
+          <div><h3>Dave's Siege TD</h3><p>Second tower-defense game page with direct index routing.</p></div>
+          <div class="meta"><span>/games/daves-siege-td/</span><span>direct</span></div>
+          <a class="open" href="/games/daves-siege-td/index.html">Open</a>
+        </article>
+
+        <article class="card" data-kind="game page">
+          <div class="card-top"><div class="icon">A</div><span class="badge game">Asteroids</span></div>
+          <div><h3>Asteroids</h3><p>Standalone browser game page inside the DaveAI games folder.</p></div>
+          <div class="meta"><span>/games/asteroids/</span><span>direct</span></div>
+          <a class="open" href="/games/asteroids/index.html">Open</a>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="pages-title">
+      <div class="section-title">
+        <h2 id="pages-title">Pages & Tools</h2>
+        <span>Useful DaveAI surfaces</span>
+      </div>
+      <div class="grid">
+        <article class="card" data-kind="tool page">
+          <div class="card-top"><div class="icon">S</div><span class="badge page">Studio</span></div>
+          <div><h3>Studio</h3><p>Studio UI page hosted under DaveAI.</p></div>
+          <div class="meta"><span>/studio/index.html</span><span>200 OK</span></div>
+          <a class="open" href="/studio/index.html">Open</a>
+        </article>
+
+        <article class="card" data-kind="tool page">
+          <div class="card-top"><div class="icon">V</div><span class="badge page">Voice</span></div>
+          <div><h3>Voice Landing</h3><p>DaveAI voice landing surface.</p></div>
+          <div class="meta"><span>/voice-landing.html</span><span>200 OK</span></div>
+          <a class="open" href="/voice-landing.html">Open</a>
+        </article>
+
+        <article class="card" data-kind="page">
+          <div class="card-top"><div class="icon">H</div><span class="badge page">Page</span></div>
+          <div><h3>Hello World</h3><p>Simple verified page useful for smoke checks.</p></div>
+          <div class="meta"><span>/hello-world.html</span><span>200 OK</span></div>
+          <a class="open" href="/hello-world.html">Open</a>
+        </article>
+      </div>
+    </section>
+
+    <footer>
+      <span id="count"></span> surfaces listed. Root chat UI is untouched; this page is a separate launcher.
+    </footer>
+  </main>
+
+  <script>
+    const filters = [...document.querySelectorAll('.filter')];
+    const cards = [...document.querySelectorAll('.card')];
+    const count = document.getElementById('count');
+
+    function applyFilter(kind) {
+      let visible = 0;
+      for (const card of cards) {
+        const match = kind === 'all' || card.dataset.kind.split(' ').includes(kind);
+        card.classList.toggle('hidden', !match);
+        if (match) visible += 1;
+      }
+      for (const filter of filters) {
+        filter.classList.toggle('active', filter.dataset.filter === kind);
+      }
+      count.textContent = visible;
+    }
+
+    for (const filter of filters) {
+      filter.addEventListener('click', () => applyFilter(filter.dataset.filter));
+    }
+
+    applyFilter('all');
+  </script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+{
+  "schema_version": "1.0",
+  "id": "CT-005",
+  "title": "Open Strategic Questions — Decisions Needed From the Owner, Not Code Fixes",
+  "phase_number": 5,
+  "status": "not_started",
+  "priority_note": "Not sequential with 0-4 in the usual sense. Some of its sub-questions are standing prerequisites the roadmap doc itself says are needed 'before Phase 0/1 work continues' (§6); others are only meaningful after CT-003/CT-004 land. This contract is a decision register to consult at both points, not a phase to run once at the end.",
+  "audit_status_note": "A section-by-section bug audit of the live production source (vps/daveai-ui-v6.html, brain_llm.py, CSS, and infra scripts) produced 133 candidate findings; 83 were independently confirmed real. The other 50 are NOT confirmed-false — they are pending re-verification after an unrelated rate-limit interruption stopped that re-check pass partway through. This contract is not primarily about those findings, but any of the 5 sub-questions below could surface more of them (e.g. investigating the dead voice/IPTV stack may turn up new issues) — record anything found the same way CT-000 through CT-004 do, rather than fixing it under this contract.",
+  "source_of_truth": {
+    "roadmap_doc": "docs/DAVEAI_DEEP_AUDIT_ROADMAP_20260915.md",
+    "roadmap_sections": ["§2 (six-week-dead services, found while verifying today's incident)", "§4.3 and §4.4 (app/'s fate, largely answered)", "§5 Phase 5", "§6 (decisions needed, with explicit owner answer already recorded for one item)"],
+    "contract_kit_overview": "docs/DAVEAI_CONTRACT_KIT_20260915.md"
+  },
+  "summary": "Not an implementation contract. This is where the roadmap's genuinely open, owner-level decisions live: app/'s remaining sub-question, the six-week-dead voice/IPTV/TV stack (and a longer list of other exited containers found alongside it), an old modularization attempt that current production has now outgrown, pacing, and how a separate, not-yet-located project thread eventually folds into this same catalog.",
+  "background": "Unlike CT-000 through CT-004, this contract's job is to surface accurate, current information and explicit owner decisions — not to write code. Four sub-questions are already on record in the roadmap doc's §6, one of them already answered there. A fifth is added here from the 2026-09-15 follow-up context: an older, March-2026 modular split of the codebase ('daveai-v7') was reconciled against current production and found to be missing real functionality production has since gained (see CT-001's F-P1-02: manual agent-routing override, approval/governance gating layer, narrator-first routing gate, tools-to-agent attribution catalog). That reconciliation raises a strategic question this roadmap's six phases do not otherwise cover: whether daveai-v7's modular-split approach should be revived and reconciled against current production, as a follow-on phase once Phases 0-4 are stable — this contract kit intentionally does not invent that as a new numbered phase, since the roadmap doc defines exactly six phases (0-5); it is recorded here as a candidate for the owner to decide on, exactly the way this contract's other four sub-questions are decisions rather than pre-approved work.",
+  "status_discipline": {
+    "verified": "You personally read the code, ran the command, or fetched the live response yourself in this session, and can quote the exact evidence.",
+    "reported": "A document or another agent's proof artifact says so, and you have not independently re-checked it today.",
+    "rule": "Never upgrade a 'reported' fact to a 'verified' claim without re-checking it yourself. Label every claim in your completion report as one or the other."
+  },
+  "depends_on": [],
+  "blocks": [],
+  "scope": {
+    "decision_items": [
+      {
+        "id": "Q1-voice-iptv-hermestv",
+        "question": "voice.daveai.tech, iptv.daveai.tech, hermestv.daveai.tech/tv.daveai.tech have been down for roughly 6 weeks (502s; their underlying pm2/docker processes show 'Exited 6 weeks ago'). A larger set of other containers on the same box (Grafana/Prometheus, Gitea, OpenHands CI, Authelia, bolt-diy-postgres/redis, hermes1-5, aice-*) show the same 'Exited 6 weeks ago' pattern, suggesting one shared root-cause event. Investigate and restart what's safe to restart, leave alone for now, or plan to remove as abandoned?",
+        "status": "open — owner decision required",
+        "roadmap_reference": "§2, §6 item 1"
+      },
+      {
+        "id": "Q2-app-bolt-pages-reachability",
+        "question": "app/ itself is answered: it is an inherited container DaveAI's files ended up inside, not a second product, and is parked as low priority. The only remaining sub-question: is the separate 'bolt' Cloudflare Pages deployment (this repo's actual `npm run deploy` target, per wrangler.toml) still live/reachable by anyone — worth a quick check before fully ignoring it, or fine to leave alone either way?",
+        "status": "app/'s fate answered 2026-09-15 (see roadmap §6 item 2); only the Cloudflare Pages reachability sub-question is open",
+        "roadmap_reference": "§4.3, §4.4, §6 item 2"
+      },
+      {
+        "id": "Q3-pace",
+        "question": "Should Phase 0 (the low-risk repo fixes in CT-000) and the Phase 1 agent wave against the real chat file (CT-001) start now, or does the owner want to read the roadmap doc in full first? Note for whoever reads this contract: the existence of this contract kit is preparatory work commissioned to make Phase 0/1 executable safely — it is not itself the owner's go-ahead to begin editing. Do not treat 'the contract kit exists' as an implicit yes; get an explicit start signal.",
+        "status": "open — owner decision required before any CT-000/CT-001 work begins",
+        "roadmap_reference": "§6 item 3"
+      },
+      {
+        "id": "Q4-alices-arena-fold-in",
+        "question": "How does the separate Alice's Arena / VPS-backend thread (referenced in an earlier handoff doc) fold into this same VPS box and this same catalog, once those deliverables are actually located? This question cannot be meaningfully resolved until the Alice's Arena artifacts are found — treat 'locate them' as the first, prerequisite step, not the catalog-integration design itself.",
+        "status": "open — blocked on locating the referenced deliverables; most relevant once CT-003/CT-004 have produced a real, singular catalog to fold anything into",
+        "roadmap_reference": "§5 Phase 5"
+      },
+      {
+        "id": "Q5-v7-modularization-revival",
+        "question": "Added from the 2026-09-15 follow-up context, not in the roadmap doc's original text: an older March-2026 modular split ('daveai-v7') is now missing functionality current production has gained (manual agent-routing override, approval/governance gating layer, narrator-first routing gate, tools-to-agent attribution catalog — see CT-001 F-P1-02). Should daveai-v7's modular-split approach be revived and reconciled against current production as a follow-on effort once Phases 0-4 are stable? This contract kit deliberately does not create a seventh numbered phase for this — it is recorded here as a candidate decision, matching how this contract's other four questions work.",
+        "status": "open — owner decision required; no work should begin on a v7 revival without an explicit go-ahead and, if given, a properly scoped new contract analogous to CT-000 through CT-004",
+        "roadmap_reference": "not in the original roadmap doc; owner-provided reconciliation summary, 2026-09-15 (task context for this contract kit)"
+      }
+    ],
+    "files": [],
+    "notes": "This contract's 'scope' is investigation and decision-recording, not file edits. Where an investigation requires touching infrastructure (e.g. attempting to restart a container for Q1), treat that as a normal, individually-scoped operational change with its own backup/rollback discipline — do not fold it into a code contract's file scope."
+  },
+  "protected_paths": [
+    { "path": "Any container, service, or file the owner has not explicitly approved restarting, modifying, or removing", "reason": "This contract's job is to gather accurate current-state information and present options — not to unilaterally restart, remove, or repurpose infrastructure that has been down for 6 weeks. A service being down is not, by itself, authorization to act on it." },
+    { "path": "daveai-v7's own source (wherever it lives)", "reason": "Investigate/reconcile-for-information only under Q5. Do not begin an actual modularization effort under this contract — that would need its own properly scoped contract if and when the owner says yes." }
+  ],
+  "known_findings": [],
+  "cross_phase_notes": [
+    "Q3's pace decision gates CT-000 and CT-001 directly — check it first.",
+    "Q4 becomes easier to answer meaningfully once CT-003/CT-004 exist, since it asks how something folds into 'this same catalog.'",
+    "Q5 is directly downstream of CT-001's F-P1-02 finding — read that finding before presenting Q5 to the owner, so the four missing-in-v7 features are named accurately."
+  ],
+  "steps": [
+    "Read docs/DAVEAI_DEEP_AUDIT_ROADMAP_20260915.md §2, §4.3, §4.4, §5 Phase 5, and §6 in full.",
+    "Read this contract in full.",
+    "For Q1: re-check current container/process status yourself (do not reuse the 'roughly 6 weeks' figure without re-confirming it is still accurate) and present the owner with exactly what is down, what a safe restart would involve, and what removal would involve — without taking action.",
+    "For Q2: check whether the 'bolt' Cloudflare Pages deployment is reachable (a simple request to its live URL is sufficient) and report the result.",
+    "For Q3: explicitly ask for, and wait for, a start signal before any CT-000/CT-001 work begins under this contract kit.",
+    "For Q4: attempt to locate the Alice's Arena / VPS-backend deliverables referenced in the earlier handoff doc; report what was found or that it remains unlocated.",
+    "For Q5: summarize the v7-vs-production functionality gap accurately (citing CT-001's F-P1-02) and present it as a decision, not a recommendation to proceed.",
+    "Record every answer received from the owner, with date, directly in this contract's evidence.",
+    "Do not mark any decision item's status as resolved without an explicit owner answer on record."
+  ],
+  "required_evidence": [
+    "For Q1: current, freshly-checked process/container status for voice.daveai.tech, iptv.daveai.tech, hermestv.daveai.tech/tv.daveai.tech, and the other 'Exited 6 weeks ago' containers named in the roadmap doc, plus the owner's recorded decision.",
+    "For Q2: the exact request/response (e.g. curl output or screenshot) showing whether the 'bolt' Cloudflare Pages deployment is currently reachable.",
+    "For Q3: a dated, quoted start signal from the owner before any dependent contract's work begins.",
+    "For Q4: either the located Alice's Arena/VPS-backend deliverables (with their location) or an explicit statement that they remain unlocated as of the date checked.",
+    "For Q5: a dated, quoted owner decision (proceed / do not proceed / revisit later) on the v7-revival question.",
+    "A restated definition_of_done checklist with each line marked done/blocked/not-attempted and an evidence pointer for every 'done' line."
+  ],
+  "forbidden_claim_patterns": [
+    "100%\\s*complete",
+    "everything\\s+(is\\s+)?(fixed|working)",
+    "no\\s+bugs?\\s+remain",
+    "release-ready",
+    "production-ready",
+    "perfect"
+  ],
+  "reporting_requirements": [
+    "State the status of each of the 5 decision items individually — do not summarize this contract as a single done/not-done outcome.",
+    "Distinguish clearly between 'I investigated and here is current, verified information' and 'the owner decided X' — these are different kinds of claims and must not be blurred.",
+    "Never use a forbidden_claim_patterns phrase to describe this contract's outcome unless the exact proof command+output is quoted directly next to it.",
+    "If any investigation under this contract turns up a new confirmed bug or security issue, record it (file/service + description) and hand it off to the appropriate contract (CT-000 through CT-004) or as a new item here — do not fix it under this contract."
+  ],
+  "definition_of_done": [
+    "[ ] Q1: current container/process status is freshly verified and presented to the owner, with a recorded decision (restart / leave / remove).",
+    "[ ] Q2: the 'bolt' Cloudflare Pages deployment's reachability is checked and reported.",
+    "[ ] Q3: an explicit, dated start signal from the owner is on record before CT-000/CT-001 work is treated as authorized.",
+    "[ ] Q4: the Alice's Arena / VPS-backend deliverables are either located (with their location recorded) or explicitly confirmed still unlocated.",
+    "[ ] Q5: an explicit, dated owner decision on the v7-revival question is on record.",
+    "[ ] No infrastructure was restarted, modified, or removed without explicit prior owner approval for that specific action.",
+    "[ ] Completion report uses verified/reported labeling per status_discipline and contains no forbidden_claim_patterns phrase without adjacent proof."
+  ],
+  "failure_policy": {
+    "if_blocked": "Stop and say exactly which decision item cannot be resolved and why (most commonly: waiting on the owner). This is expected for a decision-register contract — do not manufacture a decision on the owner's behalf.",
+    "if_partially_done": "Report each of the 5 decision items' status individually; there is no meaningful single 'percent done' figure for this contract.",
+    "release_eligible_on_partial_completion": false
+  },
+  "rollback_plan": "This contract should not itself make production changes. If an investigation step (e.g. attempting to check whether a container can restart cleanly) has any side effect, it must have its own explicit backup/rollback plan agreed before acting, following the same pattern as vps/patches/deploy-accessibility-contract-20260725.sh (backup → change → verify → trap-based rollback on failure) — never act on live infrastructure as a side effect of 'just checking.'",
+  "evidence_location": "proofs/daveai-phase5-strategic-decisions-<YYYYMMDD>/ (use the date you actually do the work, following the existing proofs/daveai-prod-audit-20260731/ naming convention)"
+}

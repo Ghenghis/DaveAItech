@@ -1,0 +1,158 @@
+{
+  "schema_version": "1.0",
+  "id": "CT-003",
+  "title": "Games Catalog Consolidation — One Real Source Instead of Five",
+  "phase_number": 3,
+  "status": "not_started",
+  "priority_note": "Third priority, per the owner's explicit ordering: chat, then menus/tabs, then games, then wildcard sites. Roadmap: 'Collapse the five-places-at-once catalog mechanism into one real source, add the missing web-pages.html source into the repo, and add at least one real input-driven test per game beyond Asteroids before calling any of them working.'",
+  "audit_status_note": "A section-by-section bug audit of the live production source (vps/daveai-ui-v6.html, brain_llm.py, CSS, and infra scripts) produced 133 candidate findings; 83 were independently confirmed real. The other 50 are NOT confirmed-false — they are pending re-verification after an unrelated rate-limit interruption stopped that re-check pass partway through. Treat any finding not explicitly marked confirmation_status='confirmed' or 'verified-in-this-contract' below as unresolved, not cleared. No consolidated ledger of all 133 findings exists in this repository as of 2026-09-15; the items under known_findings here are only the ones specifically flagged for this phase.",
+  "source_of_truth": {
+    "roadmap_doc": "docs/DAVEAI_DEEP_AUDIT_ROADMAP_20260915.md",
+    "roadmap_sections": ["§4.2 (full findings)", "§0.2 (Checkers Crowning as concrete proof of drift risk — already fixed by CT-000 item 1, do not re-break it)", "§5 Phase 3"],
+    "contract_kit_overview": "docs/DAVEAI_CONTRACT_KIT_20260915.md"
+  },
+  "summary": "The games/apps/web catalog is not one registry — the same facts about the same 55 entries are independently encoded in five places, plus a sixth surface (/web-pages.html) that has no source in this repo at all. This contract collapses that into one real source, adds web-pages.html's source into the repo, and raises test depth beyond 'the page loads' for every game except the one that already has a real gameplay assertion.",
+  "background": "The roadmap doc's §4.2 documents five independent places that all encode facts about the same 55 catalog entries: vps/daveai-project-catalog.json; a hardcoded PROJECT_CATALOG_HOST_STATUS map inside vps/daveai-ui-v6.html; a hardcoded seedProjects() list inside the same file (using different IDs for the same three carousel games than the JSON catalog does); vps/verify-source-of-truth.py's hardcoded expectations, including a hard assertion that there are exactly 55 entries; and vps/daveai-sites-config.json for infra/nginx health. The Checkers Crowning regression that CT-000 fixes (item 1) is concrete, already-happened proof that this drift is dangerous, not theoretical — do not let this contract's consolidation reintroduce it. Separately, /web-pages.html — described by the owner as the page that most literally matches the 'wildcard' launcher concept this roadmap is building toward — has no source in this repo at all, confirmed absent by a repo-wide `find` during contract-kit preparation. Testing depth is also shallower than older project docs imply: the committed, CI-running suite (vps/production-e2e-runner.cjs) only checks that a game's page loads and a canvas/title exists — it never clicks or presses a key, for any game. Exactly one game (Asteroids) has ever had a real gameplay assertion (score changed via simulated input) across this repo's entire history.",
+  "status_discipline": {
+    "verified": "You personally read the code, ran the command, or fetched the live response yourself in this session, and can quote the exact evidence.",
+    "reported": "A document or another agent's proof artifact says so, and you have not independently re-checked it today.",
+    "rule": "Never upgrade a 'reported' fact to a 'verified' claim without re-checking it yourself. Label every claim in your completion report as one or the other."
+  },
+  "depends_on": ["CT-000", "CT-002"],
+  "blocks": ["CT-004"],
+  "scope": {
+    "files": [
+      {
+        "path": "vps/daveai-project-catalog.json",
+        "lines": "full file (61 lines, verified via `wc -l` on 2026-09-15; 55 entries confirmed via grep — 24 cat:\"apps\", 20 cat:\"games\", 11 cat:\"web\", 0 cat:\"other\")",
+        "description": "Registry source #1. Candidate to become (or remain, if restructured) the single source of truth."
+      },
+      {
+        "path": "vps/daveai-ui-v6.html",
+        "lines": "PROJECT_CATALOG_HOST_STATUS map: definition at line 9124, consumed at line 9184 (verified via grep, 2026-09-15). seedProjects() function: definition at line 9338, called at lines 9559 and 10087 (verified via grep, 2026-09-15). The 'other' category filter button already exists in the UI at line 1461 (`data-cat=\"other\"`), verified 2026-09-15, but zero catalog entries currently use it — confirms the roadmap's 'unused' framing.",
+        "description": "Registry sources #2 and #3, both hardcoded inside the chat/menu monolith. seedProjects() is reported to use different IDs than the JSON catalog for the same three carousel games — verify this yourself and reconcile the IDs as part of consolidation."
+      },
+      {
+        "path": "vps/verify-source-of-truth.py",
+        "lines": "line 155: `require(len(projects) == 55, f\"expected 55 catalog projects, found {len(projects)}\")`; line 157: `require(len(project_by_id) == 55, \"duplicate project ids\")` (both verified via grep, 2026-09-15)",
+        "description": "Registry source #4: a verifier with the entry count hardcoded rather than derived. Adding a 56th entry today breaks this verifier until someone remembers to bump the number by hand — exactly the kind of drift this contract should remove."
+      },
+      {
+        "path": "vps/daveai-sites-config.json",
+        "lines": "full file (257 lines, verified via `wc -l` on 2026-09-15)",
+        "description": "Registry source #5, for infra/nginx health rather than catalog display, but still an independent encoding of overlapping facts about the same sites."
+      },
+      {
+        "path": "vps/production-e2e-runner.cjs",
+        "lines": "full file (262 lines, verified via `wc -l` on 2026-09-15)",
+        "description": "The committed, CI-running test suite. Confirmed by the roadmap doc to only check page-load + canvas/title presence, not real gameplay, for every game except Asteroids."
+      },
+      {
+        "path": "web-pages.html (does not yet exist in this repo)",
+        "lines": "n/a — file must be added",
+        "description": "Confirmed absent from this repo entirely (repo-wide `find -iname \"web-pages.html\"` returned nothing on 2026-09-15). It exists only on the VPS today, the same way /studio/index.html does. Bringing its source into this repo, under a path you choose and document, is part of this contract's Definition of Done."
+      }
+    ],
+    "notes": "Consolidating 'into one real source' means picking (or building) exactly one of these as canonical and making the others either derive from it programmatically or be deleted — not just making all five agree by hand once, which is the same failure mode that produced the Checkers Crowning drift in the first place."
+  },
+  "protected_paths": [
+    { "path": "app/", "reason": "Confirmed to share no code with daveai.tech. Out of scope for the entire roadmap unless CT-005 changes that." },
+    { "path": "vps/daveai-ui-v6.html chat-logic and topbar/sidebar/settings sections outside the catalog-rendering code", "reason": "CT-001/CT-002 territory. Touch only the catalog-related rendering (carousel, seedProjects, PROJECT_CATALOG_HOST_STATUS, category filters including the existing 'other' button at line 1461)." },
+    { "path": "The specific catalog entry fixed by CT-000 item 1 (vps/daveai-project-catalog.json:43, the Checkers Crowning entry)", "reason": "Already corrected under CT-000. Do not revert it while restructuring the file — carry the corrected data forward." }
+  ],
+  "known_findings": [
+    {
+      "id": "F-P3-01-five-place-drift",
+      "severity": "high",
+      "category": "architecture/drift",
+      "description": "The same 55 catalog entries are independently encoded in five places (see scope.files), with no mechanism keeping them in sync.",
+      "confirmation_status": "reported (2026-09-15, roadmap doc §4.2) — the five file paths and the 55-entry count were independently re-verified during contract-kit preparation (grep/wc -l); the specific claim that seedProjects() uses different IDs for the three carousel games than the JSON catalog was not independently re-verified",
+      "evidence": "docs/DAVEAI_DEEP_AUDIT_ROADMAP_20260915.md §4.2; corroborating line numbers found during contract-kit preparation, 2026-09-15, as listed in scope.files.",
+      "likely_location": "see scope.files for all five locations, with verified line numbers for four of the five"
+    },
+    {
+      "id": "F-P3-02-hardcoded-55-assertion",
+      "severity": "medium",
+      "category": "test-fragility",
+      "description": "verify-source-of-truth.py hard-asserts exactly 55 catalog entries rather than deriving the expectation from a canonical source, so adding a 56th entry breaks the verifier until a human remembers to bump the constant.",
+      "confirmation_status": "verified-in-this-contract",
+      "evidence": "vps/verify-source-of-truth.py:155 and :157, read directly during contract-kit preparation, 2026-09-15.",
+      "likely_location": "vps/verify-source-of-truth.py:155, :157 (verified)"
+    },
+    {
+      "id": "F-P3-03-web-pages-html-missing-from-repo",
+      "severity": "medium",
+      "category": "missing-source",
+      "description": "/web-pages.html — described as the page that most literally matches the 'wildcard site' launcher concept — has no source in this repo at all, so editing the catalog JSON does not change what it shows.",
+      "confirmation_status": "verified-in-this-contract (absence confirmed by repo-wide find, 2026-09-15)",
+      "evidence": "`find . -iname \"web-pages.html\"` returned no results in this repo, 2026-09-15. Original report: docs/DAVEAI_DEEP_AUDIT_ROADMAP_20260915.md §1 table.",
+      "likely_location": "not in this repo. Source must be retrieved from the live VPS (path on the VPS not yet confirmed — do not guess it) and added under a documented path in this repo."
+    },
+    {
+      "id": "F-P3-04-shallow-test-coverage",
+      "severity": "medium",
+      "category": "test-coverage",
+      "description": "The CI-running e2e suite only checks that a game's page loads and a canvas/title exists; it never clicks or presses a key. Across this repo's history, only Asteroids has ever had a real gameplay assertion (score changed via simulated input). Treat 'smoke tested' (loads) and 'verified working' (plays correctly) as different claims going forward, including in this contract's own completion report.",
+      "confirmation_status": "reported (2026-09-15, roadmap doc §4.2) — vps/production-e2e-runner.cjs's existence and line count were independently re-verified during contract-kit preparation; its exact assertion logic per game was not re-read line-by-line",
+      "evidence": "docs/DAVEAI_DEEP_AUDIT_ROADMAP_20260915.md §4.2.",
+      "likely_location": "vps/production-e2e-runner.cjs (262 lines, verified to exist)"
+    }
+  ],
+  "cross_phase_notes": [
+    "This contract must not touch the specific data fix CT-000 made to the Checkers Crowning entry — carry it forward into whatever the consolidated source becomes.",
+    "This contract is an explicit, textual prerequisite for CT-004 ('Once Phase 3's registry is real and singular...') — do not let CT-004 start against a still-fragmented catalog.",
+    "If web-pages.html's retrieved source turns out to contain chat or nav code that overlaps CT-001/CT-002's territory, flag it rather than editing those parts yourself under this contract."
+  ],
+  "steps": [
+    "Confirm CT-000 and CT-002 are done before starting.",
+    "Read docs/DAVEAI_DEEP_AUDIT_ROADMAP_20260915.md §4.2 and §5 Phase 3 in full.",
+    "Read this contract in full, including known_findings and cross_phase_notes.",
+    "Inventory the current state of all five registry locations yourself (do not trust the line numbers above without re-confirming them, since other contracts may land first and shift them).",
+    "Decide and document which one location becomes canonical (most likely vps/daveai-project-catalog.json, given it is already the most complete/structured, but verify this judgment yourself rather than assuming it).",
+    "Rewrite or remove the other four so they derive from the canonical source programmatically (e.g. verify-source-of-truth.py should read the entry count from the catalog file, not hardcode 55) rather than being hand-kept in sync.",
+    "Retrieve web-pages.html's actual source from the live VPS and add it to this repo under a documented path, wiring it to read from the same canonical catalog if applicable.",
+    "Add at least one real, input-driven gameplay assertion per game beyond Asteroids to vps/production-e2e-runner.cjs (or its successor), matching Asteroids' existing pattern (simulated input, observed state change such as score).",
+    "Gather required_evidence for every change before writing a completion report.",
+    "Check every definition_of_done line item against your own evidence before declaring any of them done."
+  ],
+  "required_evidence": [
+    "A written inventory of what each of the five (now-former) registry locations contained before consolidation, and where that information now lives.",
+    "The exact diff for each of the five files/locations changed.",
+    "A demonstration that adding a new (56th) test catalog entry requires editing exactly one place and does not break verify-source-of-truth.py or any other derived check.",
+    "The retrieved web-pages.html source's origin (where on the VPS it came from, how it was retrieved) and its new path in this repo.",
+    "For each game given a new real gameplay assertion: the exact test code added, and its pass/fail output run at least once locally.",
+    "curl or browser evidence that the live carousel/catalog UI still renders correctly against the consolidated source, matching what it rendered before this contract's changes (no visual regression).",
+    "A restated definition_of_done checklist with each line marked done/blocked/not-attempted and an evidence pointer for every 'done' line."
+  ],
+  "forbidden_claim_patterns": [
+    "100%\\s*complete",
+    "everything\\s+(is\\s+)?(fixed|working)",
+    "no\\s+bugs?\\s+remain",
+    "release-ready",
+    "production-ready",
+    "perfect"
+  ],
+  "reporting_requirements": [
+    "State exact counts: how many of the five registry locations were consolidated/removed, how many games received a new real gameplay assertion (out of how many total), and whether web-pages.html's source was successfully added.",
+    "Every item claimed fixed must cite a required_evidence artifact by file path or exact command+output, not a narrative description.",
+    "Never use a forbidden_claim_patterns phrase to describe this contract's outcome unless the exact proof command+output is quoted directly next to it. In particular, never describe a game as 'working' on the strength of a load-only test — say exactly what was asserted.",
+    "If consolidation surfaces a data conflict between the five sources (e.g. the seedProjects() ID mismatch) that cannot be resolved without an owner decision, record it and hand it off rather than guessing which value is correct."
+  ],
+  "definition_of_done": [
+    "[ ] Exactly one canonical registry location is documented and in place; the other four either derive from it programmatically or are removed.",
+    "[ ] Adding a new catalog entry is demonstrated to require editing only the canonical location, with no other file needing a manual update.",
+    "[ ] web-pages.html's source exists in this repo at a documented path.",
+    "[ ] Every game beyond Asteroids has at least one real, input-driven gameplay assertion in the e2e suite, or each exception is explicitly listed with a reason.",
+    "[ ] The live carousel/catalog UI renders correctly against the consolidated source (no regression), with evidence.",
+    "[ ] The Checkers Crowning fix from CT-000 is confirmed still correct after consolidation.",
+    "[ ] No file outside this contract's scope list was modified, or every such change is explicitly disclosed with a reason.",
+    "[ ] Completion report uses verified/reported labeling per status_discipline, states exact counts per reporting_requirements, and contains no forbidden_claim_patterns phrase without adjacent proof."
+  ],
+  "failure_policy": {
+    "if_blocked": "Stop. Document exactly what is blocking you (e.g. cannot retrieve web-pages.html's source from the VPS, cannot determine which of two conflicting IDs is correct) and why. Do not guess, silently skip the item, or mark it done anyway.",
+    "if_partially_done": "Report exact done/blocked/not-attempted counts against the five registry locations and the per-game test-coverage goal. Partial completion is a legitimate, honest outcome — an inflated claim is not.",
+    "release_eligible_on_partial_completion": false
+  },
+  "rollback_plan": "Before installing any change to /var/www/agentic-website or replacing the catalog JSON on the live VPS, snapshot the current file(s) to a timestamped backup directory, following the existing pattern in vps/patches/deploy-accessibility-contract-20260725.sh (backup → install → verify with sha256sum/curl → trap-based rollback to the backup on any verification failure). Consolidation work should land as a sequence of small, revertible commits (one per registry location retired) rather than one big-bang rewrite.",
+  "evidence_location": "proofs/daveai-phase3-games-catalog-consolidation-<YYYYMMDD>/ (use the date you actually do the work, following the existing proofs/daveai-prod-audit-20260731/ naming convention)"
+}

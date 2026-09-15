@@ -1,0 +1,170 @@
+{
+  "schema_version": "1.0",
+  "id": "CT-000",
+  "title": "Stop the Bleeding — Repo/Production Drift and Urgent Security Exposure",
+  "phase_number": 0,
+  "status": "not_started",
+  "priority_note": "Do first. Small and low-risk by design. Roadmap: 'Phase 0 — Stop the bleeding (small, low-risk, do first)'. Item 5 below was added during contract-kit preparation (2026-09-15) because of its severity; it was not in the roadmap doc's original four-item list.",
+  "audit_status_note": "A section-by-section bug audit of the live production source (vps/daveai-ui-v6.html, brain_llm.py, CSS, and infra scripts) produced 133 candidate findings; 83 were independently confirmed real. The other 50 are NOT confirmed-false — they are pending re-verification after an unrelated rate-limit interruption stopped that re-check pass partway through. Treat any finding not explicitly marked confirmation_status='confirmed' or 'verified-in-this-contract' below as unresolved, not cleared. No consolidated ledger of all 133 findings exists in this repository as of 2026-09-15; the items under known_findings here are only the ones specifically flagged for this phase.",
+  "source_of_truth": {
+    "roadmap_doc": "docs/DAVEAI_DEEP_AUDIT_ROADMAP_20260915.md",
+    "roadmap_sections": ["§0 Executive summary (items 1-2)", "§1 Source-of-truth map / drift check", "§5 Phase 0", "§6 Decisions needed (item 1 is out of this contract's scope — see CT-005)"],
+    "contract_kit_overview": "docs/DAVEAI_CONTRACT_KIT_20260915.md"
+  },
+  "summary": "Four low-risk repo-hygiene fixes that stop the repository from actively lying about what's live on daveai.tech, plus one urgent, narrowly-scoped security lockdown, before any feature work (Phase 1+) begins on the same files.",
+  "background": "The repo's copy of the production chat/menu/games surface has already drifted from what daveai.tech actually serves, in a way that has caused a real regression before: the roadmap doc records that the repo's catalog still contains a rejected, broken game entry that production had already replaced, and that if this repo's catalog were ever redeployed as-is it would put the broken page back in front of users. Separately, a fresh diff on 2026-09-15 found the repo's vps/daveai-ui-v6.html differs from live production by 64 lines of real content (an external-launch guard, a cache-bust version bump, and hardening attributes), meaning the repo is currently the stale copy, not production. A third file, vps/DAVEAI_SOURCE_OF_TRUTH.md, asserts an invariant (that an archival HTML copy must stay byte-identical to the main file) that a same-day hash check already proved false. None of this has anywhere to land automatically — production is patched by hand-running shell scripts that install straight onto the VPS, with no step that pulls the resulting state back into git. This contract closes those four gaps. A fifth item was added when preparing this contract kit: a follow-up bug audit reported an unauthenticated admin panel that leaks internal infra details, including the raw VPS IP — a live, exploitable exposure independent of any feature work, which belongs in this 'stop the bleeding' phase rather than waiting for Phase 1.",
+  "status_discipline": {
+    "verified": "You personally read the code, ran the command, or fetched the live response yourself in this session, and can quote the exact evidence.",
+    "reported": "A document or another agent's proof artifact says so, and you have not independently re-checked it today.",
+    "rule": "Never upgrade a 'reported' fact to a 'verified' claim without re-checking it yourself. Label every claim in your completion report as one or the other."
+  },
+  "depends_on": [],
+  "blocks": ["CT-001", "CT-002", "CT-003"],
+  "scope": {
+    "files": [
+      {
+        "path": "vps/daveai-project-catalog.json",
+        "lines": "full file (61 lines total, verified via `wc -l` on 2026-09-15)",
+        "description": "Item 1: replace the rejected 'Checkers Crowning Draft' entry with whatever the safe, already-live entry actually is.",
+        "verification": "verified — the bad entry is at line 39... no: confirmed at line 43: `{ \"id\": \"srv-game-checkers-crowning\", \"name\": \"Checkers Crowning Draft\", \"url\": \"https://daveai.tech/checkers-game-crowning-jumping-do-not.html\", \"cat\": \"games\", \"status\": \"needs-fix\", ... }` (grep run 2026-09-15). A separate, presumably-fine entry `srv-game-checkers` already exists at line 39 pointing at `/checkers.html` — confirm on the live site which URL/entry is the one actually served today before editing; do not assume line 39 is automatically the correct replacement without checking production."
+      },
+      {
+        "path": "vps/daveai-ui-v6.html",
+        "lines": "line range pending deep-audit workflow completion — see docs/DAVEAI_DEEP_AUDIT_ROADMAP_20260915.md",
+        "description": "Item 2: pull the reported 64-line production diff back into the repo copy — the shouldLaunchExternally() guard, a CSS cache-bust version bump, and type=\"button\" hardening attributes. Re-run the diff yourself first (`git show HEAD:vps/daveai-ui-v6.html` vs. a fresh `curl` of the live page) — production may have moved further since 2026-09-15, so do not assume the 64-line figure is still exactly current."
+      },
+      {
+        "path": "vps/DAVEAI_SOURCE_OF_TRUTH.md",
+        "lines": "full file (62 lines total, verified via `wc -l` on 2026-09-15)",
+        "description": "Item 3: correct the claim that vps/patches/agent-runtime-completion-20260724-src/daveai-ui-v6.html must stay byte-identical to the main file — a same-day SHA-256 check found three different hashes across the repo's main copy, live production, and this archival copy. Decide (and record the decision, don't just delete the claim) whether that archival copy is a historical snapshot or something else, then make the doc match reality."
+      },
+      {
+        "path": "vps/patches/agent-runtime-completion-20260724-src/daveai-ui-v6.html",
+        "lines": "read-only for this contract — do not overwrite it to force a hash match; item 3 is about correcting the doc's claim, not editing this file, unless your investigation concludes it genuinely should be re-synced",
+        "description": "The archival copy referenced by item 3. Confirmed to exist (2026-09-15)."
+      },
+      {
+        "path": "vps/patches/*.sh",
+        "lines": "n/a — add a step, not a line-range edit",
+        "description": "Item 4: add a real 'pull production back into git' step. Confirmed existing scripts in this directory as of 2026-09-15: deploy-accessibility-contract-20260725.sh, daveai-production-runtime-20260731/apply-production-runtime-fixes.sh, daveai-production-runtime-20260731/check-litellm-health.sh. Even a manual checklist item appended to these scripts' output/README satisfies this if a fully automated pull-back is out of scope for one contract."
+      },
+      {
+        "path": "vps/patches/daveai-production-runtime-20260731/nginx/daveai.tech",
+        "lines": "around line 209-214 (verified via grep 2026-09-15): `location = /api/admin/login { limit_req zone=login burst=5 nodelay; proxy_pass http://127.0.0.1:8888/admin/login; ... }`",
+        "description": "Item 5: the nginx route that exposes the admin surface to the internet. Confirm on the live VPS whether this route (or another one — this repo may not contain the full, current nginx config) is the one actually missing authentication."
+      },
+      {
+        "path": "vps/patches/daveai-production-runtime-20260731/brain_llm.py",
+        "lines": "n/a for this contract (Phase 1 / CT-001 owns full line-by-line work on this file)",
+        "description": "Item 5, read-only check: this repo's copy (430 lines, verified via `wc -l`) has NO admin-route handler at all (verified absent via case-insensitive grep for 'admin' on 2026-09-15). Either production's brain_llm.py has drifted further ahead of this repo copy (consistent with items 2 and 4 above), or the admin implementation lives entirely outside this repo on the VPS, the same way /web-pages.html and /studio/index.html do (per roadmap §1). Do not assume this repo's copy contains the vulnerable code path — confirm directly on the VPS before writing a fix, and do not make unrelated changes to this file under this contract; if the fix requires editing brain_llm.py, coordinate explicitly with whoever holds CT-001 so you are not both editing the same file unannounced."
+      }
+    ],
+    "notes": "Items 1-4 are exactly the roadmap doc's own Phase 0 list, in the same order. Item 5 is an addition from the 2026-09-15 follow-up audit, called out here because of severity (unauthenticated + leaks the raw VPS IP), not because the roadmap doc originally listed it — say so explicitly in your completion report so nobody mistakes it for something the roadmap doc itself flagged."
+  },
+  "protected_paths": [
+    { "path": "app/", "reason": "Confirmed by two independent agents to share no code with daveai.tech; it deploys to an unrelated Cloudflare Pages project. Out of scope for the entire roadmap unless CT-005 changes that." },
+    { "path": "vps/daveai-ui-v6.html chat-logic sections (SSE, auth/session, history, voice)", "reason": "Reserved for CT-001. This contract may touch daveai-ui-v6.html only for the specific 64-line sync in item 2 — do not use this contract as cover for broader chat-logic edits." },
+    { "path": "vps/daveai-ui-v6.html #topbar / sidebar / settings-panel sections", "reason": "Reserved for CT-002." },
+    { "path": "vps/verify-source-of-truth.py, vps/production-e2e-runner.cjs, and the other catalog-adjacent files listed in CT-003", "reason": "Reserved for CT-003's five-places-at-once consolidation. Item 1 here is a data fix inside the JSON catalog only, not a mechanism redesign." },
+    { "path": "brain_llm.py logic beyond confirming the absence of an admin handler", "reason": "Reserved for CT-001, except for whatever minimal, coordinated change item 5 turns out to need." }
+  ],
+  "known_findings": [
+    {
+      "id": "F-P0-01-catalog-regression",
+      "severity": "high",
+      "category": "functional-drift",
+      "description": "Repo's daveai-project-catalog.json contains the pre-fix 'Checkers Crowning Draft' entry (url containing 'checkers-game-crowning-jumping-do-not.html', status 'needs-fix') that production already replaced weeks ago.",
+      "confirmation_status": "verified-in-this-contract",
+      "evidence": "vps/daveai-project-catalog.json:43, grep run 2026-09-15 during contract-kit preparation; original report in docs/DAVEAI_DEEP_AUDIT_ROADMAP_20260915.md §0.2.",
+      "likely_location": "vps/daveai-project-catalog.json:43"
+    },
+    {
+      "id": "F-P0-02-html-drift",
+      "severity": "high",
+      "category": "drift",
+      "description": "Repo's vps/daveai-ui-v6.html is missing a 64-line, real (non-Cloudflare-injected) diff present in live production.",
+      "confirmation_status": "reported (2026-09-15, roadmap doc author) — re-run the diff yourself before acting; do not reuse the 64-line figure as still-current without checking",
+      "evidence": "docs/DAVEAI_DEEP_AUDIT_ROADMAP_20260915.md §1 'Drift check run today'.",
+      "likely_location": "line range pending deep-audit workflow completion — see docs/DAVEAI_DEEP_AUDIT_ROADMAP_20260915.md"
+    },
+    {
+      "id": "F-P0-03-source-of-truth-doc-false",
+      "severity": "medium",
+      "category": "drift-documentation",
+      "description": "vps/DAVEAI_SOURCE_OF_TRUTH.md asserts an archival HTML copy must stay byte-identical to the main file; a same-day SHA-256 comparison found three different hashes across repo-main, production, and the archival copy.",
+      "confirmation_status": "reported (2026-09-15, roadmap doc author)",
+      "evidence": "docs/DAVEAI_DEEP_AUDIT_ROADMAP_20260915.md §1.",
+      "likely_location": "vps/DAVEAI_SOURCE_OF_TRUTH.md (62 lines total; exact line of the false invariant not yet pinpointed — see file in full, it is short)"
+    },
+    {
+      "id": "F-P0-04-no-pullback-mechanism",
+      "severity": "medium",
+      "category": "process",
+      "description": "No automated or checklist step pulls hand-applied production fixes back into git after a vps/patches/*.sh script runs.",
+      "confirmation_status": "reported (2026-09-15, roadmap doc author), consistent with F-P0-01 and F-P0-02 above as symptoms of the same root cause",
+      "evidence": "docs/DAVEAI_DEEP_AUDIT_ROADMAP_20260915.md §0.2 and §5 Phase 0 item 4.",
+      "likely_location": "vps/patches/*.sh (no specific line — this is a missing step, not a bug in an existing one)"
+    },
+    {
+      "id": "F-P0-05-unauthenticated-admin-panel",
+      "severity": "critical",
+      "category": "security",
+      "description": "An unauthenticated admin panel reportedly leaks internal infra details, including the raw VPS IP. Confirmed real by the 2026-09-15 follow-up bug audit (one of the 83 independently confirmed findings), but this contract-kit author has not personally reproduced the leak — only located the plausible route.",
+      "confirmation_status": "confirmed-by-audit (per owner-provided summary, 2026-09-15) — exact leak mechanism and exact panel URL not independently reproduced during contract-kit preparation",
+      "evidence": "Owner-provided audit summary, 2026-09-15 (task context for this contract kit). Corroborating, independently verified detail found while preparing this contract: vps/patches/daveai-production-runtime-20260731/nginx/daveai.tech line 210 defines `location = /api/admin/login` proxying to the brain backend, and this repo's brain_llm.py (430 lines) has no matching admin-route handler (grep for 'admin', case-insensitive, zero matches, 2026-09-15) — so the actual implementation is not in this repo copy.",
+      "likely_location": "not yet pinpointed in this repo. Do not guess a path — confirm the exact panel URL and its handler directly on the live VPS (process list, nginx location blocks, or a directory/endpoint sweep) before scoping the fix. The nginx route at vps/patches/daveai-production-runtime-20260731/nginx/daveai.tech:210 is a lead, not a confirmed match."
+    }
+  ],
+  "cross_phase_notes": [
+    "Item 2's 64-line sync touches the same physical file (vps/daveai-ui-v6.html) that CT-001 and CT-002 will do line-by-line work on next. Finish and merge item 2 before CT-001/CT-002 branch off, or their line-number references will be wrong on day one.",
+    "F-P0-05's fix may turn out to require a brain_llm.py change. If so, do not silently expand this contract's scope — coordinate with whoever holds CT-001 (which owns brain_llm.py in full) so the same file is not edited unannounced from two directions."
+  ],
+  "steps": [
+    "Read docs/DAVEAI_DEEP_AUDIT_ROADMAP_20260915.md in full (§0, §1, §5 Phase 0 at minimum) and this contract in full before touching anything.",
+    "For item 1: fetch the live production catalog behavior (or ask for it) to determine the actual correct replacement entry for line 43 — do not invent one.",
+    "For item 2: regenerate the production-vs-repo diff yourself (`git show HEAD:vps/daveai-ui-v6.html` vs. a fresh fetch of the live page) and apply exactly the real content differences, leaving Cloudflare-injected script noise out.",
+    "For item 3: read vps/DAVEAI_SOURCE_OF_TRUTH.md in full, re-run the three-way SHA-256 comparison yourself, and correct the doc to state what is actually true today, with the hashes as evidence.",
+    "For item 4: add a concrete pull-back step (automated if feasible, a checklist item appended to script output/README if not) to the vps/patches/*.sh workflow.",
+    "For item 5: locate the real admin panel and its auth gap directly on the live VPS (do not assume this repo contains its source); apply the narrowest fix that requires authentication and stops the infra-detail leak, without touching unrelated admin functionality.",
+    "Gather required_evidence for every item before writing any completion report.",
+    "Check every definition_of_done line item against your own evidence before declaring any of them done."
+  ],
+  "required_evidence": [
+    "For item 1: the exact diff of vps/daveai-project-catalog.json (before/after), plus a citation (screenshot, curl output, or direct confirmation) of what production actually serves for the Checkers entry today.",
+    "For item 2: the exact regenerated diff between the repo copy and a fresh curl of live production, and the resulting diff of vps/daveai-ui-v6.html after your fix, showing the gap closed.",
+    "For item 3: the three SHA-256 hashes (repo-main, live production, archival copy) computed by you, plus the exact wording change made to vps/DAVEAI_SOURCE_OF_TRUTH.md.",
+    "For item 4: the exact diff/addition to the relevant vps/patches/*.sh script(s) or their documentation.",
+    "For item 5: the exact request/response (e.g. curl output, with any secret values redacted) demonstrating the panel required no authentication before your fix, and a second request/response demonstrating it is rejected (401/403) after your fix.",
+    "A restated definition_of_done checklist with each line marked done/blocked/not-attempted and an evidence pointer for every 'done' line."
+  ],
+  "forbidden_claim_patterns": [
+    "100%\\s*complete",
+    "everything\\s+(is\\s+)?(fixed|working)",
+    "no\\s+bugs?\\s+remain",
+    "release-ready",
+    "production-ready",
+    "perfect"
+  ],
+  "reporting_requirements": [
+    "State exact counts: how many of the 5 items were fixed with evidence, how many were attempted and blocked (say why), and how many were not attempted.",
+    "Every item claimed fixed must cite a required_evidence artifact by file path, not a narrative description.",
+    "Never use a forbidden_claim_patterns phrase to describe this contract's outcome unless the exact proof command+output is quoted directly next to it.",
+    "If you find additional drift or security issues outside these 5 items while working, record them (file + line + description) and hand them off rather than silently expanding this contract's scope."
+  ],
+  "definition_of_done": [
+    "[ ] Item 1: vps/daveai-project-catalog.json line 43's entry matches what production actually and safely serves, with evidence attached.",
+    "[ ] Item 2: the regenerated repo-vs-production diff of vps/daveai-ui-v6.html is empty (or only Cloudflare-injected noise remains), with the before/after diff attached as evidence.",
+    "[ ] Item 3: vps/DAVEAI_SOURCE_OF_TRUTH.md states an accurate, hash-verified claim about the archival copy, with the three hashes attached as evidence.",
+    "[ ] Item 4: a concrete pull-back step exists in the vps/patches/*.sh workflow (automated or checklist), with the diff attached as evidence.",
+    "[ ] Item 5: the admin panel identified in F-P0-05 requires authentication and no longer returns internal infra details (including the VPS IP) to an unauthenticated request, with before/after request evidence attached.",
+    "[ ] No file outside this contract's scope list was modified, or every such change is explicitly disclosed with a reason.",
+    "[ ] Completion report uses verified/reported labeling per status_discipline and contains no forbidden_claim_patterns phrase without adjacent proof."
+  ],
+  "failure_policy": {
+    "if_blocked": "Stop. Document exactly what is blocking you (e.g. cannot reach the VPS, cannot confirm the correct Checkers replacement entry) and why. Do not guess, silently skip the item, or mark it done anyway.",
+    "if_partially_done": "Report exact done/blocked/not-attempted counts against the 5 items above. Partial completion is a legitimate, honest outcome — an inflated claim is not.",
+    "release_eligible_on_partial_completion": false
+  },
+  "rollback_plan": "Before installing any change to a live path (nginx config, brain backend, or /var/www/agentic-website), snapshot the current file(s) to a timestamped backup directory, following the existing pattern in vps/patches/deploy-accessibility-contract-20260725.sh (backup → install → verify with sha256sum/curl → trap-based rollback to the backup on any verification failure). Never install to production without a verified rollback path already staged. Repo-only changes (items 1, 3, 4) should go through a normal branch + PR rather than a direct push to the default branch.",
+  "evidence_location": "proofs/daveai-phase0-stop-the-bleeding-<YYYYMMDD>/ (use the date you actually do the work, following the existing proofs/daveai-prod-audit-20260731/ naming convention)"
+}

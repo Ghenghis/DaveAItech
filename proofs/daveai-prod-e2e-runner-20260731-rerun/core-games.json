@@ -1,0 +1,81 @@
+[
+  {
+    "game": {
+      "id": "td2",
+      "url": "https://daveai.tech/games/daveai-td2/index.html",
+      "expect": {}
+    },
+    "state": {
+      "title": "DaveAI TD2",
+      "h1": "",
+      "canvasCount": 1,
+      "buttonText": [],
+      "bodyText": ""
+    },
+    "trace": {
+      "clean": true,
+      "badResponses": [],
+      "requestFailures": [],
+      "pageErrors": [],
+      "consoleMessages": []
+    },
+    "image": "G:\\Github\\Bolt.DIY\\proofs\\daveai-prod-e2e-runner-20260731-rerun\\game-td2.png",
+    "passed": true
+  },
+  {
+    "game": {
+      "id": "asteroids",
+      "url": "https://daveai.tech/games/asteroids/index.html",
+      "expect": {}
+    },
+    "state": {
+      "title": "DaveAI Asteroids",
+      "h1": "Asteroids",
+      "canvasCount": 1,
+      "buttonText": [
+        "Start mission",
+        "Pause",
+        "Restart",
+        "↺",
+        "▲",
+        "↻",
+        "Fire"
+      ],
+      "bodyText": "DAVEAI ARCADE\n\nAsteroids\nSCORE\n0\nLIVES\n3\nWAVE\n1\nDaveAI Asteroids game area\nMISSION READY\nClear the asteroid field\nUse the keyboard, pointer, or touch controls below.\nStart mission\nPause\nRestart\nReady\n↺\n▲\n↻\nFire\n\n←→ rotate · ↑ thrust · Space fire · P pause"
+    },
+    "trace": {
+      "clean": true,
+      "badResponses": [],
+      "requestFailures": [],
+      "pageErrors": [],
+      "consoleMessages": []
+    },
+    "image": "G:\\Github\\Bolt.DIY\\proofs\\daveai-prod-e2e-runner-20260731-rerun\\game-asteroids.png",
+    "passed": true
+  },
+  {
+    "game": {
+      "id": "siege",
+      "url": "https://daveai.tech/games/daves-siege-td/index.html",
+      "expect": {}
+    },
+    "state": {
+      "title": "Dave's Siege TD — by DaveAI",
+      "h1": "⚔️ Dave's Siege TD",
+      "canvasCount": 0,
+      "buttonText": [
+        "Start Game"
+      ],
+      "bodyText": "⚔️ Dave's Siege TD\n\nBY DAVEAI\n\nEnter your name to begin\n\nStart Game\n\nCreated by: DaveAI.tech"
+    },
+    "trace": {
+      "clean": true,
+      "badResponses": [],
+      "requestFailures": [],
+      "pageErrors": [],
+      "consoleMessages": []
+    },
+    "image": "G:\\Github\\Bolt.DIY\\proofs\\daveai-prod-e2e-runner-20260731-rerun\\game-siege.png",
+    "passed": true
+  }
+]

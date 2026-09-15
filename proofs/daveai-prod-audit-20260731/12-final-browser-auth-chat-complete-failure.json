@@ -1,0 +1,117 @@
+{
+  "error": "page.waitForFunction: Timeout 90000ms exceeded.",
+  "result": {
+    "aiTexts": [],
+    "statusText": "Supervisor: I'm having @Coder update the hero section. @QA will\n            verify contrast ratios.",
+    "typingIndicatorPresent": false,
+    "feedText": "hello how are you today? just reply with one short sentence"
+  },
+  "api": [
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/health"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/health"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/health"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/health"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/health"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/health"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/health"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/health"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/health"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/health"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/health"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/health"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/health"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/health"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/health"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/health"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/health"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/health"
+    },
+    {
+      "status": 200,
+      "method": "GET",
+      "url": "/api/health"
+    }
+  ],
+  "consoleEntries": [
+    {
+      "type": "warning",
+      "text": "An iframe which has both allow-scripts and allow-same-origin for its sandbox attribute can escape its sandboxing."
+    }
+  ],
+  "pageErrors": [
+    "Cannot access '_currentMode' before initialization",
+    "Cannot access '_DEFAULT_PERSONALITY' before initialization"
+  ],
+  "generatedAt": "2026-07-31T20:49:04.977Z"
+}

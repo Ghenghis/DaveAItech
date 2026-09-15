@@ -1,0 +1,26 @@
+[
+  {
+    "url": "https://brain.daveai.tech/health",
+    "status": 200,
+    "contentType": "application/json",
+    "body": "{\"status\":\"ok\",\"version\":\"4.0.0\",\"workspace\":\"/var/www/agentic-website\",\"public_dir\":\"/var/www/agentic-website/public\",\"tools\":120,\"skills_loaded\":true,\"agents\":[\"supervisor\",\"coder\",\"asset\",\"qa\"],\"ts\":\"2026-07-31T22:34:44.878616\"}"
+  },
+  {
+    "url": "https://voice.daveai.tech/health",
+    "status": 200,
+    "contentType": "application/json",
+    "body": "{\"status\":\"ok\",\"engine\":\"edge-tts\",\"voices\":30,\"default_voice\":\"bf_alice\",\"british_voices\":16}"
+  },
+  {
+    "url": "https://daveai.tech/api/health",
+    "status": 200,
+    "contentType": "application/json",
+    "body": "{\"status\":\"ok\",\"version\":\"4.0.0\",\"workspace\":\"/var/www/agentic-website\",\"public_dir\":\"/var/www/agentic-website/public\",\"tools\":120,\"skills_loaded\":true,\"agents\":[\"supervisor\",\"coder\",\"asset\",\"qa\"],\"ts\":\"2026-07-31T22:34:45.553676\"}"
+  },
+  {
+    "url": "https://api.daveai.tech/health",
+    "status": 401,
+    "contentType": "application/json; charset=utf-8",
+    "body": "{\n  \"message\":\"Unauthorized\",\n  \"request_id\":\"42da6e79b7b42139ebc82218769d7452\"\n}"
+  }
+]

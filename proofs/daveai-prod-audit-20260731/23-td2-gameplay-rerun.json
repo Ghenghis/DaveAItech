@@ -1,0 +1,29 @@
+{
+  "generatedAt": "2026-07-31T21:07:26.101Z",
+  "info": {
+    "title": "DaveAI TD2",
+    "canvasCount": 1,
+    "bodyText": "",
+    "visibleTextLen": 0
+  },
+  "screenshot": "G:\\Github\\Bolt.DIY\\proofs\\daveai-prod-audit-20260731\\23-td2-gameplay-rerun.png",
+  "badResponses": [
+    {
+      "status": 502,
+      "url": "/games/daveai-td2/assets/enemies/3/3_enemies_1_attack_003.png"
+    }
+  ],
+  "badCount": 1,
+  "consoleKinds": {
+    "webgl": 257,
+    "resource": 1
+  },
+  "actionableConsole": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 502 ()"
+    }
+  ],
+  "pageErrors": [],
+  "passed": false
+}

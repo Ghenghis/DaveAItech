@@ -1,0 +1,95 @@
+Welcome to Ubuntu 24.04.4 LTS (GNU/Linux 6.8.0-101-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Sat Aug  1 02:47:14 UTC 2026
+
+  System load:  3.07                Processes:             433
+  Usage of /:   77.9% of 192.69GB   Users logged in:       0
+  Memory usage: 51%                 IPv4 address for eth0: 187.77.30.206
+  Swap usage:   91%                 IPv6 address for eth0: 2a02:4780:4:70::1
+
+  => There are 33 zombie processes.
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+Expanded Security Maintenance for Applications is not enabled.
+
+30 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+17 additional security updates can be applied with ESM Apps.
+Learn more about enabling ESM Apps service at https://ubuntu.com/esm
+
+
+1 updates could not be installed automatically. For more details,
+see /var/log/unattended-upgrades/unattended-upgrades.log
+
+*** System restart required ***
+Sat Aug  1 02:47:15 UTC 2026
+
+--- listeners 4000 ---
+LISTEN 0      2048                     127.0.0.1:4000       0.0.0.0:*    users:(("litellm",pid=674421,fd=17))                                                                                                               
+
+--- processes litellm ---
+root      674421  0.1  0.9 1206856 159700 ?      Ssl  Jul30   3:31 /opt/litellm/venv/bin/python3 /opt/litellm/venv/bin/litellm --config /opt/litellm/config.yaml --host 127.0.0.1 --port 4000
+root      674727  0.0  0.0   3860  2716 ?        S    Jul30   0:01 inotifywait -m -r -q -e modify,create,delete,move --format %w%f --exclude (\.git/|__pycache__|node_modules|\.bak\.|\.pre-) /opt/litellm
+
+--- pm2 litellm ---
+
+--- docker litellm ---
+
+--- systemd litellm ---
+● litellm.service - LiteLLM Proxy
+     Loaded: loaded (/etc/systemd/system/litellm.service; enabled; preset: enabled)
+     Active: active (running) since Thu 2026-07-30 15:48:30 UTC; 1 day 10h ago
+   Main PID: 674421 (litellm)
+      Tasks: 15 (limit: 19144)
+     Memory: 153.0M (peak: 212.5M swap: 53.8M swap peak: 53.8M)
+        CPU: 3min 31.142s
+     CGroup: /system.slice/litellm.service
+             └─674421 /opt/litellm/venv/bin/python3 /opt/litellm/venv/bin/litellm --config /opt/litellm/config.yaml --host 127.0.0.1 --port 4000
+
+Aug 01 02:38:15 srv1376124 litellm[674421]: INFO:     127.0.0.1:51528 - "GET /v1/models HTTP/1.1" 200 OK
+Aug 01 02:39:15 srv1376124 litellm[674421]: INFO:     127.0.0.1:55192 - "GET /v1/models HTTP/1.1" 200 OK
+Aug 01 02:40:15 srv1376124 litellm[674421]: INFO:     127.0.0.1:37682 - "GET /v1/models HTTP/1.1" 200 OK
+Aug 01 02:41:15 srv1376124 litellm[674421]: INFO:     127.0.0.1:47760 - "GET /v1/models HTTP/1.1" 200 OK
+Aug 01 02:42:15 srv1376124 litellm[674421]: INFO:     127.0.0.1:32980 - "GET /v1/models HTTP/1.1" 200 OK
+Aug 01 02:43:15 srv1376124 litellm[674421]: INFO:     127.0.0.1:54490 - "GET /v1/models HTTP/1.1" 200 OK
+Aug 01 02:44:15 srv1376124 litellm[674421]: INFO:     127.0.0.1:41564 - "GET /v1/models HTTP/1.1" 200 OK
+Aug 01 02:45:15 srv1376124 litellm[674421]: INFO:     127.0.0.1:49512 - "GET /v1/models HTTP/1.1" 200 OK
+Aug 01 02:46:15 srv1376124 litellm[674421]: INFO:     127.0.0.1:55248 - "GET /v1/models HTTP/1.1" 200 OK
+Aug 01 02:47:15 srv1376124 litellm[674421]: INFO:     127.0.0.1:54556 - "GET /v1/models HTTP/1.1" 200 OK
+
+--- local health curl ---
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 127.0.0.1:4000...
+* Connected to 127.0.0.1 (127.0.0.1) port 4000
+> GET /health HTTP/1.1
+> Host: 127.0.0.1:4000
+> User-Agent: curl/8.5.0
+> Accept: */*
+> 
+
+  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:--  0:00:03 --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:--  0:00:04 --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:--  0:00:05 --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:--  0:00:06 --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:--  0:00:07 --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:--  0:00:08 --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:--  0:00:09 --:--:--     0* Operation timed out after 10002 milliseconds with 0 bytes received
+
+  0     0    0     0    0     0      0      0 --:--:--  0:00:10 --:--:--     0
+* Closing connection
+curl: (28) Operation timed out after 10002 milliseconds with 0 bytes received
+
+--- recent candidate logs ---

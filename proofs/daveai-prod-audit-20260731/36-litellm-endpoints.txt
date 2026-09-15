@@ -1,0 +1,61 @@
+===/===
+HTTP/1.1 200 OK
+date: Sat, 01 Aug 2026 02:47:39 GMT
+server: uvicorn
+content-length: 935
+content-type: text/html; charset=utf-8
+
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swagger-ui-dist@5/swagger-ui.css">
+    <link rel="shortcut icon" href="https://fastapi.tiangolo.com/img/favicon.png">
+    <title>LiteLLM API - Swagger UI</title>
+    </head>
+    <body>
+    <div id="swagger-ui">
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swagger-ui-dist@5/swagger-ui-bundle.js"></script>
+    <!-- `SwaggerUIBundle` is now available on the page -->
+    <script>
+    const ui = SwaggerUIBundle({
+        url: '/openapi.json',
+    "dom_id": "#swagger-ui",
+"layout": "BaseLayout",
+"deepLinking": true,
+"showExtensions": true,
+"showCommonExtensions": true,
+oauth2RedirectUrl: window.location.origin + '/docs/oauth2-redirect',
+    presets: [
+        SwaggerUIBundle.presets.apis,
+===/health===
+===/health/readiness===
+HTTP/1.1 200 OK
+date: Sat, 01 Aug 2026 02:47:47 GMT
+server: uvicorn
+content-length: 347
+content-type: application/json
+
+{"status":"healthy","db":"Not connected","cache":null,"litellm_version":"1.65.4","success_callbacks":["sync_deployment_callback_on_success","_PROXY_VirtualKeyModelMaxBudgetLimiter","LowestLatencyLoggingHandler","_PROXY_MaxBudgetLimiter","_PROXY_LiteLLMManagedFiles","_PROXY_MaxParallelRequestsHandler","_PROXY_CacheControlCheck","ServiceLogging"]}===/health/liveliness===
+HTTP/1.1 200 OK
+date: Sat, 01 Aug 2026 02:47:47 GMT
+server: uvicorn
+content-length: 12
+content-type: application/json
+
+"I'm alive!"===/v1/models===
+HTTP/1.1 200 OK
+date: Sat, 01 Aug 2026 02:47:47 GMT
+server: uvicorn
+content-length: 1168
+content-type: application/json
+
+{"data":[{"id":"deepseek-reasoner","object":"model","created":1677610602,"owned_by":"openai"},{"id":"minimax-highspeed","object":"model","created":1677610602,"owned_by":"openai"},{"id":"deepseek-v3","object":"model","created":1677610602,"owned_by":"openai"},{"id":"qwen2.5-72b","object":"model","created":1677610602,"owned_by":"openai"},{"id":"minimax-fast","object":"model","created":1677610602,"owned_by":"openai"},{"id":"vision","object":"model","created":1677610602,"owned_by":"openai"},{"id":"heavy-coder","object":"model","created":1677610602,"owned_by":"openai"},{"id":"minimax-vision","object":"model","created":1677610602,"owned_by":"openai"},{"id":"minimax-quality","object":"model","created":1677610602,"owned_by":"openai"},{"id":"openrouter-claude","object":"model","created":1677610602,"owned_by":"openai"},{"id":"MiniMax-M2.7-highspeed","object":"model","created":1677610602,"owned_by":"openai"},{"id":"local-fallback","object":"model","created":1677610602,"owned_by":"openai"},{"id":"fast-agent","object":"model","created":1677610602,"owned_by":"openai"},{"id":"deepseek-chat","object":"model","created":1677610602,"owned_by":"openai"}],"object":"list"}===/models===
+HTTP/1.1 200 OK
+date: Sat, 01 Aug 2026 02:47:47 GMT
+server: uvicorn
+content-length: 1168
+content-type: application/json
+
+{"data":[{"id":"deepseek-reasoner","object":"model","created":1677610602,"owned_by":"openai"},{"id":"minimax-highspeed","object":"model","created":1677610602,"owned_by":"openai"},{"id":"deepseek-v3","object":"model","created":1677610602,"owned_by":"openai"},{"id":"qwen2.5-72b","object":"model","created":1677610602,"owned_by":"openai"},{"id":"minimax-fast","object":"model","created":1677610602,"owned_by":"openai"},{"id":"vision","object":"model","created":1677610602,"owned_by":"openai"},{"id":"heavy-coder","object":"model","created":1677610602,"owned_by":"openai"},{"id":"minimax-vision","object":"model","created":1677610602,"owned_by":"openai"},{"id":"minimax-quality","object":"model","created":1677610602,"owned_by":"openai"},{"id":"openrouter-claude","object":"model","created":1677610602,"owned_by":"openai"},{"id":"MiniMax-M2.7-highspeed","object":"model","created":1677610602,"owned_by":"openai"},{"id":"local-fallback","object":"model","created":1677610602,"owned_by":"openai"},{"id":"fast-agent","object":"model","created":1677610602,"owned_by":"openai"},{"id":"deepseek-chat","object":"model","created":1677610602,"owned_by":"openai"}],"object":"list"}

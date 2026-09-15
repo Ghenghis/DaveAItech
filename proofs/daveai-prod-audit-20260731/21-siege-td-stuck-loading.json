@@ -1,0 +1,32 @@
+{
+  "generatedAt": "2026-07-31T21:06:21.392Z",
+  "url": "https://daveai.tech/games/daves-siege-td/index.html?v=codex-siege-1785531965921",
+  "info": {
+    "title": "Dave's Siege TD — by DaveAI",
+    "h1": "⚔️ Dave's Siege TD",
+    "bodyText": "⚔️ Dave's Siege TD\n\nBY DAVEAI\n\nEnter your name to begin\n\nStart Game\n\nCreated by: DaveAI.tech",
+    "canvasCount": 0,
+    "buttonCount": 1,
+    "scriptCount": 3,
+    "visibleTextLen": 92,
+    "html": "\n  <div id=\"app\">\n    <div id=\"menu-screen\">\n      <div id=\"menu-card\">\n        <h1>⚔️ Dave's Siege TD</h1>\n        <p class=\"byline\"><a href=\"https://www.DaveAI.tech\" target=\"_blank\" rel=\"noopener\">by DaveAI</a></p>\n        <p class=\"subtitle\">Enter your name to begin</p>\n        <input id=\"name-input\" type=\"text\" maxlength=\"20\" placeholder=\"Player Name\" class=\"name-input\" autofocus=\"\">\n        <button id=\"btn-name-ok\" class=\"menu-btn primary\">Start Game</button>\n        <p class=\"created-by\"><a href=\"https://www.DaveAI.tech\" target=\"_blank\" rel=\"noopener\">Created by: DaveAI.tech</a></p>\n      </div>\n    </div></div>\n  <style>\n    @keyframes pulse {\n\n      0%,\n      100% {\n        transform: scale(1)\n      }\n\n      50% {\n        transform: scale(1.15)\n      }\n    }\n  </style>\n<script type=\"module\" src=\"https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496\" integrity=\"sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ"
+  },
+  "screenshot": "G:\\Github\\Bolt.DIY\\proofs\\daveai-prod-audit-20260731\\21-siege-td-stuck-loading.png",
+  "badResponses": [],
+  "consoleEntries": [
+    {
+      "type": "log",
+      "text": "[Boot] Theme applied: dark"
+    },
+    {
+      "type": "log",
+      "text": "[SpriteLoader] Programmatic terrain renderer ready"
+    },
+    {
+      "type": "log",
+      "text": "[Boot] Sprites loaded"
+    }
+  ],
+  "pageErrors": [],
+  "passed": false
+}

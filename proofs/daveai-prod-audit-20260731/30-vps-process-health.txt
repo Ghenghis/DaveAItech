@@ -1,0 +1,54 @@
+Welcome to Ubuntu 24.04.4 LTS (GNU/Linux 6.8.0-101-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Fri Jul 31 22:32:44 UTC 2026
+
+  System load:  3.88                Processes:             436
+  Usage of /:   77.9% of 192.69GB   Users logged in:       0
+  Memory usage: 52%                 IPv4 address for eth0: 187.77.30.206
+  Swap usage:   89%                 IPv6 address for eth0: 2a02:4780:4:70::1
+
+  => There are 32 zombie processes.
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+Expanded Security Maintenance for Applications is not enabled.
+
+30 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+17 additional security updates can be applied with ESM Apps.
+Learn more about enabling ESM Apps service at https://ubuntu.com/esm
+
+
+1 updates could not be installed automatically. For more details,
+see /var/log/unattended-upgrades/unattended-upgrades.log
+
+*** System restart required ***
+Fri Jul 31 22:33:03 UTC 2026
+┌────┬────────────────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
+│ id │ name               │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
+├────┼────────────────────┼─────────────┼─────────┼─────────┼──────────┼────────┼──────┼───────────┼──────────┼──────────┼──────────┼──────────┤
+│ 4  │ agent-brain        │ default     │ N/A     │ fork    │ 3165459  │ 110m   │ 3    │ online    │ 0%       │ 633.1mb  │ root     │ disabled │
+│ 2  │ agentic-ui         │ default     │ 1.0.0   │ fork    │ 674910   │ 30h    │ 0    │ online    │ 0%       │ 84.4mb   │ root     │ disabled │
+│ 7  │ daveai-dev         │ default     │ 1.0.0   │ fork    │ 674925   │ 30h    │ 0    │ online    │ 0%       │ 34.5mb   │ root     │ disabled │
+│ 6  │ daveai-diy         │ default     │ 1.0.0   │ fork    │ 674922   │ 30h    │ 0    │ online    │ 0%       │ 31.8mb   │ root     │ disabled │
+│ 9  │ daveai-fleet       │ default     │ 1.0.0   │ fork    │ 674945   │ 30h    │ 0    │ online    │ 0%       │ 33.7mb   │ root     │ disabled │
+│ 11 │ daveai-hermes3d    │ default     │ 1.0.0   │ fork    │ 674993   │ 30h    │ 0    │ online    │ 0%       │ 34.6mb   │ root     │ disabled │
+│ 8  │ daveai-staging     │ default     │ 1.0.0   │ fork    │ 674935   │ 30h    │ 0    │ online    │ 0%       │ 34.1mb   │ root     │ disabled │
+│ 10 │ daveai-ws          │ default     │ 1.0.0   │ fork    │ 674968   │ 30h    │ 0    │ online    │ 0%       │ 33.0mb   │ root     │ disabled │
+│ 1  │ edge-tts           │ default     │ N/A     │ fork    │ 674909   │ 30h    │ 0    │ online    │ 0%       │ 45.0mb   │ root     │ disabled │
+│ 3  │ hermes-watchdog    │ default     │ N/A     │ fork    │ 674911   │ 30h    │ 0    │ online    │ 0%       │ 2.8mb    │ root     │ disabled │
+│ 5  │ openhands-web      │ default     │ N/A     │ fork    │ 674920   │ 30h    │ 0    │ online    │ 0%       │ 218.4mb  │ root     │ disabled │
+│ 0  │ serve-api          │ default     │ 1.0.0   │ fork    │ 674908   │ 30h    │ 0    │ online    │ 0%       │ 42.9mb   │ root     │ disabled │
+└────┴────────────────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘
+
+--- litellm local health ---
+
+--- brain local health ---

@@ -1,0 +1,34 @@
+{
+  "generatedAt": "2026-07-31T22:31:33.587Z",
+  "url": "https://iptv.daveai.tech/?proof=28-1785537085158",
+  "finalUrl": "https://iptv.daveai.tech/?proof=28-1785537085158",
+  "state": {
+    "title": "StreamHub",
+    "h1": "StreamHub",
+    "bodyText": "StreamHub\nAll Channels\nCategory\n\nPublic HLS Sample\n\nTears of Steel Sample\n\nLIBRARY\nNew Playlist\nAdd Selected\nRight-click a vault card to save it for later.\nPublic HLS Sample\nResume\nReload\nReplay\nSave\nPlay Later\nBookmark Time\nLive Chat",
+    "videoCount": 1,
+    "iframeCount": 1,
+    "inputs": 2,
+    "buttons": [
+      "All Channels",
+      "Category",
+      "Add channel",
+      "Public HLS Sample",
+      "Tears of Steel Sample",
+      "New Playlist",
+      "Add Selected",
+      "Resume",
+      "Reload",
+      "Replay",
+      "Save",
+      "Play Later",
+      "Bookmark Time",
+      "Send live chat command"
+    ]
+  },
+  "badResponses": [],
+  "requestFailures": [],
+  "pageErrors": [],
+  "consoleMessages": [],
+  "passed": true
+}

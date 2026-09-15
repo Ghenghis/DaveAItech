@@ -1,0 +1,343 @@
+{
+  "generatedAt": "2026-08-01T02:46:11.894Z",
+  "base": "https://daveai.tech",
+  "proofDir": "G:\\Github\\Bolt.DIY\\proofs\\daveai-prod-e2e-runner-20260731-rerun",
+  "results": [
+    {
+      "name": "health endpoints",
+      "status": "passed",
+      "checks": [
+        {
+          "url": "https://daveai.tech/api/health",
+          "status": 200,
+          "contentType": "application/json",
+          "body": "{\"status\":\"ok\",\"version\":\"4.0.0\",\"workspace\":\"/var/www/agentic-website\",\"public_dir\":\"/var/www/agentic-website/public\",\"tools\":120,\"skills_loaded\":true,\"agents\":[\"supervisor\",\"coder\",\"asset\",\"qa\"],\"ts\":\"2026-08-01T02:45:40.388045\"}"
+        },
+        {
+          "url": "https://brain.daveai.tech/health",
+          "status": 200,
+          "contentType": "application/json",
+          "body": "{\"status\":\"ok\",\"version\":\"4.0.0\",\"workspace\":\"/var/www/agentic-website\",\"public_dir\":\"/var/www/agentic-website/public\",\"tools\":120,\"skills_loaded\":true,\"agents\":[\"supervisor\",\"coder\",\"asset\",\"qa\"],\"ts\":\"2026-08-01T02:45:40.690029\"}"
+        },
+        {
+          "url": "https://voice.daveai.tech/health",
+          "status": 200,
+          "contentType": "application/json",
+          "body": "{\"status\":\"ok\",\"engine\":\"edge-tts\",\"voices\":30,\"default_voice\":\"bf_alice\",\"british_voices\":16}"
+        },
+        {
+          "url": "https://api.daveai.tech/health",
+          "status": 200,
+          "contentType": "application/json",
+          "body": "{\"status\":\"ok\",\"service\":\"api.daveai.tech\",\"public_health\":true}"
+        },
+        {
+          "url": "https://iptv.daveai.tech/api/provider-vault/providers",
+          "status": 200,
+          "contentType": "application/json",
+          "body": "{\"providers\":[]}"
+        }
+      ],
+      "failed": []
+    },
+    {
+      "name": "chat auth gate",
+      "status": "passed",
+      "state": {
+        "authVisible": true,
+        "typing": false,
+        "bodyText": "App Mode\nWelcome to DaveAI\nChoose your device to enter\nDesktop\n1280px+\nRECOMMENDED\nTablet\n768px\nMobile\n412px\nD\nDaveAI\n🛠️\nBuild\nSupervisor\nCoder\nQA\nAsset\nPreview\nBuild\nAnalytics\nAdmin\nonline\nHorizons\nDA\nLIVE\n● BRAIN OK\nBrain online\n·\nSign in for workspace stats\nconnecting…\nPAGES\nProjects\nPages\nSites\nTools\nAgents\nDB\nSkills\nLoading deployed pages…\n+ New page\nPreview\nCode\nDesktop\nTablet\nAndroid\nMobile\ndaveai.tech\ndaveai.tech\nGAME\nDave's Siege TD\n\nExperience our latest tower defense game — built entirely by DaveAI agents. Defend your castle with strategic tower placement!\n\nPlay Now\nStart Creating\nby DaveAI\nLive\nGames\nDaves_Siege_TD\nLive project\nDaveAI TD2\nLive project\nDaveAI Asteroids\nLive project\nDaveAI Arcade\nLive project\nArcade Snake\nLive project\nArcade Pacman\nLive project\nArcade Tetris\nLive project\nArcade Tower Defense\nLive project\nSnake\nLive project\nPacman\nLive project\nTic Tac Toe\nLive project\nAI Tic Tac Toe\nLive project\nChess\nLive project\nCheckers\nLive project\nBreakout\nLive project\nM"
+      },
+      "trace": {
+        "clean": true,
+        "badResponses": [],
+        "requestFailures": [],
+        "pageErrors": [],
+        "consoleMessages": []
+      },
+      "image": "G:\\Github\\Bolt.DIY\\proofs\\daveai-prod-e2e-runner-20260731-rerun\\chat-auth-gate.png"
+    },
+    {
+      "name": "authenticated chat reply",
+      "status": "skipped",
+      "reason": "Set DAVEAI_E2E_EMAIL and DAVEAI_E2E_PASSWORD to run this proof."
+    },
+    {
+      "name": "carousel launch",
+      "status": "passed",
+      "launches": [
+        {
+          "iframeSrc": "https://daveai.tech/games/daves-siege-td/index.html",
+          "bodyText": "App Mode\nWelcome to DaveAI\nChoose your device to enter\nDesktop\n1280px+\nRECOMMENDED\nTablet\n768px\nMobile\n412px\nD\nDaveAI\n🛠️\nBuild\nSupervisor\nCoder\nQA\nAsset\nPreview\nBuild\nAnalytics\nAdmin\nonline\nHorizons\nDA\nLIVE\n● BRAIN OK\nBrain online\n·\nSign in for workspace stats\nconnecting…\nPAGES\nProjects\nPages\nSites\nTools\nAgents\nDB\nSkills\nLoading deployed pages…\n+ New page\nPreview\nCode\nDesktop\nTablet\nAndroid\nMobile\ndaveai.tech\ndaveai.tech/games\nPLAYING\n🛠️\nBuild\nAzure Neural\nMaisie (UK)\n Auto\n Silent\n Text\ntype /voice to switch\nMake button purple gradient\nAdd dark mode toggle\nCheck mobile layout\nGenerate logo\nAdd pricing section\nRun lighthouse audit\nScreenshot the site\nActivity\nMemory\nHistory\n Visual\n Dev\nSY\nSystem\njust now\nSystem completed the requested operation\nSY\nSystem\njust now\nSystem completed the re"
+        },
+        {
+          "iframeSrc": "https://daveai.tech/games/daveai-td2/index.html",
+          "bodyText": "App Mode\nWelcome to DaveAI\nChoose your device to enter\nDesktop\n1280px+\nRECOMMENDED\nTablet\n768px\nMobile\n412px\nD\nDaveAI\n🛠️\nBuild\nSupervisor\nCoder\nQA\nAsset\nPreview\nBuild\nAnalytics\nAdmin\nonline\nHorizons\nDA\nLIVE\n● BRAIN OK\nBrain online\n·\nSign in for workspace stats\nconnecting…\nPAGES\nProjects\nPages\nSites\nTools\nAgents\nDB\nSkills\nLoading deployed pages…\n+ New page\nPreview\nCode\nDesktop\nTablet\nAndroid\nMobile\ndaveai.tech\ndaveai.tech/games\nPLAYING\n🛠️\nBuild\nAzure Neural\nMaisie (UK)\n Auto\n Silent\n Text\ntype /voice to switch\nMake button purple gradient\nAdd dark mode toggle\nCheck mobile layout\nGenerate logo\nAdd pricing section\nRun lighthouse audit\nScreenshot the site\nActivity\nMemory\nHistory\n Visual\n Dev\nSY\nSystem\njust now\nSystem completed the requested operation\nSY\nSystem\njust now\nSystem completed the re"
+        },
+        {
+          "iframeSrc": "https://daveai.tech/games/asteroids/index.html",
+          "bodyText": "App Mode\nWelcome to DaveAI\nChoose your device to enter\nDesktop\n1280px+\nRECOMMENDED\nTablet\n768px\nMobile\n412px\nD\nDaveAI\n🛠️\nBuild\nSupervisor\nCoder\nQA\nAsset\nPreview\nBuild\nAnalytics\nAdmin\nonline\nHorizons\nDA\nLIVE\n● BRAIN OK\nBrain online\n·\nSign in for workspace stats\nconnecting…\nPAGES\nProjects\nPages\nSites\nTools\nAgents\nDB\nSkills\nLoading deployed pages…\n+ New page\nPreview\nCode\nDesktop\nTablet\nAndroid\nMobile\ndaveai.tech\ndaveai.tech/games\nPLAYING\n🛠️\nBuild\nAzure Neural\nMaisie (UK)\n Auto\n Silent\n Text\ntype /voice to switch\nMake button purple gradient\nAdd dark mode toggle\nCheck mobile layout\nGenerate logo\nAdd pricing section\nRun lighthouse audit\nScreenshot the site\nActivity\nMemory\nHistory\n Visual\n Dev\nSY\nSystem\njust now\nSystem completed the requested operation\nSY\nSystem\njust now\nSystem completed the re"
+        }
+      ],
+      "trace": {
+        "clean": true,
+        "badResponses": [],
+        "requestFailures": [],
+        "pageErrors": [],
+        "consoleMessages": []
+      }
+    },
+    {
+      "name": "TD2/Asteroids/Siege runtime checks",
+      "status": "passed",
+      "gameResults": [
+        {
+          "game": {
+            "id": "td2",
+            "url": "https://daveai.tech/games/daveai-td2/index.html",
+            "expect": {}
+          },
+          "state": {
+            "title": "DaveAI TD2",
+            "h1": "",
+            "canvasCount": 1,
+            "buttonText": [],
+            "bodyText": ""
+          },
+          "trace": {
+            "clean": true,
+            "badResponses": [],
+            "requestFailures": [],
+            "pageErrors": [],
+            "consoleMessages": []
+          },
+          "image": "G:\\Github\\Bolt.DIY\\proofs\\daveai-prod-e2e-runner-20260731-rerun\\game-td2.png",
+          "passed": true
+        },
+        {
+          "game": {
+            "id": "asteroids",
+            "url": "https://daveai.tech/games/asteroids/index.html",
+            "expect": {}
+          },
+          "state": {
+            "title": "DaveAI Asteroids",
+            "h1": "Asteroids",
+            "canvasCount": 1,
+            "buttonText": [
+              "Start mission",
+              "Pause",
+              "Restart",
+              "↺",
+              "▲",
+              "↻",
+              "Fire"
+            ],
+            "bodyText": "DAVEAI ARCADE\n\nAsteroids\nSCORE\n0\nLIVES\n3\nWAVE\n1\nDaveAI Asteroids game area\nMISSION READY\nClear the asteroid field\nUse the keyboard, pointer, or touch controls below.\nStart mission\nPause\nRestart\nReady\n↺\n▲\n↻\nFire\n\n←→ rotate · ↑ thrust · Space fire · P pause"
+          },
+          "trace": {
+            "clean": true,
+            "badResponses": [],
+            "requestFailures": [],
+            "pageErrors": [],
+            "consoleMessages": []
+          },
+          "image": "G:\\Github\\Bolt.DIY\\proofs\\daveai-prod-e2e-runner-20260731-rerun\\game-asteroids.png",
+          "passed": true
+        },
+        {
+          "game": {
+            "id": "siege",
+            "url": "https://daveai.tech/games/daves-siege-td/index.html",
+            "expect": {}
+          },
+          "state": {
+            "title": "Dave's Siege TD — by DaveAI",
+            "h1": "⚔️ Dave's Siege TD",
+            "canvasCount": 0,
+            "buttonText": [
+              "Start Game"
+            ],
+            "bodyText": "⚔️ Dave's Siege TD\n\nBY DAVEAI\n\nEnter your name to begin\n\nStart Game\n\nCreated by: DaveAI.tech"
+          },
+          "trace": {
+            "clean": true,
+            "badResponses": [],
+            "requestFailures": [],
+            "pageErrors": [],
+            "consoleMessages": []
+          },
+          "image": "G:\\Github\\Bolt.DIY\\proofs\\daveai-prod-e2e-runner-20260731-rerun\\game-siege.png",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "non-game pages",
+      "status": "passed",
+      "pageResults": [
+        {
+          "item": {
+            "id": "studio",
+            "url": "https://daveai.tech/studio/index.html"
+          },
+          "state": {
+            "title": "DaveAI — Agentic Web Builder",
+            "h1": "Agentic Generation",
+            "authGate": false,
+            "videoCount": 0,
+            "bodyText": "D\nWelcome to DaveAI\nThe autonomous web builder. Sign in to continue.\nEmail\nGoogle\nGitHub\n  Sign In\nNo account? Create one  ·  Forgot password?\nTest login: demo@daveai.tech  /  DaveAI2026\nD\nDaveAI\nSupervisor\nanalyzing\nCoder\nbuilding UI\nQA\nidle\nAsset\nidle\nPreview\nBuild\nAnalytics\nAdmin\nHorizons\nDA\nPAGES\nPages\nSites\nTools\nAgents\nHome\n/\nAbout\n/about\nPricing\n/pricing\nBlog\n/blog\nContact\n/contact\n+ New page\nPreview\nCode\nMobile\npreview.daveai.tech\npreview.daveai.tech\nv2.0 Beta · Live\nAgentic Generation\n\nBuild faster with an autonomous swarm of AI agents that write, test, and ship production code in real-time.\n\nDeploy Now\nView Docs\nSupervisor: I'm having @Coder update the hero section. @QA will verify contrast ratios.\nMake button purple gradient\nAdd dark mode toggle\nCheck mobile layout\nGenerate logo\nAdd pricing section\nChange title to \"Build the Future\"\nActivity\nHistory\nCoder\n2m ago\nScaffolded Hero.tsx component\na3f91b2\nQA\n4m ago\nContrast ratios — all pass ✓\nSupervisor\n5m ago\nRouted \"add hero se"
+          },
+          "trace": {
+            "clean": true,
+            "badResponses": [],
+            "requestFailures": [],
+            "pageErrors": [],
+            "consoleMessages": []
+          },
+          "image": "G:\\Github\\Bolt.DIY\\proofs\\daveai-prod-e2e-runner-20260731-rerun\\page-studio.png",
+          "passed": true
+        },
+        {
+          "item": {
+            "id": "web-pages",
+            "url": "https://daveai.tech/web-pages.html"
+          },
+          "state": {
+            "title": "DaveAI Web Pages",
+            "h1": "Pages & Apps",
+            "authGate": false,
+            "videoCount": 0,
+            "bodyText": "DAVEAI WEB\n\nPages & Apps\n\nA clean launcher for DaveAI chat, hosted apps, games, and verified generated pages.\n\nDaveAI Chat\nApps\nAll\nApps\nGames\nPages\nTools\nFeatured\nVerified links only\nA\nPROTECTED\nApps Launcher\n\nHosted DaveTV/IPTV app collection with provider-ready player surfaces.\n\napps.daveai.tech\nauth gate\nOpen\nD\nLIVE\nDaveAI Chat\n\nMain DaveAI workspace and agent chat surface.\n\ndaveai.tech\nagent brain\nOpen\nW\nGAME\nWheel Hangman\n\nWheel-style hangman game generated through the repaired DaveAI agent path.\n\nbrowser proof\ninteractive\nOpen\nGames\nDirect browser pages\nG\nGAMES\nGames Hub\n\nDaveAI game collection and playable browser experiments.\n\n/games/\n200 OK\nOpen\nR\nARCADE\nArcade\n\nClassic arcade-style games including snake, tetris, racing, and breakout.\n\n/arcade/index.html\n200 OK\nOpen\nT\nGAME\nTic Tac Toe AI\n\nRecent agent-built tic tac toe page retained as a direct playable link.\n\n/tic-tac-toe-ai.html\n200 OK\nOpen\nTD\nTOWER\nDaveAI TD2\n\nTower-defense game page hosted under the DaveAI games collectio"
+          },
+          "trace": {
+            "clean": true,
+            "badResponses": [],
+            "requestFailures": [],
+            "pageErrors": [],
+            "consoleMessages": []
+          },
+          "image": "G:\\Github\\Bolt.DIY\\proofs\\daveai-prod-e2e-runner-20260731-rerun\\page-web-pages.png",
+          "passed": true
+        },
+        {
+          "item": {
+            "id": "windsurf",
+            "url": "https://daveai.tech/windsurf.html"
+          },
+          "state": {
+            "title": "DaveAI — Ops Control Panel",
+            "h1": "Windsurf is an authenticated control panel",
+            "authGate": true,
+            "videoCount": 0,
+            "bodyText": "VPS\nCPU\n–\nMEM\n–\nUPTIME\n–\nLAST POLL –\n↻ Refresh\n🔔 Alerts\n← DaveAI\nPM2 PROCESSES\n↻\nDOCKER CONTAINERS\n(CORE ONLY)\nAI TOOLS\ngoose\nv1.27.2\n/usr/local/bin/goose\nver\nrun\nopenhands\ndocker\n:3333 → open\n↻\nlog\nQUICK ACTIONS\n↻ Restart All PM2\n↻ Restart Brain\n⚡ Fix edge-tts\n📄 View Logs\n🚀 Deploy\n🚨 Monitor\n⌨ Command\n🖥 Procs\n📄 Logs\n🧪 Tests\n🚀 Deploy\n💬 Discuss\n■ stop\nsupervisor\nIDLE\n–\n–\n■ stop\ncoder\nIDLE\n–\n–\n■ stop\nasset\nIDLE\n–\n–\n■ stop\nqa\nIDLE\n–\n–\nLIVE ACTIVITY FEED\n1 EVENTS\n7:45:50 PM\nsystem\nAuth required — Windsurf polling not started\nBUDGET STATUS\nCHECKPOINT\nAgent Chat\nsupervisor\ncoder\nasset\nqa\n→\nDAVEAI OPS\nWindsurf is an authenticated control panel\n\nThis page controls VPS processes, deployment commands, logs, and agent operations. Sign in through DaveAI first, then reopen Windsurf from the launcher.\n\nSign in to DaveAI\nBack to launcher\n\nPublic proof expectation: no protected admin API calls are made until auth is present."
+          },
+          "trace": {
+            "clean": true,
+            "badResponses": [],
+            "requestFailures": [],
+            "pageErrors": [],
+            "consoleMessages": []
+          },
+          "image": "G:\\Github\\Bolt.DIY\\proofs\\daveai-prod-e2e-runner-20260731-rerun\\page-windsurf.png",
+          "passed": true
+        },
+        {
+          "item": {
+            "id": "voice",
+            "url": "https://voice.daveai.tech/"
+          },
+          "state": {
+            "title": "Voice Studio — DaveAI.tech",
+            "h1": "Voice Studio",
+            "authGate": false,
+            "videoCount": 0,
+            "bodyText": "VOICE STUDIO — STAGING\nVoice Studio\n\nEdge TTS synthesis server running on daveai.tech infrastructure. Real-time voice synthesis, multi-language support, and AI agent voice integration. Accessible via API or integrated into the DaveAI agent workflow.\n\nReal-time TTS\n\nLow-latency text-to-speech synthesis via Edge TTS engine. Multiple voices, styles, and speeds.\n\nMulti-language\n\nSupports 100+ languages and dialects. British and American English, Spanish, German, French, and more.\n\nAgent Voice\n\nAssign unique voices to each AI agent — Supervisor, Coder, QA, Asset. DaveAI reads responses aloud.\n\nREST API\n\nClean API for programmatic synthesis. POST JSON, receive audio. Integrated into the Brain API.\n\nAPI ENDPOINTS\nPOST /synthesize — Text-to-speech\nGET /voices — Available voices\nGET /health — Service status\nPOST /api/edge-tts — Via DaveAI proxy\nBack to DaveAI.tech\n Engine: Active\nModels: 0 loaded\nRegion: VPS Boston\nContainer: edge-tts-server\n DaveAI.tech Hub  ·   Hermes Chat  ·   Web Builder"
+          },
+          "trace": {
+            "clean": true,
+            "badResponses": [],
+            "requestFailures": [],
+            "pageErrors": [],
+            "consoleMessages": []
+          },
+          "image": "G:\\Github\\Bolt.DIY\\proofs\\daveai-prod-e2e-runner-20260731-rerun\\page-voice.png",
+          "passed": true
+        },
+        {
+          "item": {
+            "id": "voice-landing",
+            "url": "https://daveai.tech/voice-landing.html"
+          },
+          "state": {
+            "title": "Voice Studio — DaveAI.tech",
+            "h1": "Voice Studio",
+            "authGate": false,
+            "videoCount": 0,
+            "bodyText": "VOICE STUDIO — STAGING\nVoice Studio\n\nEdge TTS synthesis server running on daveai.tech infrastructure. Real-time voice synthesis, multi-language support, and AI agent voice integration. Accessible via API or integrated into the DaveAI agent workflow.\n\nReal-time TTS\n\nLow-latency text-to-speech synthesis via Edge TTS engine. Multiple voices, styles, and speeds.\n\nMulti-language\n\nSupports 100+ languages and dialects. British and American English, Spanish, German, French, and more.\n\nAgent Voice\n\nAssign unique voices to each AI agent — Supervisor, Coder, QA, Asset. DaveAI reads responses aloud.\n\nREST API\n\nClean API for programmatic synthesis. POST JSON, receive audio. Integrated into the Brain API.\n\nAPI ENDPOINTS\nPOST /synthesize — Text-to-speech\nGET /voices — Available voices\nGET /health — Service status\nPOST /api/edge-tts — Via DaveAI proxy\nBack to DaveAI.tech\n Engine: Active\nModels: 0 loaded\nRegion: VPS Boston\nContainer: edge-tts-server\n DaveAI.tech Hub  ·   Hermes Chat  ·   Web Builder"
+          },
+          "trace": {
+            "clean": true,
+            "badResponses": [],
+            "requestFailures": [],
+            "pageErrors": [],
+            "consoleMessages": []
+          },
+          "image": "G:\\Github\\Bolt.DIY\\proofs\\daveai-prod-e2e-runner-20260731-rerun\\page-voice-landing.png",
+          "passed": true
+        },
+        {
+          "item": {
+            "id": "streamhub",
+            "url": "https://iptv.daveai.tech/"
+          },
+          "state": {
+            "title": "StreamHub",
+            "h1": "StreamHub",
+            "authGate": false,
+            "videoCount": 1,
+            "bodyText": "StreamHub\nAll Channels\nCategory\n\nPublic HLS Sample\n\nTears of Steel Sample\n\nLIBRARY\nNew Playlist\nAdd Selected\nRight-click a vault card to save it for later.\nPublic HLS Sample\nResume\nReload\nReplay\nSave\nPlay Later\nBookmark Time\nLive Chat"
+          },
+          "trace": {
+            "clean": true,
+            "badResponses": [],
+            "requestFailures": [],
+            "pageErrors": [],
+            "consoleMessages": []
+          },
+          "image": "G:\\Github\\Bolt.DIY\\proofs\\daveai-prod-e2e-runner-20260731-rerun\\page-streamhub.png",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "StreamHub no-error render",
+      "status": "passed",
+      "streamhub": {
+        "item": {
+          "id": "streamhub",
+          "url": "https://iptv.daveai.tech/"
+        },
+        "state": {
+          "title": "StreamHub",
+          "h1": "StreamHub",
+          "authGate": false,
+          "videoCount": 1,
+          "bodyText": "StreamHub\nAll Channels\nCategory\n\nPublic HLS Sample\n\nTears of Steel Sample\n\nLIBRARY\nNew Playlist\nAdd Selected\nRight-click a vault card to save it for later.\nPublic HLS Sample\nResume\nReload\nReplay\nSave\nPlay Later\nBookmark Time\nLive Chat"
+        },
+        "trace": {
+          "clean": true,
+          "badResponses": [],
+          "requestFailures": [],
+          "pageErrors": [],
+          "consoleMessages": []
+        },
+        "image": "G:\\Github\\Bolt.DIY\\proofs\\daveai-prod-e2e-runner-20260731-rerun\\page-streamhub.png",
+        "passed": true
+      }
+    }
+  ],
+  "passed": 6,
+  "failed": 0,
+  "skipped": 1
+}

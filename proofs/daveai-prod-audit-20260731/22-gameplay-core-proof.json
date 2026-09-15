@@ -1,0 +1,79 @@
+{
+  "generatedAt": "2026-07-31T21:06:59.682Z",
+  "results": [
+    {
+      "name": "Siege TD",
+      "url": "https://daveai.tech/games/daves-siege-td/index.html",
+      "runError": null,
+      "info": {
+        "title": "Dave's Siege TD — by DaveAI",
+        "h1": "⚔️ Dave's Siege TD",
+        "bodyText": "⚔️ Dave's Siege TD\n\nBY DAVEAI\n\nWelcome back, Codex!\n\n⭐ 0 Stars\n🗺️ 0/32 Stages\n🏆 0 Wins\n▶ Play Campaign\n🏅 Hi-Scores\n🏆 Achievements\n⚙ Settings\n0/32 stages complete\n\nCreated by: DaveAI.tech",
+        "canvasCount": 0,
+        "buttonCount": 4,
+        "visibleTextLen": 190,
+        "activeElement": "BODY"
+      },
+      "screenshot": "G:\\Github\\Bolt.DIY\\proofs\\daveai-prod-audit-20260731\\22-gameplay-0.png",
+      "badResponses": [],
+      "badCount": 0,
+      "actionableConsole": [],
+      "actionableConsoleCount": 0,
+      "pageErrors": [],
+      "passed": true
+    },
+    {
+      "name": "TD2",
+      "url": "https://daveai.tech/games/daveai-td2/index.html",
+      "runError": null,
+      "info": {
+        "title": "DaveAI TD2",
+        "h1": "",
+        "bodyText": "",
+        "canvasCount": 1,
+        "buttonCount": 0,
+        "visibleTextLen": 0,
+        "activeElement": "BODY"
+      },
+      "screenshot": "G:\\Github\\Bolt.DIY\\proofs\\daveai-prod-audit-20260731\\22-gameplay-1.png",
+      "badResponses": [
+        {
+          "status": 502,
+          "url": "/games/daveai-td2/assets/vfx/damage/1_effect_damage_005.png"
+        }
+      ],
+      "badCount": 1,
+      "actionableConsole": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 502 ()"
+        }
+      ],
+      "actionableConsoleCount": 1,
+      "pageErrors": [],
+      "passed": false
+    },
+    {
+      "name": "Asteroids",
+      "url": "https://daveai.tech/games/asteroids/index.html",
+      "runError": null,
+      "info": {
+        "title": "DaveAI Asteroids",
+        "h1": "Asteroids",
+        "bodyText": "DAVEAI ARCADE\n\nAsteroids\nSCORE\n43\nLIVES\n3\nWAVE\n1\nDaveAI Asteroids game area\nPause\nRestart\nMission active\n↺\n▲\n↻\nFire\n\n←→ rotate · ↑ thrust · Space fire · P pause",
+        "canvasCount": 1,
+        "buttonCount": 7,
+        "visibleTextLen": 160,
+        "activeElement": "CANVAS"
+      },
+      "screenshot": "G:\\Github\\Bolt.DIY\\proofs\\daveai-prod-audit-20260731\\22-gameplay-2.png",
+      "badResponses": [],
+      "badCount": 0,
+      "actionableConsole": [],
+      "actionableConsoleCount": 0,
+      "pageErrors": [],
+      "passed": true
+    }
+  ],
+  "passed": false
+}
