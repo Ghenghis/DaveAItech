@@ -268,10 +268,30 @@ findings and the remaining broken/degraded menu-nav items in
 [`DAVEAI_CONFIRMED_FINDINGS_20260915.md`](DAVEAI_CONFIRMED_FINDINGS_20260915.md) live here,
 including the 23-toggle Settings modal a11y failure. Contract: `docs/contracts/CT-002-menu-nav-polish.json`.
 
-### Phase 3 — Games catalog consolidation
+### Phase 3 — Games catalog consolidation — mostly done, 2026-09-15
 Collapse the five-places-at-once catalog mechanism (§4.2) into one real source, add the missing
 `web-pages.html` source into the repo, and add at least one real input-driven test per game beyond
 Asteroids before calling any of them "working." Contract: `docs/contracts/CT-003-games-catalog-consolidation.json`.
+
+**Done:** the most damaging piece of the "five places" mess — `seedProjects()` using different
+ids than the server catalog for the same 5 real projects/games, causing them to show up twice
+in a user's project list — is fixed, with a migration for browsers that already saved the old
+ids. `web-pages.html` is pulled into the repo. `vps/tests/siege-td.spec.ts` is a real, verified,
+3x-run-and-passing input-driven gameplay test for Dave's Siege TD (name entry → menu → stage
+select → place a tower via simulated input → assert the game's own gold counter drops by
+exactly the tower's cost) — the second game to get one, after Asteroids, using Playwright
+(newly added as this repo's first real devDependency; see `package.json`).
+
+**Not done:** the catalog mechanism isn't fully collapsed to one source — `PROJECT_CATALOG_HOST_
+STATUS` (hardcoded in `vps/daveai-ui-v6.html`) still duplicates `daveai-sites-config.json`'s
+per-hostname status facts, left as a documented gap rather than wired to fetch that file live
+since there's no confirmation it's actually deployed at a fetchable URL (see the comment at that
+constant's declaration). Real gameplay tests for the other ~13 games (TD2, the arcade/board game
+set, Checkers Crowning's crowning mechanic) don't exist — this establishes the pattern and proves
+it's achievable per-game (and cheap: ~5 seconds per test run against live production), but
+extending it to the rest is real per-game work (each game's UI/canvas layout needs its own
+verified coordinates or locators, the same way Siege TD's took two iterations against the live
+page to get right), not attempted here.
 
 ### Phase 4 — Wildcard site extensibility — substantially already built, verified 2026-09-15
 This phase's stated goal — wire the unused `"other"` category into the launcher UI, with
