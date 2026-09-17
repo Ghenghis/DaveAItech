@@ -2028,9 +2028,14 @@
               <h3><i class="fas fa-code" style="margin-right:6px"></i>Code Agent Mode</h3>
               <div class="ms-sub">Code Agent mode keeps plans, file review, test output,
                 and deploy notes organized while DaveAI works.</div>
+              <div class="mode-action-grid">
+                <input id="mp-code-topic" type="text" placeholder="Describe what to build or change…">
+                <button type="button" onclick="prepareModePrompt('code')">Prepare build request</button>
+              </div>
+              <div class="mode-action-note" id="mp-code-note">Builds a request that states the plan and files first, then makes the change with tests and proof.</div>
               <ul>
                 <li>Plan + assumptions panel (left)</li>
-                <li>File tree with inline diff (center)</li>
+                <li>File tree with inline diff (center) — also reachable directly via Files mode</li>
                 <li>Test output + deploy chip (right)</li>
               </ul>
             </div>
@@ -3155,7 +3160,7 @@
       const read = id => (document.getElementById(id)?.value || '').trim();
       const notes = {
         chat: 'mp-chat-note', research: 'mp-research-note',
-        problem: 'mp-problem-note', hermes: 'mp-hermes-note'
+        problem: 'mp-problem-note', hermes: 'mp-hermes-note', code: 'mp-code-note'
       };
       let prompt = '';
       if (mode === 'chat') {
@@ -3172,13 +3177,16 @@
       } else if (mode === 'hermes') {
         const topic = read('mp-hermes-task');
         if (topic) prompt = `Delegate this task through the DaveAI agent team. Show agent ownership and progress in Activity, and keep approval gates attached to any write or deployment: ${topic}`;
+      } else if (mode === 'code') {
+        const topic = read('mp-code-topic');
+        if (topic) prompt = `Build or change this. State your plan and exactly which files you'll touch before making any change, then make the change, run relevant tests or checks, and show proof of the result (file diffs, test output, or a working preview): ${topic}`;
       }
       const note = document.getElementById(notes[mode]);
       if (!prompt) {
         if (note) note.textContent = 'Enter a request first.';
         const sourceId = {
           chat: 'mp-chat-starter', research: 'mp-research-topic',
-          problem: 'mp-problem-topic', hermes: 'mp-hermes-task'
+          problem: 'mp-problem-topic', hermes: 'mp-hermes-task', code: 'mp-code-topic'
         }[mode];
         document.getElementById(sourceId)?.focus();
         return;
