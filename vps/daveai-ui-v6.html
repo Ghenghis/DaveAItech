@@ -2141,6 +2141,12 @@
 
       </div><!-- /panel-area -->
 
+      <!-- Drag handle between the preview/action window above and the chat transcript
+           below — previously there was no way to resize this split at all; the
+           transcript's height came entirely from a fixed clamp() in CSS. -->
+      <div id="chat-resizer" role="separator" aria-orientation="horizontal"
+        aria-label="Resize chat panel" tabindex="0"></div>
+
       <!-- Chat -->
       <div id="chat" data-region="chat">
         <!-- Drag handle for floating chat (only visible in app-chat-float mode) -->
@@ -5498,6 +5504,114 @@
           getComputedStyle(document.documentElement).getPropertyValue('--right-panel-w')
         );
         if (Number.isFinite(current)) setRightPanelWidth(current);
+      });
+    }
+
+    // ── Chat/preview vertical split resize ──
+    // Mirrors initRightPanelResize()'s pattern exactly (pointer events, localStorage
+    // persistence, dbl-click reset, arrow-key nudging) but for the horizontal divider
+    // between #panel-area (the preview/action window) and #chat below it. Previously
+    // there was no way to resize this split at all — #chat's height came entirely from
+    // a fixed clamp() in CSS (--transcript-max-h), which meant long messages could only
+    // be read via #chat-feed's own internal scrollbar, not by giving the transcript
+    // more room. Sets --transcript-max-h as an inline style directly on #chat itself
+    // (not on <body> or :root) so it correctly overrides that variable's many
+    // mode/breakpoint-specific redeclarations (mobile, tablet, immersive, app-mode,
+    // etc. each redefine --transcript-max-h at the body level) for exactly this
+    // element's own subtree, without touching or needing to trace through all of those
+    // other contexts — if the user hasn't dragged, every one of those still behaves
+    // exactly as before.
+    const CHAT_TRANSCRIPT_HEIGHT_KEY = 'daveai_chat_transcript_h';
+    const CHAT_TRANSCRIPT_MIN_H = 100;
+    const CHAT_TRANSCRIPT_DEFAULT_H = 220;
+    function chatTranscriptMaxH() {
+      return Math.max(CHAT_TRANSCRIPT_MIN_H, Math.min(640, Math.floor(window.innerHeight * 0.6)));
+    }
+    function setChatTranscriptHeight(height, persist = false) {
+      const chat = document.getElementById('chat');
+      if (!chat) return CHAT_TRANSCRIPT_DEFAULT_H;
+      const max = chatTranscriptMaxH();
+      const numericHeight = Number(height);
+      const next = Math.round(Math.max(
+        CHAT_TRANSCRIPT_MIN_H,
+        Math.min(max, Number.isFinite(numericHeight) ? numericHeight : CHAT_TRANSCRIPT_DEFAULT_H)
+      ));
+      chat.style.setProperty('--transcript-max-h', next + 'px');
+      const handle = document.getElementById('chat-resizer');
+      if (handle) {
+        handle.setAttribute('aria-valuenow', String(next));
+        handle.setAttribute('aria-valuemin', String(CHAT_TRANSCRIPT_MIN_H));
+        handle.setAttribute('aria-valuemax', String(max));
+      }
+      if (persist) {
+        try { localStorage.setItem(CHAT_TRANSCRIPT_HEIGHT_KEY, String(next)); } catch (e) { }
+      }
+      return next;
+    }
+    function initChatResize() {
+      const chat = document.getElementById('chat');
+      const handle = document.getElementById('chat-resizer');
+      if (!chat || !handle) return;
+
+      let savedHeight = NaN;
+      try { savedHeight = Number.parseInt(localStorage.getItem(CHAT_TRANSCRIPT_HEIGHT_KEY), 10); } catch (e) { }
+      if (Number.isFinite(savedHeight)) setChatTranscriptHeight(savedHeight);
+
+      let dragging = false;
+      let startY = 0;
+      let startHeight = 0;
+
+      const finishResize = event => {
+        if (!dragging) return;
+        dragging = false;
+        document.body.classList.remove('chat-resizing');
+        if (event && handle.hasPointerCapture && handle.hasPointerCapture(event.pointerId)) {
+          handle.releasePointerCapture(event.pointerId);
+        }
+        const current = Number.parseFloat(chat.style.getPropertyValue('--transcript-max-h'));
+        setChatTranscriptHeight(Number.isFinite(current) ? current : startHeight, true);
+        keepTranscriptAnchored('chat-panel-resize', true);
+      };
+
+      handle.addEventListener('pointerdown', event => {
+        if (event.pointerType === 'mouse' && event.button !== 0) return;
+        event.preventDefault();
+        dragging = true;
+        startY = event.clientY;
+        startHeight = Number.parseFloat(getComputedStyle(chat).getPropertyValue('--transcript-max-h'))
+          || CHAT_TRANSCRIPT_DEFAULT_H;
+        document.body.classList.add('chat-resizing');
+        handle.setPointerCapture(event.pointerId);
+      });
+      handle.addEventListener('pointermove', event => {
+        if (!dragging) return;
+        // Dragging the handle down enlarges the preview above it (chat gets shorter);
+        // dragging up enlarges the chat transcript — standard split-pane convention.
+        const delta = startY - event.clientY;
+        setChatTranscriptHeight(startHeight + delta);
+      });
+      handle.addEventListener('pointerup', finishResize);
+      handle.addEventListener('pointercancel', finishResize);
+      handle.addEventListener('dblclick', () => {
+        setChatTranscriptHeight(CHAT_TRANSCRIPT_DEFAULT_H, true);
+        keepTranscriptAnchored('chat-panel-resize-reset', true);
+      });
+      handle.addEventListener('keydown', event => {
+        let next = Number.parseFloat(getComputedStyle(chat).getPropertyValue('--transcript-max-h'))
+          || CHAT_TRANSCRIPT_DEFAULT_H;
+        if (event.key === 'ArrowUp') next += 16;
+        else if (event.key === 'ArrowDown') next -= 16;
+        else if (event.key === 'Home') next = CHAT_TRANSCRIPT_MIN_H;
+        else if (event.key === 'End') next = chatTranscriptMaxH();
+        else return;
+        event.preventDefault();
+        setChatTranscriptHeight(next, true);
+        keepTranscriptAnchored('chat-panel-resize-keyboard', true);
+      });
+
+      window.addEventListener('resize', () => {
+        const current = Number.parseFloat(chat.style.getPropertyValue('--transcript-max-h'));
+        if (Number.isFinite(current)) setChatTranscriptHeight(current);
       });
     }
 
@@ -10777,6 +10891,7 @@
       // Build dynamic UI elements
       buildActivityHeader();   // inject Visual/Dev toggle in right panel
       initRightPanelResize();  // restore and wire the resizable right panel
+      initChatResize();  // restore and wire the resizable chat/preview split
       startStatusBar();        // start real-time status bar (polls /api/health every 5s)
       startClock();            // real-time clock from IP timezone
       startPolling();          // agents + health + stats polling

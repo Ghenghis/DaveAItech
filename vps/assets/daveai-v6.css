@@ -2249,6 +2249,43 @@
       user-select: none;
     }
 
+    body.chat-resizing {
+      cursor: row-resize;
+      user-select: none;
+    }
+
+    /* Drag handle for the preview/chat vertical split — same interaction pattern as
+       #rp-resizer above, rotated for a horizontal divider instead of a vertical one. */
+    #chat-resizer {
+      position: relative;
+      z-index: 12;
+      flex-shrink: 0;
+      height: 9px;
+      margin: -5px 0 -4px;
+      cursor: row-resize;
+      touch-action: none;
+      outline: none;
+    }
+
+    #chat-resizer::after {
+      content: '';
+      position: absolute;
+      left: 8px;
+      right: 8px;
+      top: 4px;
+      height: 2px;
+      border-radius: 2px;
+      background: transparent;
+      transition: background .15s ease, box-shadow .15s ease;
+    }
+
+    #chat-resizer:hover::after,
+    #chat-resizer:focus-visible::after,
+    body.chat-resizing #chat-resizer::after {
+      background: #8B5CF6;
+      box-shadow: 0 0 10px rgba(139, 92, 246, .55);
+    }
+
     #rp-resizer {
       position: absolute;
       z-index: 12;
